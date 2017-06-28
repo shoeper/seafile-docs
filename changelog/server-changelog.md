@@ -19,7 +19,7 @@ pip install pillow moviepy
 ### 6.1.1 (2017.06.15)
 
 * Disable thumbnail for video files in default
-* Enable fixing the email for share link to be fixed in certain language (option SHARE_LINK_EMAIL_LANGUAGE in seahub_setting.py). So admin can force the language for a email of a share link to be always in English, regardless of what language the sender is using.
+* Enable fixing the email for share link to be fixed in certain language (option `SHARE_LINK_EMAIL_LANGUAGE` in `seahub_setting.py`). So admin can force the language for a email of a share link to be always in English, regardless of what language the sender is using.
 * The language of the interface of CollaboraOffice/OnlyOffice will be determined by the language of the current user.
 * Display the correct image thumbnails in favorites instead of the generic one
 * Enable set favicon and logo via admin panel
@@ -33,7 +33,7 @@ Web UI Improvement:
 1. Add thumbnail for video files
 2. Improved image file view, using thumbnail to view pictures
 3. Improve pdf preview in community edition
-4. Move items by drap & drop
+4. Move items by drag & drop
 5. Add create docx/xlsx/pptx in web interface
 6. Add OnlyOffice integration
 7. Add Collabora integration
@@ -56,13 +56,13 @@ System changes:
 
 ## 6.0
 
-Note: If you ever used 6.0.0 or 6.0.1 or 6.0.2 with SQLite as database and encoutered a problem with desktop/mobile client login, follow https://github.com/haiwen/seafile/pull/1738 to fix the problem.
+Note: If you ever used 6.0.0 or 6.0.1 or 6.0.2 with SQLite as database and encountered a problem with desktop/mobile client login, follow https://github.com/haiwen/seafile/pull/1738 to fix the problem.
 
 ### 6.0.9 (2017.03.30)
 
 * Show user' name instead of user's email in notifications sent out by email
 * Add config items for setting favicon, disable wiki feature
-* Add css id to easily hide user password reset and delete account button
+* Add CSS id to easily hide user password reset and delete account button
 * [fix] Fix UI bug in restoring a file from snapshot
 * [fix] Fix after renaming a file, the old versions before file rename can't be downloaded
 * [security] Fix XSS problem of the "go back" button in history page and snapshot view page
@@ -74,24 +74,24 @@ Improvement for admin
 * Admin can add/delete group members
 * Admin can create group in admin panel
 * Show total storage, total number of files, total number of connected devices in the info page of admin panel
-* Force users to change password if imported via csv
-* Support set user's quota, name when import user via csv
+* Force users to change password if imported via CSV
+* Support set user's quota, name when import user via CSV
 * Set user's quota in user list page
 * Add search group by group name
-* Use ajax when deleting a user's library in admin panel
-* Support logrotate for controller.log
-* Add `# -*- coding: utf-8 -*-` to seahub_settings.py, so that admin can use non-ascii characters in the file.
-* Ingore white space character in the end of lines in ccnet.conf
+* Use Ajax when deleting a user's library in admin panel
+* Support log rotation for controller.log
+* Add `# -*- coding: utf-8 -*-` to `seahub_settings.py`, so that admin can use non-ascii characters in the file.
+* Ignore white space character in the end of lines in `ccnet.conf`
 * Add a log when a user can't be find in LDAP during login, so that the system admin can know whether it is caused by password error or the user can't be find
 * Delete shared libraries information when deleting a user
 
 Other
 
 * [fix] Uploading files with special names lets seaf-server crash
-* [fix] Fix user search when global address book is disabled in CLOUD_MODE
+* [fix] Fix user search when global address book is disabled in `CLOUD_MODE`
 * [fix] Avoid timeout in some cases when showing a library trash
 * Show "the account is inactive" when an inactive account try to login
-* [security] Remove viewer.js to show open document files (ods, odt) because viewer.js is not actively maintained and may have potential security bugs (Thanks to Lukas Reschke from Nextcloud GmbH to report the issue)
+* [security] Remove viewer.js to show open document files (ods, odt) because viewer.js is not actively maintained and may have potential security bugs (Thanks to Lukas Reschke from Nextcloud GmbH for reporting the issue)
 * [fix] Fix PostgreSQL support
 * Update Django to 1.8.17
 * Change time_zone to UTC as default
@@ -119,10 +119,10 @@ Other
 * [fix] Fix support for PostgreSQL
 * [fix] Fix SQLite database locking problem
 * [fix] Fix the shared folder name is not changed after removing the old share, renaming the folder and re-sharing the folder
-* [fix] Fix sub-folder accidentially show the files in parent folder when the parent folder contains more than 100 files
+* [fix] Fix sub-folder accidentally showing the files in parent folder when the parent folder contains more than 100 files
 * [fix] Fix image preview navigation when there are more than 100 entries in a folder
-* [fix] Fix bug when admin searching unexisting user
-* [fix] Fix jpeg image display in IE10
+* [fix] Fix bug when admin searches an inexistent user
+* [fix] Fix JPEG image display in IE10
 * Add support for online view of mov video files
 * Make web access token expiring time configurable
 * Add an option on server to control block size for web upload files
@@ -144,7 +144,7 @@ Other
 * [fix] Fix UI of personal profile page
 * [fix] Fix in some cases mobile devices can't be unlinked
 * [fix] Fix connection problem for the latest MariaDB in initialisation script
-* [fix] PNG Thumbnail creation broken in 6.0.3 (getexif failes)
+* [fix] PNG Thumbnail creation broken in 6.0.3 (getexif fails)
 * Make maxNumberOfFiles configurable
 * [fix] Remember the sorting of libraries
 * Add Finnish translation
@@ -152,13 +152,13 @@ Other
 
 ### 6.0.3 (2016.09.03)
 
-* [fix] Fix a bug in sqlite database upgrade script
+* [fix] Fix a bug in SQLite database upgrade script
 * [fix] Fix a bug in database connection pool
 * [fix] Fix a bug in file comment
 
 ### 6.0.2 (2016.09.02)
 
-* [fix] Fix a bug in sqlite database table locking
+* [fix] Fix a bug in SQLite database table locking
 * Update translations
 * Support create libraries for Seafile Drive client
 
@@ -171,7 +171,7 @@ Other
 * Admin can set library permissions in admin panel
 * Show name/contact email in admin panel and enable search user by name/contact email
 * Add printing style for markdown
-* The “Seafile” in "Welcome to Seafile" message can be customised by SITE_NAME
+* The “Seafile” in "Welcome to Seafile" message can be customised by `SITE_NAME`
 * Improve sorting of files with numbers
 * [fix] Fix can't view more than 100 files
 * [API] Add admin API to only return LDAP imported user list
@@ -195,9 +195,9 @@ Warning:
 * The concept of sub-library is removed in version 5.1. You can do selective sync with the latest desktop client
 * The group message **reply** function is removed, and the old reply messages will not be shown with the new UI
 
-Note: when upgrade from 5.1.3 or lower version to 5.1.4+, you need to install python-urllib3 (or python2-urllib3 for Arch Linux) manually:
+Note: when upgrade from 5.1.3 or lower version to 5.1.4+, you need to install `python-urllib3` (or `python2-urllib3` for Arch Linux) manually:
 
-```
+```shell
 # for Ubuntu
 sudo apt-get install  python-urllib3
 # for CentOS
@@ -211,12 +211,12 @@ sudo yum install python-urllib3
 * Remove user from groups when a user is deleted.
 * [fix] Fix can't generate shared link for read-only shared library
 * [fix] Fix can still view file history after library history is set to "no history".
-* [fix] Fix after moving or deleting multiple selected items in the webinterface, the buttons are lost until reloading
+* [fix] Fix after moving or deleting multiple selected items in the web interface, the buttons are lost until reloading
 * Check user before start seafile. The user must be the owner of seafile-data directory
 * Don't allow emails with very special characters that may containing XSS string to register
 * [fix] During downloading multiple files/folders, show "Total size exceeds limits" instead of "internal server error" when selected items exceeds limits.
 * [fix] When delete a share, only check whether the be-shared user exist or not. This is to avoid the situation that share to a user can't be deleted after the user be deleted.
-* Add a notificition to a user if he/she is added to a group
+* Add a notification to a user if he/she is added to a group
 * Improve UI for password change page when forcing password change after admin reset a user's password
 * [fix] Fix duplicated files show in Firefox if the folder name contains single quote '
 
@@ -224,7 +224,7 @@ sudo yum install python-urllib3
 ### 5.1.3 (2016.05.30)
 
 * [security]  Fix permission checking for generating share links
-* Add an option (ENABLE_SETTINGS_VIA_WEB) to ignore settings via Web UI (system admin->settings)
+* Add an option (`ENABLE_SETTINGS_VIA_WEB`) to ignore settings via Web UI (system admin->settings)
 * [fix] Making user search (used in auto-completion) case insensitive
 
 ### 5.1.2 (2016.05.13)
@@ -233,10 +233,10 @@ sudo yum install python-urllib3
 * [fix] Fix group transfer
 * Send notifications to members when a new library is shared to a group
 * Download multiple selected files from Seahub as a ZIP-file
-* Use seafile-data/http-temp to store zip file when downloading a dir
+* Use seafile-data/http-temp to store zip file when downloading a directory
 * [UI] Remember the expanded status of groups in the left hand nav bar
-* [accessibility] Improve accessiblity of library trash/history page by making links for operations selectable by tab.
-* [accessibility] Improve accessiblity of dialogs, add missing labelledby properties for the whole dialog.
+* [accessibility] Improve accessibility of library trash/history page by making links for operations selectable by tab.
+* [accessibility] Improve accessibility of dialogues, add missing labelledby properties for the whole dialog.
 * [accessibility] Improve file/folder upload menu
 * list all devices in admin panel
 * Add syslog support for seafile.log
@@ -249,14 +249,14 @@ Note: downloading multiple files at once will be added in the next release.
 
 * A few UI Improvement and fixes
 * Add group-discussion (warning: the group message reply function is removed, and the old reply messages will not be shown with the new UI)
-* Add an option for disable forcing users to change password (FORCE_PASSWORD_CHANGE, default is True)
-* Support new Shibboleth users be created as inactive and activated via Admin later (SHIB_ACTIVATE_AFTER_CREATION , default is True)
+* Add an option for disable forcing users to change password (`FORCE_PASSWORD_CHANGE`, default is `True`)
+* Support new Shibboleth users be created as inactive and activated via Admin later (`SHIB_ACTIVATE_AFTER_CREATION`, default is `True`)
 * Update jquery to v1.11
 
 
 ### 5.1.0 beta (2016.03.22)
 
-Note: in this version, the group discussion is not re-implement yet. It will be available when the stable verison is released.
+Note: in this version, the group discussion is not re-implement yet. It will be available when the stable version is released.
 
 * Redesign navigation
 * Rewrite group management
@@ -264,12 +264,12 @@ Note: in this version, the group discussion is not re-implement yet. It will be 
 * Remember the sorting option for folder
 * Improve devices page
 * Update icons for libraries and files
-* Remove library settings page, re-implement them with dialogs
+* Remove library settings page, re-implement them with dialogues
 * Remove group avatar
 * Don't show share menu in top bar when multiple item selected
 * Auto-focus on username field when loading the login page
 * Remove self-introduction in user profile
-* Upgrade to django 1.8
+* Upgrade to Django 1.8
 * Force the user to change password if adding by admin or password reset by admin
 * disable add non-existing user to a group
 
@@ -322,7 +322,7 @@ Common issues (solved) when upgrading to v5.0:
 * Show broken libraries in user's library page (so they can contact admin for help)
 * [fix] Fix cache for thumbnail in sharing link
 * [fix] Enable copy files from read-only shared libraries to other libraries
-* [fix] Open image gallery popup in grid view when clicking the thumbnail image
+* [fix] Open image gallery pop-up in grid view when clicking the thumbnail image
 
 
 ### 5.0.3 (2015.12.17)
@@ -438,7 +438,7 @@ Security:
 
 * [fix] Fix sometimes a revision is missing from a file's version history
 * [security] Use HTTP POST instead of GET to remove libraries
-* [fix] Fix a problem that sharing dialog not popup in IE10
+* [fix] Fix a problem that sharing dialog not pop-up in IE10
 * A few other small UI improvements
 
 ### 4.4.1 (2015.09.24)
@@ -456,7 +456,7 @@ New features:
 
 * Allow group names with spaces
 * Enable generating random password when adding an user
-* Add option SHARE_LINK_PASSWORD_MIN_LENGTH
+* Add option `SHARE_LINK_PASSWORD_MIN_LENGTH`
 * Add sorting in share link management page
 * Show total/active number of users in admin panel
 * Other UI improvements
@@ -478,7 +478,7 @@ Fixes:
 * [fix] Fix bug of list file revisions
 * Update translations
 * [UI] Small improvements
-* [fix] Fix api error in opCopy/opMove
+* [fix] Fix API error in opCopy/opMove
 * Old library page (used by admin in admin panel): removed 'thumbnail' & 'preview' for image files
 * [fix] Fix modification operations for system default library by admin
 
@@ -495,8 +495,8 @@ Fixes:
 
 Usability Improvement
 
-* [UI] Improve ui for file view page
-* [UI] Improve ui for sorting files and libraries
+* [UI] Improve UI for file view page
+* [UI] Improve UI for sorting files and libraries
 * Redesign sharing dialog 
 * Enable generating random password for sharing link
 * Remove private message module
@@ -515,13 +515,13 @@ Others
 * [API] Add API for link files in sharing link
 * Don't listen in 10001 and 12001 by default.
 * Add an option to disable sync with any folder feature in clients
-* Change the setting of THUMBNAIL_DEFAULT_SIZE from string to number, i.e., use `THUMBNAIL_DEFAULT_SIZE = 24`, instead of `THUMBNAIL_DEFAULT_SIZE = '24'`
+* Change the setting of `THUMBNAIL_DEFAULT_SIZE` from string to number, i.e., use `THUMBNAIL_DEFAULT_SIZE = 24`, instead of `THUMBNAIL_DEFAULT_SIZE = '24'`
 
 ## 4.2
 
 Note when upgrade to 4.2 from 4.1:
 
-If you deploy Seafile in a non-root domain, you need to add the following extra settings in seahub_settings.py:
+If you deploy Seafile in a non-root domain, you need to add the following extra settings in `seahub_settings.py`:
 
 ```
 COMPRESS_URL = MEDIA_URL
@@ -530,7 +530,7 @@ STATIC_URL = MEDIA_URL + '/assets/'
 
 ### 4.2.3 (2015.06.18)
 
-* Add global address book and remove the contacts module (You can disable it if you use CLOUD_MODE by adding ENABLE_GLOBAL_ADDRESSBOOK = False in seahub_settings.py)
+* Add global address book and remove the contacts module (You can disable it if you use `CLOUD_MODE` by adding `ENABLE_GLOBAL_ADDRESSBOOK = False` in `seahub_settings.py`)
 * Use image gallery module in sharing link for folders containing images
 * [fix] Fix missing library names (show as none) in 32bit version
 * [fix] Fix viewing sub-folders for password protected sharing
@@ -584,7 +584,7 @@ Platform
 ### 4.1.2 (2015.03.31)
 
 * [fix] Fix several packaging related bugs (missing some python libraries)
-* [fix] Fix webdav issue
+* [fix] Fix WebDAV issue
 * [fix] Fix image thumbnail in sharing link
 * [fix] Fix permission mode of seaf-gc.sh
 * Show detailed time when mouse over a relative time
@@ -604,7 +604,7 @@ Platform
 * Add API to support logout/login an account in the desktop client
 * Add API to generate thumbnails for images files
 * Clean syncing tokens after deleting an account
-* Change permission of seahub_settings.py, ccnet.conf, seafile.conf to 0600
+* Change permission of `seahub_settings.py`, `ccnet.conf`, `seafile.conf` to 0600
 * Update Django to v1.5.12
 
 ## 4.0
@@ -621,7 +621,7 @@ Small
 
 * [webdav] list organisation public libraries
 * Disable non-shibboleth login for shibboleth users
-* [fix] Fix wrong timestamp in file view page for files in sub-library
+* [fix] Fix wrong time stamp in file view page for files in sub-library
 * Add Web API for thumbnail
 * Add languages for Thai and Turkish, update a few translations
 
@@ -694,10 +694,10 @@ Small improvements
 ### 3.1.5 (2014.08.29)
 
 * [Fix] Fix multi-file upload in upload link and library page
-* [Fix] Fix libreoffice file online view
+* [Fix] Fix LibreOffice file online view
 * Add 'back to top' for pdf file view.
 * [Fix] Fix "create sub-library" button under some language
-* [Fix popup] Fix bug in set single notice as read.
+* [Fix pop-up] Fix bug in set single notice as read.
 
 ### 3.1.4 (2014.08.26)
 
@@ -715,7 +715,7 @@ Small improvements
 
 ### 3.1.2 (2014.08.07)
 
-* Use unix domain socket in ccnet to listen for local connections. This isolates the access to ccnet daemon for different users. Thanks to Kimmo Huoman and Henri Salo for reporting this issue.
+* Use Unix domain socket in ccnet to listen for local connections. This isolates the access to ccnet daemon for different users. Thanks to Kimmo Huoman and Henri Salo for reporting this issue.
 
 ### 3.1.1 (2014.08.01)
 
@@ -761,7 +761,7 @@ Web
 
 * [API] Add replace if exist into upload-api
 * Show detailed error message when Gunicorn failed to start
-* Improve object and block writting performance
+* Improve object and block writing performance
 * Add retry when failed getting database connection
 * [fix] Use hash value for avatar file names to avoid invalid file name
 * [fix] Add cache for repo_crypto.js to improve page speed
@@ -801,7 +801,7 @@ Web
 
 Platform
 
-* Use random salt and PBKDF2 algorithm to store users' password. (You need to manually upgrade the database if you using 3.0.0 beta2 with MySQL backend.)
+* Use random salt and PBKDF2 algorithm to store users' password. (You need to manually upgrade the database if you using 3.0.0 beta2 with MySQL back end.)
 
 ### 3.0.0 beta2
 
@@ -809,14 +809,14 @@ Web
 
 * Handle 413 error of file upload
 * Support cross library files copy/move
-* Fixed a few api errors
+* Fixed a few API errors
 
 Platform
 
 * Allow config httpserver bind address
 * [fix] Fix file ID calculation
 * Improved device (desktop and mobile clients) management
-* Add back webdav support
+* Add back WebDAV support
 * Add upgrade script
 
 ### 3.0.0 beta
@@ -825,7 +825,7 @@ Platform
 
 * Separate the storage of libraries
 * Record files' last modification time directly
-* Keep file timestamp during syncing
+* Keep file time stamp during syncing
 * Allow changing password of an encrypted library
 
 Web
@@ -871,7 +871,7 @@ WebDAV
 ### 2.1.3
 
 * [api] Add more web APIs
-* Incorporate Viewer.js to display opendocument formats
+* Incorporate Viewer.js to display OpenDocument formats
 * [fix] Add user email validation to avoid SQL injection
 * [fix] Only allow `<a>, <table>, <img>` and a few other html elements in markdown to avoid XSS attack.  
 * Return sub-libraries to the client when the feature is enabled.
@@ -904,7 +904,7 @@ Web
 
 * Redesigned Web UI
 * Redesigned notification module
-* Uploadable share links
+* Upload share links
 * [login] Added captcha to prevent brute force attack
 * [fix] Fixed a bug of "trembling" when scrolling file lists
 * [sub-library] User can choose whether to enable sub-library
@@ -951,7 +951,7 @@ Known issues
 
 ### 2.0.1
 
-* [fix] Fix a bug in sqlite3 upgrade script
+* [fix] Fix a bug in SQLite3 upgrade script
 * Add Chinese translation
 
 
@@ -1004,7 +1004,7 @@ Known issues
 ### 1.8.2
 
 * Add script for setting up MySQL
-* [bugfix] Fixed a bug when sharing a library to another user without sending HTTP_REFERER
+* [bugfix] Fixed a bug when sharing a library to another user without sending `HTTP_REFERER` header
 
 ### 1.8.1
 
@@ -1016,7 +1016,7 @@ Web
 
 * Improve online file browsing and uploading
     - Redesigned interface
-    - Use ajax for file operations
+    - Use Ajax for file operations
     - Support selecting of multiple files in uploading
     - Support drag/drop in uploading
 * Improve file syncing and sharing

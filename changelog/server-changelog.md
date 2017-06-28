@@ -931,6 +931,10 @@ Web for Admin
 
 * [fix] Speed up file syncing when there are lots of small files
 
+Known issues
+
+* [LDAP] Don't support search user with LDAP backend.
+
 ### 2.0.2
 
 * [fix] Fix CIFS support.
@@ -939,6 +943,11 @@ Web for Admin
 * [fix] Fix sql syntax error in ccnet.log, issue #400 (https://github.com/haiwen/seafile/issues/400).
 * [fix] Return organization libraries to the client.
 * Update French, German and Portuguese (Brazil) languages.
+
+Known issues
+
+* [LDAP] Don't support search user with LDAP backend.
+* There is a bug that causes slow syncing when you upload lots of small files.
 
 ### 2.0.1
 
@@ -988,6 +997,9 @@ API
 * Remove redundant log messages
 * Fixed bugs in web API
 
+Known issues
+
+* [Online Editing] You can't input space in .seaf files.
 
 ### 1.8.2
 
@@ -1030,6 +1042,10 @@ Platform
 * Move log files to a single directory
 * [security] Add salt when saving user's password
 * [bugfix] Fix a bug in handling client connection
+
+Known issues
+
+* [Share link broken] Visit share link generated in file page will result in "File does not exit"
 
 
 ## 1.7

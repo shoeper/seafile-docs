@@ -271,6 +271,18 @@ LIBRARY_TEMPLATES = {
 # This list can be any valid email address, not necessarily the emails of Seafile user.
 # Since version 6.0.8
 VIRUS_SCAN_NOTIFY_LIST = ['user_a@seafile.com', 'user_b@seafile.com']
+
+# Enable a user to change password in 'settings' page. Default to `True`
+# Since version 6.2.11
+ENABLE_CHANGE_PASSWORD = True
+
+# Enable group discussion. Default to `True`
+# Since version 6.2.11
+ENABLE_GROUP_DISCUSSION = True
+
+# Enable file comments. Default to `True`
+# Since version 6.2.11
+ENABLE_FILE_COMMENT = True
 ```
 
 ## RESTful API

@@ -6,6 +6,31 @@ In version 6.3, Django is upgraded to version 1.11. Django 1.8, which is used in
 
 With this upgrade, the fast-cgi mode is no longer supported. You need to config Seafile behind Nginx/Apache in WSGI mode.
 
+Version 6.3 also changed the database table for file comments, if you have used this feature, you need migrate old file comments using the following commends after upgrading to 6.3:
+
+```
+./seahub.sh python-env seahub/manage.py migrate_file_comment
+```
+
+> Note, this command should be run while Seafile server is running.
+
+### 6.3.1 (2018/06/24)
+
+* Allow fullscreen presentation when view ppt(x) file via CollaboraOffice.
+* Support mobile UI style when view file via OnlyOffice.
+* Some UI improvement.
+* Show terms and condition link if terms and condition is enabled
+* [fix] Update OnlyOffice callback func (save file when status is 6).
+* [fix] Show library’s first commit’s desc on library history page.
+* [fix] Check if is an deleted library when admin restore a deleted library.
+* [fix] Removed dead 'quota doc' link on user info popup.
+* [fix] Fix bug of OnlyOffice file co-authoring.
+* [API] Add starred field to file detail api.
+* Use ID instead of email on sysadmin user page.
+* [fix] Fix database upgrade problems
+* [fix] Fix support for sqlite3
+* [fix] Fix crash when seaf-fsck, seaf-gc receive wrong arguments
+
 ### 6.3.0 beta (2018/05/26)
 
 * UI Improvements: moving buttons to top bar, improve scrolling in file/library list

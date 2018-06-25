@@ -246,28 +246,62 @@ http://192.168.1.111:8000/
 Congratulations! Now you have successfully setup your private Seafile Server.
 
 
-### Run Seahub on another port
+#### Run Seahub on another port
 
-If you want to run Seahub on another port than the default port 8000, say 8001, you must:
+If you want to run Seahub on a port other than the default 8000, say 8001, you must:
 
-* stop the Seafile Server
+**Seafile 6.2.x and previous versions**
+
+- stop the Seafile server
 ```
 ./seahub.sh stop
 ./seafile.sh stop
 ```
 
-* modify the value of `SERVICE_URL` in the file [ccnet.conf](../config/ccnet-conf.md), like this: (assume your ip or domain is `192.168.1.111`). You can also modify `SERVICE_URL` via web UI in "System Admin->Settings". (**Warning**: if you set the value both via Web UI and ccnet.conf, the setting via Web UI will take precedence.)
+- modify the value of SERVICE_URL in the file [ccnet.conf](../config/ccnet-conf.md), like this: (assume your ip or domain is 192.168.1.100). You can also modify SERVICE_URL via web UI in "System Admin->Settings". (**Warning**: if you set the value both via Web UI and ccnet.conf, the setting via Web UI will take precedence.)
+
 ```
-SERVICE_URL = http://192.168.1.111:8001
+SERVICE_URL = http://192.168.1.100:8001
 ```
 
-* restart Seafile Server
+- restart Seafile server
 ```
 ./seafile.sh start
 ./seahub.sh start 8001
 ```
 
-see [Seafile server configuration options](../config/ccnet-conf.md) for more details about `ccnet.conf`.
+See Seafile [Server Configuration Manual](../config/ccnet-conf.md) for more details about ``ccnet.conf``.
+
+**Seafile 6.3.x and above versions**
+
+At Seafile 6.3.x, you could't simply run Seahub on another port by `./seahub.sh start <port>`. But you can assign the port of seahub by setting the `conf/gunicorn.conf`.
+
+- stop the Seafile server
+```
+./seahub.sh stop
+./seafile.sh stop
+```
+
+- modify the value of SERVICE_URL in the file [ccnet.conf](../config/ccnet-conf.md), like this: (assume your ip or domain is 192.168.1.100). You can also modify SERVICE_URL via web UI in "System Admin->Settings". (**Warning**: if you set the value both via Web UI and ccnet.conf, the setting via Web UI will take precedence.)
+
+```
+SERVICE_URL = http://192.168.1.100:8001
+```
+
+- **modify the conf/gunicorn.conf**
+
+```
+# default localhost:8000
+bind = "0.0.0.0:8001"
+```
+
+- restart Seafile server
+```
+./seafile.sh start
+./seahub.sh start
+```
+
+See Seafile [Server Configuration Manual](../config/ccnet-conf.md) for more details about ``ccnet.conf``.
 
 ## Stopping and Restarting Seafile and Seahub
 

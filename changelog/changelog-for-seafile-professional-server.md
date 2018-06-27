@@ -1,5 +1,45 @@
 # Seafile Professional Server Changelog
 
+## 6.3
+
+In version 6.3, Django is upgraded to version 1.11. Django 1.8, which is used in version 6.2, is deprecated in 2018 April.
+
+With this upgrade, the fast-cgi mode is no longer supported. You need to config Seafile behind Nginx/Apache in WSGI mode.
+
+The way to run Seahub in another port is also changed. You need to modify the configuration file `conf/gunicorn.conf` instead of running `./seahub.sh start <another-port>`.
+
+
+Version 6.3 also changed the database table for file comments, if you have used this feature, you need migrate old file comments using the following commends after upgrading to 6.3:
+
+```
+./seahub.sh python-env seahub/manage.py migrate_file_comment
+```
+
+> Note, this command should be run while Seafile server is running.
+
+
+### 6.3.0 Beta (2018/06/28)
+
+* Support nested group and group-owned libraries
+* Keep sharing link when file or folder moved or renamed
+* Update Django to 1.11, remove fast-cgi support
+* Update jQuery to version 3.3.1
+* Update pdf.js, use pdf.js for preview pdf files
+* Docx files are converted to PDFs and preview via pdf.js in builtin preview
+* [fix] Fix some bugs with OnlyOffice and CollaboraOffice
+* [fix] Use mobile version of OnlyOffice if viewed via mobile devices
+* Shared sub-folders can be searched
+* Show terms and condition link if terms and condition is enabled
+* Remove login log after delete a user
+* [admin] Support customize site title, site name, CSS via Web UI
+* [fix] Fix a bug that causing seaf-fsck crash
+* [fix] Cancel Zip download task at the server side when user close zip download dialog
+* [fix] Fix crash when seaf-fsck, seaf-gc receive wrong arguments
+* [fix] Fix a few bugs in realtime backup server
+* [beta] Wiki, users can create public wikis
+* Some other UI improvements
+
+
 ## 6.2
 
 From 6.2, It is recommended to use proxy mode for communication between Seahub and Nginx/Apache. Two steps are needed if you'd like to switch to WSGI mode:

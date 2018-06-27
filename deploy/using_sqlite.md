@@ -202,7 +202,7 @@ See Seafile [Server Configuration Manual](../config/ccnet-conf.md) for more deta
 
 **Seafile 6.3.x and above versions**
 
-At Seafile 6.3.x, you could't simply run Seahub on another port by `./seahub.sh start <port>`. But you can assign the port of seahub by setting the `conf/gunicorn.conf`.
+You can assign the port of Seahub by setting the `conf/gunicorn.conf`.
 
 - stop the Seafile server
 ```

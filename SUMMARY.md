@@ -95,7 +95,6 @@
   * [seahub\_settings.py](config/seahub_settings_py.md)
   * [seafevents.conf](config/seafevents-conf.md)
   * [Seahub customization](config/seahub_customization.md)
-  * [Desktop client customization](config/desktop_customization.md)
   * [Email Sending](config/sending_email.md)
 * [Administration](maintain/README.md)
   * [Account management](maintain/account.md)
@@ -136,4 +135,3 @@
   * [Seafile Professional Edition](changelog/changelog-for-seafile-professional-server.md)
   * [Seafile Client](changelog/client-changelog.md)
   * [Drive Client ChangeLog](changelog/drive-client-changelog.md)
-

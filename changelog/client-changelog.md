@@ -6,6 +6,18 @@ v6.1.0 is the latest stable release. It is compatibile with server 5.x and 6.x.
 
 The Mac Finder sync extension need OSX 10.10+
 
+## 6.2
+
+### 6.2.0 Beta (2018/07/03)
+
+* [mac] Add automatical locking support for Office files
+* [mac] Don't update local office file if it is editing locally while simultaneously edited remotely  
+* Remove ccnet component to make running multiple-instances on a single machine possible
+* Don't send unneccesary "api2/events" requests
+* [cloud file browser] Fix uploading retrying
+* [fix] Fix .eml files can't be deleted
+
+
 ## 6.1
 
 ### 6.1.8 (2018/05/08)

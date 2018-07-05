@@ -1,12 +1,12 @@
 # Log In By CAS
 
-Since Seafile-pro 6.3.0, Seafile support the single sign-on by CAS service. You can refer to the  following steps.
+Since Seafile-pro 6.3.0, Seafile supports CAS single-sign-on protocol.
 
 ## Requirements
 
-Now you should have a usable CAS service, and access the service by the `https://<CAS-SERVER-IP>:<PORT>/cas/`.
+Supposed you have a usable CAS service, and the service can be accessed by the `https://<CAS-SERVER-IP>:<PORT>/cas/`.
 
-## configure the seahub_settings.py
+## configure seahub_settings.py
 
 - Add the following lines in `conf/seahub_settings.py`
 
@@ -24,4 +24,4 @@ CAS_LOGOUT_COMPLETELY = True
 ./seahub.sh restart
 ```
 
-Now, you can access the Seafile-web by "single sign-on". Please click the "Single Sign-on" on the Seafile's landing page.
+Now, you can login to Seafile web interface with CAS authentication. Please click the "Single Sign-on" on the Seafile's login page.

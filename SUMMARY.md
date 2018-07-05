@@ -69,6 +69,7 @@
     * [Migrate to Ceph](deploy_pro/migrate_to_ceph.md)
     * [OpenStack Swift Backend](deploy_pro/setup_with_swift.md)
     * [Storage Backend Encryption](deploy_pro/seaf_encrypt.md)
+    * [Multiple Storage Backends](deploy_pro/multiple_storage_backends.md)
     * [Data migration](deploy_pro/migrate.md)
   * Cluster Deployment
     * [Deploy in a cluster](deploy_pro/deploy_in_a_cluster.md)
@@ -83,11 +84,12 @@
     * [Multi-Tenancy Support](deploy_pro/multi_tenancy.md)
   * Advanced Authentication
     * [Two-factor Authenticatioin](deploy_pro/two_factor_authentication.md)
+    * [CAS Authentication](deploy_pro/cas.md)
   * Advanced Maintenance Tools
     * [Real-time Backup Server](deploy_pro/real_time_backup.md)
     * [Import Directory To Seafile](deploy_pro/seaf_import.md)
   * [Web Resumable File Upload](deploy_pro/web_resumable_upload.md)
-  * [Deploying Seafile with Docker](deploy_pro/deploy_with_docker.md)
+  * [Deploying Seafile-pro with Docker](deploy_pro/deploy_with_docker.md)
   * [License](deploy_pro/seafile_professional_sdition_software_license_agreement.md)
 * [Server Configuration and Customization](config/README.md)
   * [ccnet.conf](config/ccnet-conf.md)

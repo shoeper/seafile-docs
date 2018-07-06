@@ -89,7 +89,7 @@ The three ignored tables are core tables related to library data and are synced 
 
 **You should setup crontab to run the mysqldump at regular intervals.**
 
-If you want to backup the tables (except for the 3 tables synced by Seafile), you can deploy the master-slave replication for the MySQL/MariaDB database from the primary node to another database server. **The database running on the backup server must not be used as the target of this replication.** Otherwise you'll end up with replication conflicts, since the db on backup server will also be updated by Seafile backup process too. 
+If you want to backup the tables (except for the 3 tables synced by Seafile) in a more real-time manner, you can deploy the master-slave replication for the MySQL/MariaDB database from the primary node to another database server. **The database running on the backup server must not be used as the target of this replication.** Otherwise you'll end up with replication conflicts, since the db on backup server will also be updated by Seafile backup process too. 
 
 ### Checking Backup Status
 

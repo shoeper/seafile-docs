@@ -136,11 +136,7 @@ Also add following options to seahub_setting.py. These settings tell Seahub to s
 ```
 AVATAR_FILE_STORAGE = 'seahub.base.database_storage.DatabaseStorage'
 
-COMPRESS_CACHE_BACKEND = 'django.core.cache.backends.locmem.LocMemCache'
 ```
-
-`COMPRESS_CACHE_BACKEND` is needed because the CSS file is created on the fly when any user first visit any page after a new Seafile version being deployed. The CSS file is saved to local disk and the path of the file is saved to cache. If `COMPRESS_CACHE_BACKEND` is not set to use LocMemCache, after one machine in a cluster generating the CSS file, another machine will not generate the file again, which will cause CSS file not found problem in this second machine.
-
 
 #### seafevents.conf
 
@@ -304,7 +300,6 @@ For **seahub_settings.py**:
 
 ```
 AVATAR_FILE_STORAGE = 'seahub.base.database_storage.DatabaseStorage'
-COMPRESS_CACHE_BACKEND = 'django.core.cache.backends.locmem.LocMemCache'
 
 OFFICE_CONVERTOR_ROOT = 'http://<ip of node background>'
 ```

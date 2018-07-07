@@ -33,8 +33,6 @@ COMPRESS_CACHE_BACKEND = 'locmem'
 
 ```
 
-`COMPRESS_CACHE_BACKEND` is needed because the CSS file is created on the fly when any user first visit any page after a new Seafile version being deployed. The CSS file is saved to local disk and the path of the file is saved to cache. If `COMPRESS_CACHE_BACKEND` is not set to use LocMemCache, after one machine in a cluster generating the CSS file, another machine will not generate the file again, which will cause CSS file not found problem in this second machine.
-
 If you use a memcached cluster, your configuration depends on your Seafile server version. You can find how to setup memcached cluster [here](../deploy_pro/memcached_mariadb_cluster.md).
 
 ### Seafile server before 6.2.11

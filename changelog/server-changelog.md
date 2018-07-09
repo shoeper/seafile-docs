@@ -16,6 +16,16 @@ Version 6.3 also changed the database table for file comments, if you have used 
 
 > Note, this command should be run while Seafile server is running.
 
+### 6.3.2 (2018/07/09)
+
+* [fix] Fix error when public wiki be viewed by anonymous users
+* Remove department field in users' profile page
+* [fix] Print warning instead of exit when there are errors in database table upgrade
+* [fix] Send notification to the upload link creator after there are files uploaded
+* [fix] Fix customize css via "custom/custom.css"
+* [API] return the last modifier in file detail API
+* [fix] Fix ZIP download can't work in some languages
+
 ### 6.3.1 (2018/06/24)
 
 * Allow fullscreen presentation when view ppt(x) file via CollaboraOffice.

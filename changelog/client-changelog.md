@@ -8,6 +8,11 @@ The Mac Finder sync extension need OSX 10.10+
 
 ## 6.2
 
+### 6.2.2 6.2.1 Beta (2018/07/13)
+
+* [fix] Fix initialization problem in first time launching
+* Improve file syncing notification message
+
 ### 6.2.0 Beta (2018/07/03)
 
 * [mac] Add automatical locking support for Office files

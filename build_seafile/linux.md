@@ -41,14 +41,14 @@ First you should get the latest source of libsearpc/ccnet/seafile/seafile-client
 Download the source tarball of the latest tag from
 
 - https://github.com/haiwen/libsearpc/tags (use v3.0-latest)
-- https://github.com/haiwen/ccnet/tags
+- https://github.com/haiwen/ccnet/tags (NOTE: from 6.2 version on, ccnet is no longer needed)
 - https://github.com/haiwen/seafile/tags
 - https://github.com/haiwen/seafile-client/tags
 
 For example, if the latest released seafile client is 5.0.7, then just use the **v5.0.7** tags of the four projects. You should get four tarballs:
 
 - libsearpc-v3.0-latest.tar.gz
-- ccnet-5.0.7.tar.gz
+- ccnet-5.0.7.tar.gz (NOTE: from 6.2 version on, ccnet is no longer needed)
 - seafile-5.0.7.tar.gz
 - seafile-client-5.0.7.tar.gz
 
@@ -59,7 +59,8 @@ shopt -s expand_aliases
 export version=5.0.7
 alias wget='wget --content-disposition -nc'
 wget https://github.com/haiwen/libsearpc/archive/v3.0-latest.tar.gz
-wget https://github.com/haiwen/ccnet/archive/v${version}.tar.gz
+# NOTE: from 6.2 version on, ccnet is no longer needed
+wget https://github.com/haiwen/ccnet/archive/v${version}.tar.gz 
 wget https://github.com/haiwen/seafile/archive/v${version}.tar.gz
 wget https://github.com/haiwen/seafile-client/archive/v${version}.tar.gz
 ```
@@ -68,6 +69,7 @@ Now uncompress them:
 
 ```sh
 tar xf libsearpc-3.0-latest.tar.gz
+# NOTE: from 6.2 version on, ccnet is no longer needed
 tar xf ccnet-${version}.tar.gz
 tar xf seafile-${version}.tar.gz
 tar xf seafile-client-${version}.tar.gz
@@ -94,6 +96,8 @@ cd ..
 ```
 
 ##### ccnet #####
+
+NOTE: from 6.2 version on, ccnet is no longer needed
 
 ```bash
 cd ccnet-${version}

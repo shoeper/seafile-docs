@@ -16,7 +16,8 @@
   * [Config Seahub with Apache](deploy/deploy_with_apache.md)
   * [Enabling Https with Apache](deploy/https_with_apache.md)
   * [LDAP/AD Integration](deploy/using_ldap.md)
-  * [Shibboleth Authentication](deploy/shibboleth_config.md)
+  * [Shibboleth Authentication for Seafile v6.2](deploy/shibboleth_config.md)
+  * [Shibboleth Authentication for Seafile v6.3+](deploy/shibboleth_config_v6.3.md)
   * [OAuth Authentication](deploy/oauth.md)
   * [Syslog Integration](deploy/using_syslog.md)
   * Online File Preview and Edit

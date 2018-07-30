@@ -8,6 +8,12 @@ The Mac Finder sync extension need OSX 10.10+
 
 ## 6.2
 
+### 6.2.3 (2018/07/30)
+
+* Prevent multiple seaf-daemon running
+* [fix] Support preconfigured Shibboleth Url
+* Restart seaf-daemon automatically if it is dead
+
 ### 6.2.2 6.2.1 Beta (2018/07/13)
 
 * [fix] Fix initialization problem in first time launching

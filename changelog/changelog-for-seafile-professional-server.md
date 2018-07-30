@@ -17,6 +17,24 @@ Version 6.3 also changed the database table for file comments, if you have used 
 
 > Note, this command should be run while Seafile server is running.
 
+Version 6.3 changed '/shib-login' to '/sso'. If you use Shibboleth, you need to to update your Apache/Nginx config. Please check the updated document: https://manual.seafile.com/deploy/shibboleth_config_v6.3.html
+
+### 6.2.3 (2018/07/30)
+
+* [fix] Fix sometimes get group listing will cause ccnet-server crash
+* [fix] Fix built in office file preview can't works
+* Redirect '/shib-login' to '/sso'
+* Other small fixes
+
+### 6.3.1 (2018/07/25)
+
+* Add smart links
+* Lock office files when editing via online office suite
+* Support setting organization quota, delete an organization via Web API
+* Support Swift storage backend Identity v3.0 API
+* Improve markdown editor
+* Several fixes
+
 
 ### 6.3.0 Beta (2018/06/28)
 

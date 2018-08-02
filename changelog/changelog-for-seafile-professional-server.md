@@ -19,7 +19,20 @@ Version 6.3 also changed the database table for file comments, if you have used 
 
 Version 6.3 changed '/shib-login' to '/sso'. If you use Shibboleth, you need to to update your Apache/Nginx config. Please check the updated document: https://manual.seafile.com/deploy/shibboleth_config_v6.3.html
 
-### 6.2.3 (2018/07/30)
+Version 6.3 add a new option for file search (`seafevents.conf`):
+
+```
+[INDEX FILES]
+...
+highlight = fvh
+...
+```
+
+This option will make search speed improved significantly (10x) when the search result contains large pdf/doc files. But you need to rebuild search index if you want to add this option.
+
+
+
+### 6.3.2 (2018/07/30)
 
 * [fix] Fix sometimes get group listing will cause ccnet-server crash
 * [fix] Fix built in office file preview can't works
@@ -28,7 +41,7 @@ Version 6.3 changed '/shib-login' to '/sso'. If you use Shibboleth, you need to 
 
 ### 6.3.1 (2018/07/25)
 
-* Add smart links
+* Add generating of internal links
 * Lock office files when editing via online office suite
 * Support setting organization quota, delete an organization via Web API
 * Support Swift storage backend Identity v3.0 API

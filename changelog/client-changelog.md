@@ -1,11 +1,5 @@
 # Seafile Client Changelog
 
-## Known bugs and limitations
-
-v6.1.0 is the latest stable release. It is compatibile with server 5.x and 6.x.
-
-The Mac Finder sync extension need OSX 10.10+
-
 ## 6.2
 
 ### 6.2.3 (2018/07/30)

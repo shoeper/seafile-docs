@@ -153,6 +153,7 @@ Here is an example `[INDEX FILES]` section:
 [INDEX FILES]
 enabled = true
 interval = 10m
+highlight = fvh     # This configuration is only available for Seafile 6.3.0 pro and above.
 index_office_pdf = true
 external_es_server = true
 es_host = background.seafile.com
@@ -310,6 +311,7 @@ For **seafevents.conf**:
 [INDEX FILES]
 enabled = true
 interval = 10m
+highlight = fvh     # This configuration is only available for Seafile 6.3.0 pro and above.
 external_es_server = true
 es_host = <IP of background node>
 es_port = 9200

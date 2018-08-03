@@ -2,6 +2,10 @@
 
 ## 6.2
 
+### 6.2.4 (2018/08/03)
+
+* [fix] Fix a bug that causing Windows Explorer crash
+
 ### 6.2.3 (2018/07/30)
 
 * Prevent multiple seaf-daemon running

@@ -57,6 +57,7 @@ This option will make search speed improved significantly (10x) when the search 
 * Update jQuery to version 3.3.1
 * Update pdf.js, use pdf.js for preview pdf files
 * Docx files are converted to PDFs and preview via pdf.js in builtin preview
+* Support multiple storage backend to be used in a single server
 * [fix] Fix some bugs with OnlyOffice and CollaboraOffice
 * [fix] Use mobile version of OnlyOffice if viewed via mobile devices
 * Shared sub-folders can be searched

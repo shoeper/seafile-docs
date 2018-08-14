@@ -2012,7 +2012,7 @@ Create upload link for directory with password
 * p, `/` means the **root** folder, which is equivalent to the library.
 * share_type, `user`
 * username, a email string or a list contains multi emails
-* permission, default `r`
+* permission, `r`, `rw` or `admin`, default `r`.
 
 **Sample request**
 
@@ -2104,7 +2104,7 @@ Create upload link for directory with password
 * p, `/` means the **root** folder, which is equivalent to the library.
 * share_type, `group`
 * group_id , an integer or a list contains multi integers
-* permission, default `r`
+* permission, `r`, `rw` or `admin`, default `r`.
 
 **Sample request**
 

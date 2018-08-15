@@ -31,6 +31,13 @@ highlight = fvh
 This option will make search speed improved significantly (10x) when the search result contains large pdf/doc files. But you need to rebuild search index if you want to add this option.
 
 
+### 6.3.3 (2018/08/15)
+
+* [fix] Fix some bugs in sharing group-owned libraries
+* [fix] Fix a bug in setting folder permission
+* Update Django to 1.11.11
+* Support login via contact email
+* Support sharing a sub-folder in a group-owned library
 
 ### 6.3.2 (2018/07/30)
 

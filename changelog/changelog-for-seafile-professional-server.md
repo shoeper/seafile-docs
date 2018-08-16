@@ -30,6 +30,9 @@ highlight = fvh
 
 This option will make search speed improved significantly (10x) when the search result contains large pdf/doc files. But you need to rebuild search index if you want to add this option.
 
+### 6.3.4 (2018/08/16)
+
+* [fix] Fix a bug in creating group-owned library
 
 ### 6.3.3 (2018/08/15)
 

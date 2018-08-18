@@ -2,6 +2,12 @@
 
 ## ChangeLog
 
+### 0.9.4 (2018/08/18)
+
+* [Win] No longer depends on .Net framework
+* [Mac] Support file search in Finder
+* [Win] Fix loading of HTTPS certifications
+
 ### 0.9.3 (2018/06/19)
 
 * [Win] Show syncing status at the top level folders

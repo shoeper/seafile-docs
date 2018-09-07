@@ -16,6 +16,21 @@ Version 6.3 also changed the database table for file comments, if you have used 
 
 > Note, this command should be run while Seafile server is running.
 
+### 6.3.3 (2018/09/07)
+
+* Add generating of internal links
+* Support copy a file to its own parent folder, creating a file with a suffix like test-1.docx
+* Support setting the language list
+* Redirect '/shib-login' to '/sso'
+* Change "Unknown error" to "network error" when uploading failed caused by network error
+* [fix] Fix groups not shown in system admin panel
+* Support files be manually saved in OnlyOffice
+* Improve performance when getting users quota usage
+* Improve Markdown editor
+* The new Wiki feature is ready
+* Update Django to 1.11.11
+
+
 ### 6.3.2 (2018/07/09)
 
 * [fix] Fix error when public wiki be viewed by anonymous users

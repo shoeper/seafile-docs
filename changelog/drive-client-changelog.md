@@ -2,6 +2,13 @@
 
 ## ChangeLog
 
+### 0.9.5 (2018/09/18)
+
+* [fix, Win] Fix support for some SSL CA
+* Redirect to https if user accidentally input server's address with http but the server is actually use http
+* [fix, Win] Show a tooltip that the Windows system maybe rebooted during upgrading drive client
+* [fix, Mac] Fix permission problems during installation on Mac 10.13+
+
 ### 0.9.4 (2018/08/18)
 
 * [Win] No longer depends on .Net framework

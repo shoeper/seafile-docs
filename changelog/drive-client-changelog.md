@@ -2,7 +2,7 @@
 
 ## ChangeLog
 
-### 0.9.5 (2018/09/18)
+### 0.9.5 (2018/09/10)
 
 * [fix, Win] Fix support for some SSL CA
 * Redirect to https if user accidentally input server's address with http but the server is actually use http
@@ -21,8 +21,8 @@
 * [fix] Fix sometimes logout/login lead to empty drive folder
 * Support change cache folder
 * Add "open file/open folder" in search window
-* Set automatical login to true in SSO mode
-* [Mac] Fix compability with AirDrop
+* Set automatically login to true in SSO mode
+* [Mac] Fix compatibility with AirDrop
 
 
 ### 0.9.2 (2018/05/05)

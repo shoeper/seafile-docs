@@ -209,6 +209,13 @@ TIME_ZONE = 'UTC'
 # Default language for sending emails.
 LANGUAGE_CODE = 'en'
 
+# Custom language code choice.
+LANGUAGES = (
+    ('en', 'English'),
+    ('zh-cn', '简体中文'),
+    ('zh-tw', '繁體中文'),
+)
+
 # Set this to your website/company's name. This is contained in email notifications and welcome message when user login for the first time.
 SITE_NAME = 'Seafile'
 

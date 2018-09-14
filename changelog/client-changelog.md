@@ -2,6 +2,14 @@
 
 ## 6.2
 
+### 6.2.5 (2018/09/14)
+
+* More robust deleting folder locally if it is deleted on the server
+* Show file modifier in cloud file browser
+* [fix, win] Fix avatar with jpg format can't be displayed problem
+* Support getting internal link
+* [fix, Win] Fix support for some SSL CA
+
 ### 6.2.4 (2018/08/03)
 
 * [fix] Fix a bug that causing Windows Explorer crash

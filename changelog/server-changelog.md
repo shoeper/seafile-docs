@@ -16,6 +16,11 @@ Version 6.3 also changed the database table for file comments, if you have used 
 
 > Note, this command should be run while Seafile server is running.
 
+### 6.3.4 (2018/09/15)
+
+* [fix] Fix a security issue in Shibboleth authentication
+* [fix] Fix sometimes Web UI will not autoload a >100 item directory view
+
 ### 6.3.3 (2018/09/07)
 
 * Add generating of internal links

@@ -30,6 +30,20 @@ highlight = fvh
 
 This option will make search speed improved significantly (10x) when the search result contains large pdf/doc files. But you need to rebuild search index if you want to add this option.
 
+### 6.3.5 (2018/09/18)
+
+* [fix, security] Fix a security issue in Shibboleth authentication
+* [fix] Fix sometimes Web UI will not autoload a >100 item directory view
+* [fix] Fix sending notification emails in backend node
+* Showing user's name instead of email in web interface
+* [fix] Fix desktop client can't login if using ADFS
+
+New features
+
+* Add a new sharing link permission "can edit" for docx/excel. Any login users can edit the file via share link.
+* [multi-tenancy] Support department and department owned library
+
+
 ### 6.3.4 (2018/08/16)
 
 * [fix] Fix a bug in creating group-owned library

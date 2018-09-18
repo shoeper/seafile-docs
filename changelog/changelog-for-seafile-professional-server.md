@@ -42,6 +42,7 @@ New features
 
 * Add a new sharing link permission "can edit" for docx/excel. Any login users can edit the file via share link.
 * [multi-tenancy] Support department and department owned library
+* Add system traffic statistics (showing the daily web download/web upload/sync traffic)
 
 
 ### 6.3.4 (2018/08/16)

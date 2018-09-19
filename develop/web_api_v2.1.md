@@ -4249,6 +4249,7 @@ After getting the upload link, POST to this link for uploading files.
 * parent_dir : path in your Seafile repo that you want to upload local file to.
 * relative_path: sub path of "parent_dir", if this sub path does not exist, Seafile will create it recursively.
 * ret-json: returns a json array including file info if set to `1`.
+* replace: whether overwrite file with the same name. 1 for replace, 0 for not replace.
 
 > NOTE:
 > 1. `parent_dir` must endswith `/`
@@ -4256,9 +4257,9 @@ After getting the upload link, POST to this link for uploading files.
 
 **Sample request**
 
-upload file to `/path-in-seafile-repo/`:
+upload file to `/path-in-seafile-repo/`, if a file named 'test.txt' already exists in `/path-in-seafile-repo/`, replace it with the new file:
 
-    curl -H "Authorization: Token f2210dacd9c6ccb8133606d94ff8e61d99b477fd" -F file=@local-folder/test.txt -F parent_dir=/path-in-seafile-repo/ http://cloud.seafile.com:8082/upload-api/73c5d117-3bcf-48a0-aa2a-3f48d5274ae3
+    curl -H "Authorization: Token f2210dacd9c6ccb8133606d94ff8e61d99b477fd" -F file=@local-folder/test.txt -F parent_dir=/path-in-seafile-repo/ -F replace=1 http://cloud.seafile.com:8082/upload-api/73c5d117-3bcf-48a0-aa2a-3f48d5274ae3
 
 **Sample response for no `ret-json` parameter**
 
@@ -4286,7 +4287,7 @@ upload file to `/path-in-seafile-repo/sub_path_1/sub_path_2/`, Seafile will crea
 
 **Note**
 
-- New uploaded file name will be 'test(1).text' if a file with name 'test.txt' already exists in parent directory
+- If 'replace=1' is not specified, new uploaded file name will be 'test(1).text' if a file with name 'test.txt' already exists in parent directory
 
 - For python client uploading, see <https://github.com/haiwen/webapi-examples/blob/master/python/upload-file.py>, or it can be done much more easily with elegant [python requests library](http://docs.python-requests.org/en/latest/), see <https://github.com/haiwen/webapi-examples/blob/master/python/upload-file2.py>
 
@@ -4406,13 +4407,14 @@ After getting the upload link and `uploadedBytes`, POST to this link for uploadi
 
 * file: local file path.
 * parent_dir : path in your Seafile repo that you want to upload local file to.
+* replace: whether overwrite file with the same name. 1 for replace, 0 for not replace.
 
 **Sample request**
 
-upload file to `/path-in-seafile-repo/`:
+upload file to `/path-in-seafile-repo/`, if a file named 'test.txt' already exists in `/path-in-seafile-repo/`, replace it with the new file::
 
 ```
-curl -H "Authorization: Token f2210dacd9c6ccb8133606d94ff8e61d99b477fd" -H "Content-Range: bytes 149946368-150994943/1587609600" -F file=@test.md -F parent_dir=/path-in-seafile-repo/ http://cloud.seafile.com:8082/upload-api/73c5d117-3bcf-48a0-aa2a-3f48d5274ae3
+curl -H "Authorization: Token f2210dacd9c6ccb8133606d94ff8e61d99b477fd" -H "Content-Range: bytes 149946368-150994943/1587609600" -F file=@test.md -F parent_dir=/path-in-seafile-repo/ -F replace=1 http://cloud.seafile.com:8082/upload-api/73c5d117-3bcf-48a0-aa2a-3f48d5274ae3
 ```
 
 * `149946368-150994943` means is now uploading 149946368-150994943 bytes.

@@ -30,6 +30,11 @@ highlight = fvh
 
 This option will make search speed improved significantly (10x) when the search result contains large pdf/doc files. But you need to rebuild search index if you want to add this option.
 
+### 6.3.6 (2018/09/21)
+
+* [fix] Fix a bug in user defined role
+* [fix] Editable share link can be edited by anonymous user
+
 ### 6.3.5 (2018/09/18)
 
 * [fix, security] Fix a security issue in Shibboleth authentication

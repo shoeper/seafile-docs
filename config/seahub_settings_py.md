@@ -105,10 +105,10 @@ SHARE_LINK_EXPIRE_DAYS_MIN = 3 # default is 0, no limit.
 # maximum expire days for share link (since version 6.3.6)
 SHARE_LINK_EXPIRE_DAYS_MAX = 8 # default is 0, no limit.
 
-# if force user login when view file/folder share link (since version 6.3.6)
+# force user login when view file/folder share link (since version 6.3.6)
 SHARE_LINK_LOGIN_REQUIRED = True
 
-# If enable water mark when view(not edit) file (since version 6.3.6)
+# enable water mark when view(not edit) file in web browser (since version 6.3.6)
 ENABLE_WATERMARK = True
 
 # Disable sync with any folder. Default is `False`

@@ -125,6 +125,10 @@ ENABLE_USER_CREATE_ORG_REPO = True
 # Enable or disable user share library to any group
 # Since version 6.2.0
 ENABLE_SHARE_TO_ALL_GROUPS = True
+
+# Enable or disable user to clean trash (default is True)
+# Since version 6.3.6
+ENABLE_USER_CLEAN_TRASH = True
 ```
 
 Options for online file preview:

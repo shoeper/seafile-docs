@@ -30,6 +30,17 @@ highlight = fvh
 
 This option will make search speed improved significantly (10x) when the search result contains large pdf/doc files. But you need to rebuild search index if you want to add this option.
 
+### 6.3.7 (2018/10/16)
+
+* [fix] Fix a bug of lock by online office
+* Anyone that can write a file can unlock the file if it is locked by online office
+* [fix] Fix a bug in sending mails in background node
+* [fix] Remove forcesave option in OnlyOffice since it have a bug
+* [fix] Fix a bug that wiki page can't be loaded
+* Add traffic statistics
+* [fix] Remove unneccesary logs in virus scan
+
+
 ### 6.3.6 (2018/09/21)
 
 * [fix] Fix a bug in user defined role

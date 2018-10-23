@@ -6016,40 +6016,60 @@ If scope parameter is passed then accounts will be searched inside the specific 
 
 ### <a id="admin-only-update-account"></a>Update Account
 
-**PUT** https://cloud.seafile.com/api2/accounts/{email}/
+**PUT** https://cloud.seafile.com/api/v2.1/admin/users/
 
 **Request parameters**
 
 At least one of followings:
 
-* password
-* is_staff
-* is_active
+* is_staff, `true` or `false`.
+* is_active, `true` or `false`.
+* role
 * name
-* note
-* storage, the unit is MB.
-* role.
+* login_id
+* contact_email
+* reference_id
+* department
+* quota_total_mb, the unit is MB.
 
 **Sample request**
 
-    curl -v -X PUT -d "password=654321&is_staff=true&storage=100&role=guest" -H "Authorization: Token f2210dacd9c6ccb8133606d94ff8e61d99b477fd" -H 'Accept: application/json; indent=4' https://cloud.seafile.com/api2/accounts/user@mail.com/
+Update user's role.
+
+```
+curl -X PUT -d 'role=guest' -H "Authorization: Token 5eba8c2f983404e33b140b13a1d050b9a4440e03" -H 'Accept: application/json; indent=4' "http://192.168.1.113:8000/api/v2.1/admin/users/1@1.com/"
+```
 
 **Sample response**
 
-    ...
-    < HTTP/1.0 200 OK
-    ...
-
-    "success"
-
-**Success**
-
-    Response code 200(OK) is returned.
+```
+{
+    "login_id": "",
+    "quota_usage": 859349,
+    "name": "1",
+    "create_time": "2018-08-18T10:39:01+08:00",
+    "is_active": true,
+    "is_staff": false,
+    "contact_email": "",
+    "reference_id": "",
+    "department": "",
+    "quota_total": 2000000,
+    "role": "guest",
+    "email": "1@1.com"
+}
+```
 
 **Errors**
 
-* 400 Bad Request, keyword password is required
-* 403 Permission error, only administrator can perform this action
+* 400 Bad Request, is_staff invalid.
+* 400 Bad Request, is_active invalid.
+* 400 Bad Request, Name is too long (maximum is 64 characters).
+* 400 Bad Request, Name should not include '/'.
+* 400 Bad Request, Contact email invalid.
+* 400 Bad Request, Department is too long (maximum is 512 characters).
+* 400 Bad Request, Space quota is too low (minimum value is 0).
+* 404 User not found.
+* 500 Internal Server Error
 
 ### <a id="admin-only-migrate-account"></a>Migrate Account
 

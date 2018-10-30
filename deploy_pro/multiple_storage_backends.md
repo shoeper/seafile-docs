@@ -32,6 +32,9 @@ First, you have to enable this feature in seafile.conf.
 [storage]
 enable_storage_classes = true
 storage_classes_file = /opt/seafile_storage_classes.json
+
+[memcached]
+memcached_options = --SERVER=<the IP of Memcached Server> --POOL-MIN=10 --POOL-MAX=100
 ```
 - enable_storage_classes ：If this is set to true, storage class feature is enabled. You have to define the storage classes in a JSON file provided in the next configuration option.
 - storage_classes_file：Specifies the path for the JSON file that contains storage class definition.

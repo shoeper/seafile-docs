@@ -3818,18 +3818,32 @@ For more info, you can see [this official docs](http://wopi.readthedocs.org/en/l
 
 **Sample response**
 
-    {
-    "id": "013d3d38fed38b3e8e26b21bb3463eab6831194f",
-    "mtime": 1398148877,
+```
+{
+    "last_modifier_name": "\u8d85\u7ba1",
+    "uploader_email": "03e7957e09ee43d9b57c9b2b4c741668@ifile.com",
+    "upload_time": "2018-07-11T05:14:20+08:00",
+    "name": "1.md",
+    "permission": "rw",
+    "uploader_name": "\u8d85\u7ba1",
+    "uploader_contact_email": "03e7957e09ee43d9b57c9b2b4c741668@ifile.com",
+    "last_modified": "2018-07-16T15:03:56+08:00",
+    "mtime": 1531724636,
+    "starred": false,
+    "size": 2,
     "type": "file",
-    "name": "foo.py",
-    "size": 22
-    }
+    "id": "86dd07538e51f8d437ecc25d9a48250041fef5a0",
+    "last_modifier_email": "03e7957e09ee43d9b57c9b2b4c741668@ifile.com",
+    "last_modifier_contact_email": "03e7957e09ee43d9b57c9b2b4c741668@ifile.com"
+}
+```
 
 **Errors**
 
-* 400 Path is missing
-* 520 Operation failed.
+* 400 p invalid.
+* 404 Library/File not found.
+* 403 Permission denied.
+* 500 Internal Server Error
 
 ### <a id="get-file-history"></a>Get File History
 

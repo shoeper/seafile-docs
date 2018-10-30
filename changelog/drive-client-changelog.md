@@ -1,16 +1,52 @@
 # SeaDrive Client Changelog
 
-## Known issues
-
-* In version 0.5.1, we add the feature that the mounted drive is only visible to the current user, so some exe files can't be executed if stored in the drive because it needs admin privilege to run
-* In version 0.5.1, rename a non-cached folder or file will lead to sync error.
-* In version 0.5.0 Copy exe files to SeaDrive on Win 7 will freeze the explorer
-
 ## ChangeLog
+
+### 0.9.5 (2018/09/10)
+
+* [fix, Win] Fix support for some SSL CA
+* Redirect to https if user accidentally input server's address with http but the server is actually use http
+* [fix, Win] Show a tooltip that the Windows system maybe rebooted during upgrading drive client
+* [fix, Mac] Fix permission problems during installation on Mac 10.13+
+
+### 0.9.4 (2018/08/18)
+
+* [Win] No longer depends on .Net framework
+* [Mac] Support file search in Finder
+* [Win] Fix loading of HTTPS certifications
+
+### 0.9.3 (2018/06/19)
+
+* [Win] Show syncing status at the top level folders
+* [fix] Fix sometimes logout/login lead to empty drive folder
+* Support change cache folder
+* Add "open file/open folder" in search window
+* Set automatically login to true in SSO mode
+* [Mac] Fix compatibility with AirDrop
+
+
+### 0.9.2 (2018/05/05)
+
+* Fix a bug that causing SeaDrive crash
+
+### 0.9.1 (2018/04/24)
+
+* Fix a bug that causing crash when file search menu is clicked
+
+### 0.9.0 (2018/04/24)
+
+* Libraries are displayed under three folders "My Libraries", "Group Libraries", "Shared libraries"
+* [fix] Fix a bug in cleaning cache
+* [Win] Update the kernel drive
+* Improve syncing notification messages
+* [Mac] Include the kernel drive with the SeaDrive package
+* [Mac] Add Finder sidebar shortcut
+* Add file search
+
 
 ### 0.8.6 \(2018/03/19\)
 
-* \[fix\] Fix compatibility with Visio and other applications by implementing a missing system API 
+* \[fix\] Fix compatibility with Visio and other applications by implementing a missing system API
 
 ### 0.8.5 \(2018/01/03\)
 
@@ -140,6 +176,3 @@
 ### 0.1.0 \(2016/09/02\)
 
 * Initial release
-
-
-

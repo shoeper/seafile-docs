@@ -7,7 +7,7 @@
 Since version 5.0, we offered command to clear expired session records in Seahub database.
 
     cd <install-path>/seafile-server-latest
-    ./seahub.sh clearsessions
+    ./seahub.sh python-env seahub/manage.py clearsessions
 
 ### Activity
 

@@ -16,7 +16,8 @@
   * [Config Seahub with Apache](deploy/deploy_with_apache.md)
   * [Enabling Https with Apache](deploy/https_with_apache.md)
   * [LDAP/AD Integration](deploy/using_ldap.md)
-  * [Shibboleth Authentication](deploy/shibboleth_config.md)
+  * [Shibboleth Authentication for Seafile v6.2](deploy/shibboleth_config.md)
+  * [Shibboleth Authentication for Seafile v6.3+](deploy/shibboleth_config_v6.3.md)
   * [OAuth Authentication](deploy/oauth.md)
   * [Syslog Integration](deploy/using_syslog.md)
   * Online File Preview and Edit
@@ -34,6 +35,7 @@
     * [Migrate From SQLite to MySQL](deploy/migrate_from_sqlite_to_mysql.md)
   * [Common Problems for Setting up Server](faq.md)
   * [New Directory Layout in Seafile Server 5.0.0](deploy/new_directory_layout_5_0_0.md)
+  * [Deploying Seafile with Docker](deploy/deploy_with_docker.md)
 * [Deploy Seafile under Windows](deploy_windows/deploy_with_windows.md)
   * [Download and Setup Seafile Windows Server](deploy_windows/download_and_setup_seafile_windows_server.md)
   * [Configure Seafile to use LDAP on Windows](deploy_windows/using_ldap.md)
@@ -60,6 +62,7 @@
     * [Office Online Server Integration](deploy_pro/office_web_app.md)
   * [File Search](deploy_pro/details_about_file_search.md)
   * [Virus Scan](deploy_pro/virus_scan.md)
+    * [Run ClamAV as a Daemon](deploy_pro/deploy_clamav_as_daemon.md)
     * [Virus Scan With Kav4fs](deploy_pro/virus_scan_with_kav4fs.md)
   * Storage Backends
     * [Amazon S3 Backend](deploy_pro/setup_with_amazon_s3.md)
@@ -67,6 +70,7 @@
     * [Migrate to Ceph](deploy_pro/migrate_to_ceph.md)
     * [OpenStack Swift Backend](deploy_pro/setup_with_swift.md)
     * [Storage Backend Encryption](deploy_pro/seaf_encrypt.md)
+    * [Multiple Storage Backends](deploy_pro/multiple_storage_backends.md)
     * [Data migration](deploy_pro/migrate.md)
   * Cluster Deployment
     * [Deploy in a cluster](deploy_pro/deploy_in_a_cluster.md)
@@ -81,10 +85,12 @@
     * [Multi-Tenancy Support](deploy_pro/multi_tenancy.md)
   * Advanced Authentication
     * [Two-factor Authenticatioin](deploy_pro/two_factor_authentication.md)
+    * [CAS Authentication](deploy_pro/cas.md)
   * Advanced Maintenance Tools
     * [Real-time Backup Server](deploy_pro/real_time_backup.md)
     * [Import Directory To Seafile](deploy_pro/seaf_import.md)
   * [Web Resumable File Upload](deploy_pro/web_resumable_upload.md)
+  * [Deploying Seafile-pro with Docker](deploy_pro/deploy_with_docker.md)
   * [License](deploy_pro/seafile_professional_sdition_software_license_agreement.md)
 * [Server Configuration and Customization](config/README.md)
   * [ccnet.conf](config/ccnet-conf.md)
@@ -92,7 +98,6 @@
   * [seahub\_settings.py](config/seahub_settings_py.md)
   * [seafevents.conf](config/seafevents-conf.md)
   * [Seahub customization](config/seahub_customization.md)
-  * [Desktop client customization](config/desktop_customization.md)
   * [Email Sending](config/sending_email.md)
 * [Administration](maintain/README.md)
   * [Account management](maintain/account.md)
@@ -133,4 +138,3 @@
   * [Seafile Professional Edition](changelog/changelog-for-seafile-professional-server.md)
   * [Seafile Client](changelog/client-changelog.md)
   * [Drive Client ChangeLog](changelog/drive-client-changelog.md)
-

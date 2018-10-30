@@ -1916,10 +1916,11 @@ For more info, you can see [this official docs](http://wopi.readthedocs.org/en/l
 
 * repo-id
 * p (use '/' as default)
+* replace - whether to overwrite existing files, 0 or 1, default to 0
 
 **Sample request**
 
-    curl -H "Authorization: Token f2210dacd9c6ccb8133606d94ff8e61d99b477fd" https://cloud.seafile.com/api2/repos/99b758e6-91ab-4265-b705-925367374cf0/upload-link/
+    curl -H "Authorization: Token f2210dacd9c6ccb8133606d94ff8e61d99b477fd" https://cloud.seafile.com/api2/repos/99b758e6-91ab-4265-b705-925367374cf0/upload-link/?p=/&replace=0
 
 **Sample response**
 

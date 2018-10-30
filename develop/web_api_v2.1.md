@@ -13,6 +13,7 @@
         <a href="#account">Account</a>
         <ul>
             <li><a href="#check-account-info">Check Account Info</a></li>
+            <li><a href="#client-login">Get Client Login URL</a></li>
             <li><a href="#server-info">Get Server Information</a></li>
         </ul>
     </li>
@@ -52,6 +53,22 @@
                     <li><a href="#get-group-messages">Get Group Messages</a></li>
                     <li><a href="#send-a-group-message">Send A Group Message</a></li>
                     <li><a href="#delete-a-group-message">Delete A Group Message</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="#group-owned-libraries">Group Owned Libraries</a>
+                <ul>
+                    <li><a href="#add-group-owned-library">Add Group Owned Library</a></li>
+                    <li><a href="#delete-group-owned-library">Delete Group Owned Library</a></li>
+                    <li><a href="#get-group-owned-library-user-share-info">Get Group Owned Library User Share Info</a></li>
+                    <li><a href="#share-group-owned-library-to-user">Share Group Owned Library to User</a></li>
+                    <li><a href="#modify-group-owned-library-user-share-permission">Modify Group Owned Library User Share Permission</a></li>
+                    <li><a href="#delete-group-owned-library-user-share">Delete Group Owned Library User Share</a></li>
+                    <li><a href="#get-group-owned-library-group-share-info">Get Group Owned Library Group Share Info</a></li>
+                    <li><a href="#share-group-owned-library-to-user">Share Group Owned Library to Group</a></li>
+                    <li><a href="#modify-group-owned-library-group-share-permission">Modify Group Owned Library Group Share Permission</a></li>
+                    <li><a href="#delete-group-owned-library-group-share">Delete Group Owned Library Group Share</a></li>
+                    <li><a href="#modify-group-owned-library-sub-folder-permission">Modify Group Owned Library Sub-Folder Permission</a></li>
                 </ul>
             </li>
         </ul>
@@ -95,6 +112,8 @@
                     <li><a href="#update-permission-of-group-shared-library">Update Permission of Group Shared Library</a></li>
                     <li><a href="#batch-share-libraries-to-user">Batch Share Libraries to User</a></li>
                     <li><a href="#batch-share-libraries-to-group">Batch Share Libraries to Group</a></li>
+                    <li><a href="#batch-copy-items">Batch Copy Items</a></li>
+                    <li><a href="#batch-move-items">Batch Move Items</a></li>
                 </ul>
             <li>
                 <a href="#shared-folders">Shared Folders</a>
@@ -166,7 +185,8 @@
             <li><a href="#view-file-through-owa">View File Through Owa</a></li>
             <li><a href="#download-file">Download File</a></li>
             <li><a href="#get-file-detail">Get File Detail</a></li>
-            <li><a href="#get-file-history">Get File History</a></li>
+            <li><a href="#get-file-history">Get File History (Deprecated)</a></li>
+            <li><a href="#get-file-history-v2.1">Get File History</a></li>
             <li><a href="#restore-file-from-history">Restore File From History</a></li>
             <li><a href="#download-file-revision">Download File From a Revision</a></li>
             <li><a href="#create-file">Create File</a></li>
@@ -185,13 +205,22 @@
                 </ul>
             </li>
             <li>
+                <a href="#resumable-upload-file">Resumable Upload File</a>
+                <ul>
+                    <li><a href="#resumable-check-if-enabled">Check If Enable Resumable Upload</a></li>
+                    <li><a href="#resumable-get-upload-link">Get Upload Link</a></li>
+                    <li><a href="#resumable-get-bytes-already-upload">Get Bytes Already Uploaded</a></li>
+                    <li><a href="#resumable-upload-file-1">Upload File</a></li>
+                </ul>
+            </li>
+            <li>
                 <a href="#update-file">Update File</a>
                 <ul>
                     <li><a href="#get-update-link">Get Update Link</a></li>
                     <li><a href="#update-file-1">Update File</a></li>
                 </ul>
             </li>
-            <li><a href="#get-upload-blocks-link">Get Upload Blocks Link</a></li>
+            <li><a href="#get-upload-blocks-link">Uploading Large File in Blocks</a></li>
             <li><a href="#get-update-blocks-link">Get Update Blocks Link</a></li>
             <li>
                 <a href="#file-comments">File Comment</a>
@@ -203,6 +232,7 @@
                     <li><a href="#get-number-of-comments">Get Number of Comments</a></li>
                 </ul>
             </li>
+            <li><a href="#get-smart-link-for-a-file">Get Smart Link for a File</a></li>
         </ul>
     </li>
     <li>
@@ -215,6 +245,7 @@
             <li><a href="#delete-directory">Delete Directory</a></li>
             <li><a href="#download-directory">Download Directory</a></li>
             <li><a href="#revert-directory">Revert Directory</a></li>
+            <li><a href="#move-directory-merge">Move Directory Merge</a></li>
         </ul>
     </li>
     <li>
@@ -306,6 +337,11 @@
             <li><a href="#admin-only-delete-a-library">Delete a Library</a></li>
             <li><a href="#admin-only-transfer-a-library">Transfer a Library</a></li>
             <li><a href="#admin-only-get-library-dirents">Get Library Dirents</a></li>
+            <li><a href="#admin-only-get-all-deleted-librares">Get All Deleted Libraries</a></li>
+            <li><a href="#admin-only-get-deleted-librares-by-owner">Get Deleted Libraries by Owner</a></li>
+            <li><a href="#admin-only-clean-deleted-library">Clean Deleted Library</a></li>
+            <li><a href="#admin-only-restore-deleted-library">Restore Deleted Library</a></li>
+            <li><a href="#admin-only-clean-all-deleted-libraries">Clean ALl Deleted Libraries</a></li>
         </ul>
     </li>
     <li>
@@ -327,12 +363,16 @@
             <li><a href="#admin-only-get-all-groups">Get all Groups</a></li>
             <li><a href="#admin-only-delete-a-group">Delete a Group</a></li>
             <li><a href="#admin-only-transfer-a-group">Transfer a Group</a></li>
+            <li><a href="#admin-only-set-group-quota">Set Group Quota</a></li>
             <li><a href="#admin-only-get-group-libraries">Get Group Libraries</a></li>
             <li><a href="#admin-only-delete-group-library">Delete Group Library</a></li>
             <li><a href="#admin-only-get-group-members">Get Group Members</a></li>
             <li><a href="#admin-only-delete-group-member">Delete Group Member</a></li>
             <li><a href="#admin-only-add-group-member">Add Group Member</a></li>
             <li><a href="#admin-only-update-group-member-role">Update Group Member Role</a></li>
+            <li><a href="#admin-only-add-group-owned-library">Add Group Owned Library</a></li>
+            <li><a href="#admin-only-delete-group-owned-library">Delete Group Owned Library</a></li>
+            <li><a href="#admin-only-modify-group-owned-library-sub-folder-permission">Modify Group Owned Library Sub-Folder Permission</a></li>
         </ul>
     </li>
     <li>
@@ -368,10 +408,22 @@
         <a href="#admin-only-organization">Organization</a>
         <ul>
             <li><a href="#admin-only-add-organization">Add Organization</a></li>
+            <li><a href="#admin-only-get-organization-info">Get Organization Info</a></li>
+            <li><a href="#admin-only-update-organization-info">Update Organization Info</a></li>
+            <li><a href="#admin-only-delete-organization">Delete Organization</a></li>
             <li><a href="#admin-only-add-organization-user">Add Organization User</a></li>
             <li><a href="#admin-only-get-organization-user-info">Get Organization User Info</a></li>
             <li><a href="#admin-only-update-organization-user-info">Update Organization User Info</a></li>
             <li><a href="#admin-only-delete-organization-user">Delete Organization User</a></li>
+        </ul>
+    </li>
+    <li>
+        <a href="#admin-only-department">Department</a>
+        <ul>
+            <li><a href="#admin-only-list-departments">List departments</a></li>
+            <li><a href="#admin-only-list-departments-groups">List groups and members in a department</a></li>
+            <li><a href="#admin-only-create-department">Create department</a></li>
+            <li><a href="#admin-only-dismiss-department">Dismiss department</a></li>
         </ul>
     </li>
 </ul>
@@ -452,6 +504,28 @@ you should use `--data-urlencode` if you want to process some special characters
     "total": 104857600,
     "email": "user@example.com"
     }
+
+**Errors**
+
+* 403 Invalid token
+
+### <a id="client-login"></a>Get Client Login URL
+
+**GET** https://cloud.seafile.com/api2/client-login/
+
+**Sample request**
+
+    curl -H "Authorization: Token f2210dacd9c6ccb8133606d94ff8e61d99b477fd" https://cloud.seafile.com/api2/client-login/
+
+**Sample response**
+
+*Note*:
+
+- If the user has two way authentication enabled, the server will respond with an empty JSON object (`{}`).
+
+```
+"https://cloud.seafile.com/client-login/?token=000f1f83d612836c65fed087fb9c4ca40852d0f9"
+```
 
 **Errors**
 
@@ -1055,6 +1129,388 @@ curl -X DELETE -H 'Authorization: Token 444d2bbf1fc78ffbeedc4704c9f41e32d926ac94
 * 400 Discussion id not found.
 * 403 Permission denied.
 
+### <a id="group-owned-libraries"></a>Group Owned Libraries
+
+#### <a id="add-group-owned-library"></a>Add Group Owned Library
+
+**POST** http://192.168.1.113:8000/api/v2.1/groups/{group_id}/group-owned-libraries/
+
+**Request parameters**
+
+* `group_id`
+* `repo_name`
+* `password`
+* `permission`, default `rw`.
+
+**Sample request**
+
+```
+curl -d "repo_name=group-owned-repo-4&permission=r" -H 'Authorization: Token f2210dacd9c6ccb8133606d94ff8e61d99b477fd' "http://192.168.1.113:8000/api/v2.1/groups/53/group-owned-libraries/"
+```
+
+**sample response**
+
+```
+{
+    "repo_id": "9bc59af9-265e-4110-a0e2-619450a5cb35",
+    "permission": "r",
+    "encrypted": false,
+    "owner_email": "53@seafile_group",
+    "mtime": "2018-04-23T17:25:37+08:00",
+    "repo_name": "group-owned-repo-4",
+    "size": 0
+}
+```
+
+**Errors**
+
+* 400 repo_name/permission invalid.
+* 403 NOT allow to create encrypted library..
+* 403 Permission denied.
+* 403 No group quota.
+* 404 Group not found.
+
+#### <a id="delete-group-owned-library"></a>Delete Group Owned Library
+
+**DELETE** http://192.168.1.113:8000/api/v2.1/groups/{group_id}/group-owned-libraries/{repo_id}/
+
+**Request parameters**
+
+* `group_id`
+* `repo_id`
+
+**Sample request**
+
+```
+curl -X DELETE -H 'Authorization: Token f2210dacd9c6ccb8133606d94ff8e61d99b477fd' "http://192.168.1.113:8000/api/v2.1/groups/53/group-owned-libraries/9bc59af9-265e-4110-a0e2-619450a5cb35/"
+```
+
+**sample response**
+
+```
+{"success":true}
+```
+
+**Errors**
+
+* 403 Permission denied.
+* 404 Group/Library not found.
+* 500 Internal Server Error
+
+#### <a id="get-group-owned-library-user-share-info"></a>Get Group Owned Library User Share Info
+
+**GET** http://192.168.1.113:8000/api/v2.1/group-owned-libraries/{repo_id}/user-share/
+
+**Request parameters**
+
+* `repo_id`
+
+**Sample request**
+
+```
+curl -H 'Authorization: Token 5eba8c2f983404e33b140b13a1d050b9a4440e03' -H 'Accept: application/json; charset=utf-8; indent=4' "http://192.168.1.113:8000/api/v2.1/group-owned-libraries/4902dcc7-29be-4020-81e9-4e512f97db1e/user-share/"
+```
+
+**sample response**
+
+```
+[
+    {
+        "permission": "rw",
+        "user_name": "1",
+        "user_email": "1@1.com",
+        "user_contact_email": "1@1.com"
+    },
+    {
+        "permission": "rw",
+        "user_name": "1",
+        "user_email": "1@111.com",
+        "user_contact_email": "1@111.com"
+    },
+    {
+        "permission": "rw",
+        "user_name": "10",
+        "user_email": "10@10.com",
+        "user_contact_email": "10@10.com"
+    }
+]
+```
+
+**Errors**
+
+* 403 Permission denied.
+* 404 Group/Library not found.
+
+#### <a id="share-group-owned-library-to-user"></a>Share Group Owned Library to User
+
+**POST** http://192.168.1.113:8000/api/v2.1/group-owned-libraries/{repo_id}/user-share/
+
+**Request parameters**
+
+* `repo_id`
+* `permission`, `r` or `rw`.
+* `username`
+
+**Sample request**
+
+```
+curl -d "permission=r&username=1@1.com&username=2@1.com" -H 'Authorization: Token 5eba8c2f983404e33b140b13a1d050b9a4440e03' -H 'Accept: application/json; charset=utf-8; indent=4' "http://192.168.1.113:8000/api/v2.1/group-owned-libraries/4902dcc7-29be-4020-81e9-4e512f97db1e/user-share/"
+```
+
+**sample response**
+
+```
+{
+    "failed": [
+        {
+            "email": "2@1.com",
+            "error_msg": "User 2@1.com not found."
+        }
+    ],
+    "success": [
+        {
+            "permission": "r",
+            "user_name": "1",
+            "user_email": "1@1.com",
+            "user_contact_email": "1@1.com"
+        }
+    ]
+}
+```
+
+**Errors**
+
+* 400 permission invalid.
+* 403 Permission denied.
+* 404 Group/Library not found.
+
+#### <a id="modify-group-owned-library-user-share-permission"></a>Modify Group Owned Library User Share Permission
+
+**PUT** http://192.168.1.113:8000/api/v2.1/group-owned-libraries/{repo_id}/user-share/
+
+**Request parameters**
+
+* `repo_id`
+* `permission`, `r` or `rw`.
+* `username`
+
+**Sample request**
+
+```
+curl -X PUT -d "permission=rw&username=1@1.com" -H 'Authorization: Token 5eba8c2f983404e33b140b13a1d050b9a4440e03' -H 'Accept: application/json; charset=utf-8; indent=4' "http://192.168.1.113:8000/api/v2.1/group-owned-libraries/4902dcc7-29be-4020-81e9-4e512f97db1e/user-share/"
+```
+
+**sample response**
+
+```
+{
+    "success": true
+}
+```
+
+**Errors**
+
+* 400 permission invalid.
+* 403 Permission denied.
+* 404 Group/Library not found.
+
+#### <a id="delete-group-owned-library-user-share"></a>Delete Group Owned Library User Share
+
+**DELETE** http://192.168.1.113:8000/api/v2.1/group-owned-libraries/{repo_id}/user-share/
+
+**Request parameters**
+
+* `repo_id`
+* `username`
+
+**Sample request**
+
+```
+curl -X DELETE -d "username=1@1.com" -H 'Authorization: Token 5eba8c2f983404e33b140b13a1d050b9a4440e03' -H 'Accept: application/json; charset=utf-8; indent=4' "http://192.168.1.113:8000/api/v2.1/group-owned-libraries/4902dcc7-29be-4020-81e9-4e512f97db1e/user-share/"
+```
+
+**sample response**
+
+```
+{
+    "success": true
+}
+```
+
+**Errors**
+
+* 403 Permission denied.
+* 404 Group/Library not found.
+
+#### <a id="get-group-owned-library-group-share-info"></a>Get Group Owned Library Group Share Info
+
+**GET** http://192.168.1.113:8000/api/v2.1/group-owned-libraries/{repo_id}/group-share/
+
+**Request parameters**
+
+* `repo_id`
+
+**Sample request**
+
+```
+curl -H 'Authorization: Token 5eba8c2f983404e33b140b13a1d050b9a4440e03' -H 'Accept: application/json; charset=utf-8; indent=4' "http://192.168.1.113:8000/api/v2.1/group-owned-libraries/4902dcc7-29be-4020-81e9-4e512f97db1e/group-share/"
+```
+
+**sample response**
+
+```
+[
+    {
+        "permission": "r",
+        "group_id": 71,
+        "group_name": "asd"
+    },
+    {
+        "permission": "r",
+        "group_id": 70,
+        "group_name": "group-of-lian"
+    }
+]
+```
+
+**Errors**
+
+* 403 Permission denied.
+* 404 Group/Library not found.
+
+#### <a id="share-group-owned-library-to-group"></a>Share Group Owned Library to Group
+
+**POST** http://192.168.1.113:8000/api/v2.1/group-owned-libraries/{repo_id}/group-share/
+
+**Request parameters**
+
+* `repo_id`
+* `permission`, `r` or `rw`.
+* `group_id`
+
+**Sample request**
+
+```
+curl -d "permission=r&group_id=89&group_id=71&group_id=70" -H 'Authorization: Token 5eba8c2f983404e33b140b13a1d050b9a4440e03' -H 'Accept: application/json; charset=utf-8; indent=4' "http://192.168.1.113:8000/api/v2.1/group-owned-libraries/4902dcc7-29be-4020-81e9-4e512f97db1e/group-share/"
+```
+
+**sample response**
+
+```
+{
+    "failed": [
+        {
+            "error_msg": "Group 89 not found"
+        },
+        {
+            "error_msg": "This item has been shared to asd.",
+            "group_name": "asd"
+        }
+    ],
+    "success": [
+        {
+            "permission": "r",
+            "group_id": 70,
+            "group_name": "group-of-lian"
+        }
+    ]
+}
+```
+
+**Errors**
+
+* 400 permission invalid.
+* 403 Permission denied.
+* 404 Group/Library not found.
+
+#### <a id="modify-group-owned-library-group-share-permission"></a>Modify Group Owned Library Group Share Permission
+
+**PUT** http://192.168.1.113:8000/api/v2.1/group-owned-libraries/{repo_id}/group-share/
+
+**Request parameters**
+
+* `repo_id`
+* `permission`, `r` or `rw`.
+* `group_id`
+
+**Sample request**
+
+```
+curl -X PUT -d "permission=rw&group_id=70" -H 'Authorization: Token 5eba8c2f983404e33b140b13a1d050b9a4440e03' -H 'Accept: application/json; charset=utf-8; indent=4' "http://192.168.1.113:8000/api/v2.1/group-owned-libraries/4902dcc7-29be-4020-81e9-4e512f97db1e/group-share/"
+```
+
+**sample response**
+
+```
+{
+    "success": true
+}
+```
+
+**Errors**
+
+* 400 permission invalid.
+* 403 Permission denied.
+* 404 Group/Library not found.
+
+#### <a id="delete-group-owned-library-group-share"></a>Delete Group Owned Library Group Share
+
+**DELETE** http://192.168.1.113:8000/api/v2.1/group-owned-libraries/{repo_id}/group-share/
+
+**Request parameters**
+
+* `repo_id`
+* `group_id`
+
+**Sample request**
+
+```
+curl -X DELETE -d "group_id=71" -H 'Authorization: Token 5eba8c2f983404e33b140b13a1d050b9a4440e03' -H 'Accept: application/json; charset=utf-8; indent=4' "http://192.168.1.113:8000/api/v2.1/group-owned-libraries/4902dcc7-29be-4020-81e9-4e512f97db1e/group-share/"
+```
+
+**sample response**
+
+```
+{
+    "success": true
+}
+```
+
+**Errors**
+
+* 403 Permission denied.
+* 404 Group/Library not found.
+
+#### <a id="modify-group-owned-library-sub-folder-permission"></a>Modify Group Owned Library Sub-Folder Permission
+
+**PUT** http://192.168.1.113:8000/api/v2.1/groups/{group_id}/group-owned-libraries/{repo_id}/
+
+**Request parameters**
+
+* `group_id`
+* `repo_id`
+* `path`, path of sub folder.
+* `permission`: `r` or `rw`.
+
+**Sample request**
+
+```
+curl -X PUT -d "path=/tmp/&permission=r" -H 'Authorization: Token f2210dacd9c6ccb8133606d94ff8e61d99b477fd' "http://192.168.1.113:8000/api/v2.1/groups/53/group-owned-libraries/9bc59af9-265e-4110-a0e2-619450a5cb35/"
+```
+
+**sample response**
+
+```
+{"success":true}
+```
+
+**Errors**
+
+* 400 path/permission invalid.
+* 403 Permission denied.
+* 404 Group/Library/Folder not found.
+* 500 Internal Server Error
+
 ## <a id="share"></a>Share
 
 ### <a id="share-link"></a>File Share Link
@@ -1563,7 +2019,7 @@ Create upload link for directory with password
 * p, `/` means the **root** folder, which is equivalent to the library.
 * share_type, `user`
 * username, a email string or a list contains multi emails
-* permission, default `r`
+* permission, `r`, `rw` or `admin`, default `r`.
 
 **Sample request**
 
@@ -1655,7 +2111,7 @@ Create upload link for directory with password
 * p, `/` means the **root** folder, which is equivalent to the library.
 * share_type, `group`
 * group_id , an integer or a list contains multi integers
-* permission, default `r`
+* permission, `r`, `rw` or `admin`, default `r`.
 
 **Sample request**
 
@@ -1811,6 +2267,132 @@ Create upload link for directory with password
 * 404 Library not found.
 * 404 Group not found.
 * 500 Internal Server Error
+
+#### <a id="batch-copy-items"></a>Batch Copy Items
+
+**POST** http://192.168.1.113:8000/api/v2.1/repos/batch-copy-item/
+
+**Request parameters**
+
+Content type of parameter must be `application/json` and passed through POST request's body.
+
+```
+{
+    "src_repo_id":"",
+    "dst_repo_id":"",
+    "paths":[
+        {"src_path":"","dst_path":""},
+        {"src_path":"","dst_path":""},
+    ]
+}
+```
+
+**Sample request**
+
+```
+curl -d '{"src_repo_id":"d4aac5b9-28d4-4372-a4b3-d6de171402df", "dst_repo_id":"09b7d3c0-5f0d-49be-9318-7ca136f386cd", "paths":[{"src_path":"/folder-1","dst_path":"/"},{"src_path":"/file-1","dst_path":"/"},{"src_path":"/file-2","dst_path":"/dst-folder"}]}' -H 'Authorization: Token 2bac21cab9eb0c4baac10d1e6fc3cf590f0dcf17' -H 'Accept: application/json; charset=utf-8; indent=4' -H 'Content-Type: application/json' "http://192.168.1.113:8000/api/v2.1/repos/batch-copy-item/"
+```
+
+**Sample response**
+
+```
+{
+    "failed": [
+        {
+            "src_repo_id": "d4aac5b9-28d4-4372-a4b3-d6de171402df",
+            "dst_path": "/dst-folder/",
+            "dst_repo_id": "09b7d3c0-5f0d-49be-9318-7ca136f386cd",
+            "src_path": "/file-2/",
+            "error_msg": "Folder /dst-folder/ not found."
+        }
+    ],
+    "success": [
+        {
+            "src_repo_id": "d4aac5b9-28d4-4372-a4b3-d6de171402df",
+            "dst_path": "/",
+            "dst_repo_id": "09b7d3c0-5f0d-49be-9318-7ca136f386cd",
+            "src_path": "/folder-1/",
+            "dst_obj_name": "folder-1 (2)"
+        },
+        {
+            "src_repo_id": "d4aac5b9-28d4-4372-a4b3-d6de171402df",
+            "dst_path": "/",
+            "dst_repo_id": "09b7d3c0-5f0d-49be-9318-7ca136f386cd",
+            "src_path": "/file-1/",
+            "dst_obj_name": "file-1 (2)"
+        }
+    ]
+}
+```
+
+**Errors**
+
+* 400 src_repo_id/dst_repo_id/paths invalid.
+* 403 Permission denied.
+* 404 Library not found.
+
+#### <a id="batch-move-items"></a>Batch Move Items
+
+**POST** http://192.168.1.113:8000/api/v2.1/repos/batch-move-item/
+
+**Request parameters**
+
+Content type of parameter must be `application/json` and passed through POST request's body.
+
+```
+{
+    "src_repo_id":"",
+    "dst_repo_id":"",
+    "paths":[
+        {"src_path":"","dst_path":""},
+        {"src_path":"","dst_path":""},
+    ]
+}
+```
+
+**Sample request**
+
+```
+curl -d '{"src_repo_id":"d4aac5b9-28d4-4372-a4b3-d6de171402df", "dst_repo_id":"09b7d3c0-5f0d-49be-9318-7ca136f386cd", "paths":[{"src_path":"/folder-1","dst_path":"/"},{"src_path":"/file-1","dst_path":"/"},{"src_path":"/file-2","dst_path":"/dst-folder"}]}' -H 'Authorization: Token 2bac21cab9eb0c4baac10d1e6fc3cf590f0dcf17' -H 'Accept: application/json; charset=utf-8; indent=4' -H 'Content-Type: application/json' "http://192.168.1.113:8000/api/v2.1/repos/batch-move-item/"
+```
+
+**Sample response**
+
+```
+{
+    "failed": [
+        {
+            "src_repo_id": "d4aac5b9-28d4-4372-a4b3-d6de171402df",
+            "dst_path": "/dst-folder/",
+            "dst_repo_id": "09b7d3c0-5f0d-49be-9318-7ca136f386cd",
+            "src_path": "/file-2/",
+            "error_msg": "Folder /dst-folder/ not found."
+        }
+    ],
+    "success": [
+        {
+            "src_repo_id": "d4aac5b9-28d4-4372-a4b3-d6de171402df",
+            "dst_path": "/",
+            "dst_repo_id": "09b7d3c0-5f0d-49be-9318-7ca136f386cd",
+            "src_path": "/folder-1/",
+            "dst_obj_name": "folder-1 (4)"
+        },
+        {
+            "src_repo_id": "d4aac5b9-28d4-4372-a4b3-d6de171402df",
+            "dst_path": "/",
+            "dst_repo_id": "09b7d3c0-5f0d-49be-9318-7ca136f386cd",
+            "src_path": "/file-1/",
+            "dst_obj_name": "file-1 (4)"
+        }
+    ]
+}
+```
+
+**Errors**
+
+* 400 src_repo_id/dst_repo_id/paths invalid.
+* 403 Permission denied.
+* 404 Library not found.
 
 ### <a id="shared-folders"></a>Shared Folders
 
@@ -2321,84 +2903,89 @@ curl -H 'Authorization: Token 24fd3c026886e3121b2ca630805ed425c272cb96' -H 'Acce
 ```
 [
     {
-        "permission": "rw",
-        "encrypted": false,
-        "mtime_relative": "<time datetime=\"2017-08-12T10:48:42\" is=\"relative-time\" title=\"Sat, 12 Aug 2017 10:48:42 +0800\" >1 minute ago</time>",
-        "mtime": 1502506122,
-        "owner": "1@1.com",
+        "storage_id": "old_version_id",
         "root": "",
-        "id": "b8c8eeaf-a62f-4ece-a2cb-e1c67f49f881",
-        "size": 0,
-        "name": "group-lib",
-        "type": "repo",
+        "modifier_email": "1@1.com",
+        "name": "lib-of-1",
+        "permission": "rw",
+        "size_formatted": "0 bytes",
+        "storage_name": "旧版本",
         "virtual": false,
+        "mtime_relative": "<time datetime=\"2018-07-18T11:34:36\" is=\"relative-time\" title=\"Wed, 18 Jul 2018 11:34:36 +0800\" >59 seconds ago</time>",
+        "head_commit_id": "a0727e27e73a513c281bd7f3e78bcd65767d095c",
+        "encrypted": false,
         "version": 1,
-        "head_commit_id": "b0a8c797972b83af1054428a397f843612257425",
-        "size_formatted": "0 bytes"
+        "mtime": 1531884876,
+        "owner": "1@1.com",
+        "modifier_contact_email": "1@1.com",
+        "type": "repo",
+        "id": "1f6a3ed4-a53c-4f02-a688-eac373347127",
+        "modifier_name": "1",
+        "size": 0
     },
     {
-        "permission": "rw",
-        "encrypted": false,
-        "mtime_relative": "<time datetime=\"2017-08-03T17:42:49\" is=\"relative-time\" title=\"Thu, 3 Aug 2017 17:42:49 +0800\" >8 days ago</time>",
-        "mtime": 1501753369,
-        "owner": "1@1.com",
-        "root": "",
-        "id": "cd0df3ce-7e1b-4fc3-9b76-714c48db47d7",
-        "size": 1449,
-        "name": "My Library",
-        "type": "repo",
-        "virtual": false,
-        "version": 1,
-        "head_commit_id": "9d47232bb87d39dbbba54fb8f09f9795b2d396e4",
-        "size_formatted": "1.4 KB"
-    },
-    {
-        "owner_nickname": "lian",
-        "permission": "rw",
-        "encrypted": false,
-        "mtime_relative": "<time datetime=\"2017-08-12T10:44:07\" is=\"relative-time\" title=\"Sat, 12 Aug 2017 10:44:07 +0800\" >6 minutes ago</time>",
-        "mtime": 1502505847,
-        "owner": "lian@lian.com",
-        "root": "",
-        "id": "c474a093-19dc-4ddf-b0b0-72b33214ba33",
-        "size": 708833229,
-        "name": "seacloud.cc.124",
+        "owner_nickname": "name of lian",
+        "modifier_email": "lian@lian.com",
+        "name": "lib-of-lian",
         "share_type": "personal",
-        "type": "srepo",
-        "version": 1,
-        "head_commit_id": "0b11fc08518d0c9acfd15e95a580664896484336",
-        "size_formatted": "676.0 MB"
-    },
-    {
         "permission": "rw",
-        "encrypted": false,
-        "mtime": 1502506122,
-        "owner": "asdf",
-        "id": "b8c8eeaf-a62f-4ece-a2cb-e1c67f49f881",
-        "size": 0,
-        "name": "group-lib",
+        "size_formatted": "5.3 GB",
         "root": "",
+        "mtime_relative": "<time datetime=\"2018-07-18T11:32:06\" is=\"relative-time\" title=\"Wed, 18 Jul 2018 11:32:06 +0800\" >3 minutes ago</time>",
+        "is_admin": false,
+        "head_commit_id": "7ea21638dae358f3b75f5236f083f846c91ef2e3",
+        "encrypted": false,
         "version": 1,
-        "head_commit_id": "b0a8c797972b83af1054428a397f843612257425",
-        "type": "grepo",
-        "groupid": 1675
+        "mtime": 1531884726,
+        "owner": "lian@lian.com",
+        "modifier_contact_email": "lian-contact@email.com",
+        "type": "srepo",
+        "id": "d4f596ed-09ea-4ac6-8d59-12acbd089097",
+        "modifier_name": "name of lian",
+        "size": 5655202974
     },
     {
+        "share_from_name": "name of lian",
+        "modifier_email": "lian@lian.com",
+        "name": "seacloud.cc.124",
         "share_from": "lian@lian.com",
         "permission": "rw",
+        "share_from_contact_email": "lian-contact@email.com",
         "encrypted": false,
-        "mtime_relative": "<time datetime=\"2017-08-12T10:33:47\" is=\"relative-time\" title=\"Sat, 12 Aug 2017 10:33:47 +0800\" >16 minutes ago</time>",
-        "mtime": 1502505227,
-        "owner": "Organization",
         "root": "",
-        "id": "050ef344-45fb-49b6-80e6-e1bf094ab7bd",
-        "size": 0,
-        "name": "public-repo",
-        "share_type": "public",
-        "type": "grepo",
+        "groupid": 70,
         "version": 1,
-        "head_commit_id": "b71a95373896eb52e2971d72a869b7c413791b0b",
-        "size_formatted": "0 bytes"
+        "head_commit_id": "d96bc7919934facec5f11d4dbe5215284e7a438a",
+        "mtime": 1531812196,
+        "owner": "group-of-lian",
+        "modifier_contact_email": "lian-contact@email.com",
+        "group_name": "group-of-lian",
+        "type": "grepo",
+        "id": "f26331a8-8acd-4c3d-9c73-352c595c36c8",
+        "modifier_name": "name of lian",
+        "size": 475709269
+    },
+    {
+        "share_from_name": "name of lian",
+        "modifier_email": "lian@lian.com",
+        "name": "public-repo-createe-by-lian",
+        "share_from": "lian@lian.com",
+        "permission": "rw",
+        "share_from_contact_email": "lian-contact@email.com",
+        "size_formatted": "0 bytes",
+        "head_commit_id": "e24fe624d38247661b9f5ccf64d931ee130834fa",
+        "root": "",
+        "mtime_relative": "<time datetime=\"2018-07-18T10:43:46\" is=\"relative-time\" title=\"Wed, 18 Jul 2018 10:43:46 +0800\" >51 minutes ago</time>",
+        "share_type": "public",
+        "encrypted": false,
+        "version": 1,
+        "mtime": 1531881826,
+        "owner": "Organization",
+        "modifier_contact_email": "lian-contact@email.com",
+        "type": "grepo",
+        "id": "1d3e5d57-bcc0-4c6e-9fb5-0415bbbc48a4",
+        "modifier_name": "name of lian",
+        "size": 0
     }
 ]
 ```
@@ -2414,37 +3001,26 @@ curl -H "Authorization: Token 8cc0e7085a24b6abfee721e758b6aab4a90e7321" -H 'Acce
 ```
 [
     {
-        "permission": "rw",
-        "encrypted": false,
-        "mtime_relative": "<time datetime=\"2017-08-12T10:48:42\" is=\"relative-time\" title=\"Sat, 12 Aug 2017 10:48:42 +0800\" >19 minutes ago</time>",
-        "mtime": 1502506122,
-        "owner": "1@1.com",
+        "storage_id": "old_version_id",
         "root": "",
-        "id": "b8c8eeaf-a62f-4ece-a2cb-e1c67f49f881",
-        "size": 0,
-        "name": "group-lib",
-        "type": "repo",
+        "modifier_email": "1@1.com",
+        "name": "lib-of-1",
+        "permission": "rw",
+        "size_formatted": "0 bytes",
+        "storage_name": "旧版本",
         "virtual": false,
+        "mtime_relative": "<time datetime=\"2018-07-18T11:34:36\" is=\"relative-time\" title=\"Wed, 18 Jul 2018 11:34:36 +0800\" >59 seconds ago</time>",
+        "head_commit_id": "a0727e27e73a513c281bd7f3e78bcd65767d095c",
+        "encrypted": false,
         "version": 1,
-        "head_commit_id": "b0a8c797972b83af1054428a397f843612257425",
-        "size_formatted": "0 bytes"
+        "mtime": 1531884876,
+        "owner": "1@1.com",
+        "modifier_contact_email": "1@1.com",
+        "type": "repo",
+        "id": "1f6a3ed4-a53c-4f02-a688-eac373347127",
+        "modifier_name": "1",
+        "size": 0
     },
-    {
-        "permission": "rw",
-        "encrypted": false,
-        "mtime_relative": "<time datetime=\"2017-08-03T17:42:49\" is=\"relative-time\" title=\"Thu, 3 Aug 2017 17:42:49 +0800\" >8 days ago</time>",
-        "mtime": 1501753369,
-        "owner": "1@1.com",
-        "root": "",
-        "id": "cd0df3ce-7e1b-4fc3-9b76-714c48db47d7",
-        "size": 1449,
-        "name": "My Library",
-        "type": "repo",
-        "virtual": false,
-        "version": 1,
-        "head_commit_id": "9d47232bb87d39dbbba54fb8f09f9795b2d396e4",
-        "size_formatted": "1.4 KB"
-    }
 ]
 ```
 
@@ -2780,7 +3356,7 @@ check if a dir has a corresponding sub_repo, if it does not have, create one
 
 **Sample request**
 
-    curl -d "repo_name=new-repo-name"  -H 'Authorization: Token f2210dacd9c6ccb8133606d94ff8e61d99b477fd' -H 'Accept: application/json; indent=4' https://cloud.seafile.com/api2/repos/8f5f2222-72a8-454f-ac40-8397c5a556a8/op=rename
+    curl -d "repo_name=new-repo-name"  -H 'Authorization: Token f2210dacd9c6ccb8133606d94ff8e61d99b477fd' -H 'Accept: application/json; indent=4' https://cloud.seafile.com/api2/repos/8f5f2222-72a8-454f-ac40-8397c5a556a8/?op=rename
 
 **Sample response**
 
@@ -2992,6 +3568,14 @@ success
 
 * `with_permission`, `true` or `false`. Whether return permission info of the file or not, default is `false`.
 
+* `time_from`, filter the result that the updated time greater than or equal to  this value. default unit is `second`.
+
+* `time_to`, filter the result that the updated time less than or equal to  this value. default unit is `second`.
+
+* `size_from`: filter the result that the size greater than or equal to  this value. default unit is `byte`.
+
+* `size_to`: filter the result that the size less than or equal to this value. default unit is `byte`.
+
 **Sample request**
 ```
 curl -H 'Authorization: Token 076de58233c09f19e7a5179abff14ad55987350e' -H 'Accept: application/json; charset=utf-8; indent=4' "https://cloud.seafile.com/api2/search/?q=seafile&search_repo=all&search_ftypes=custom&ftype=Document&input_fexts=md,png&per_page=3&page=3&with_permission=true"
@@ -3013,6 +3597,7 @@ curl -H 'Authorization: Token 076de58233c09f19e7a5179abff14ad55987350e' -H 'Acce
             "fullpath": "/\u4e1c\u98ce\u65e5\u4ea7/Archived/seafile \u8fd0\u7ef4.docx",
             "repo_name": "\u4ee3\u7ef4\u5ba2\u6237",
             "is_dir": false,
+            "repo_type": 'mine',
             "size": 494490
         },
         {
@@ -3025,6 +3610,7 @@ curl -H 'Authorization: Token 076de58233c09f19e7a5179abff14ad55987350e' -H 'Acce
             "fullpath": "/\u4ea7\u54c1\u4f7f\u7528\u6587\u6863/seafile-tutorial.doc",
             "repo_name": "seafile-dev",
             "is_dir": false,
+            "repo_type": 'mine',
             "size": 414208
         },
         {
@@ -3037,6 +3623,7 @@ curl -H 'Authorization: Token 076de58233c09f19e7a5179abff14ad55987350e' -H 'Acce
             "fullpath": "/\u90e8\u7f72\u548c\u8fd0\u7ef4/seafile_vm.md",
             "repo_name": "seafile-dev",
             "is_dir": false,
+            "repo_type": 'shared',
             "size": 3255
         }
     ]
@@ -3046,7 +3633,7 @@ curl -H 'Authorization: Token 076de58233c09f19e7a5179abff14ad55987350e' -H 'Acce
 **Sample request**
 
     Search for files in a library specified directory.
-    
+
     curl -H 'Authorization: Token 076de58233c09f19e7a5179abff14ad55987350e' -H 'Accept: application/json; charset=utf-8; indent=4' "https://cloud.seafile.com/api2/search/?q=a&search_repo=2628a63b-cfad-41f5-a748-392ec9287686&search_path=/testtest"
 
 **Sample response**
@@ -3084,10 +3671,83 @@ curl -H 'Authorization: Token 076de58233c09f19e7a5179abff14ad55987350e' -H 'Acce
         ]
     }
 
+**Sample request**
+
+    Search for files within the specified time range and size range.
+
+    curl -H 'Authorization: Token 076de58233c09f19e7a5179abff14ad55987350e' -G -d 'q=a&time_from=1517801993&
+    time_to=15254060581&size_from=100&size_to=105' http://cloud.seafile.com/api2/search/
+
+**Sample response**
+
+    {
+    "has_more": false,
+    "total": 4,
+    "results": [
+        {
+            "repo_owner_name": "admin",
+            "repo_type": "mine",
+            "repo_id": "c89409c5-b52c-4469-91ba-b222a5d3efff",
+            "name": "e0c64527659f42b60cc3b16597ac07a0448a50",
+            "repo_owner_contact_email": "admin@admin.com",
+            "repo_owner_email": "admin@admin.com",
+            "last_modified": 1517802012,
+            "content_highlight": "",
+            "fullpath": "/note1/.git/objects/06/e0c64527659f42b60cc3b16597ac07a0448a50",
+            "repo_name": "Doc",
+            "is_dir": false,
+            "size": 103
+        },
+        {
+            "repo_owner_name": "admin",
+            "repo_type": "mine",
+            "repo_id": "c89409c5-b52c-4469-91ba-b222a5d3efff",
+            "name": "e0c64527659f42b60cc3b16597ac07a0448a50",
+            "repo_owner_contact_email": "admin@admin.com",
+            "repo_owner_email": "admin@admin.com",
+            "last_modified": 1517802012,
+            "content_highlight": "",
+            "fullpath": "/untitled folder/note1/.git/objects/06/e0c64527659f42b60cc3b16597ac07a0448a50",
+            "repo_name": "Doc",
+            "is_dir": false,
+            "size": 103
+        },
+        {
+            "repo_owner_name": "admin",
+            "repo_type": "mine",
+            "repo_id": "c89409c5-b52c-4469-91ba-b222a5d3efff",
+            "name": "2a4dce0781e77bd4e8d6a73d5c35bafbccebe7",
+            "repo_owner_contact_email": "admin@admin.com",
+            "repo_owner_email": "admin@admin.com",
+            "last_modified": 1517802010,
+            "content_highlight": "",
+            "fullpath": "/note1/.git/objects/29/2a4dce0781e77bd4e8d6a73d5c35bafbccebe7",
+            "repo_name": "Doc",
+            "is_dir": false,
+            "size": 103
+        },
+        {
+            "repo_owner_name": "admin",
+            "repo_type": "mine",
+            "repo_id": "c89409c5-b52c-4469-91ba-b222a5d3efff",
+            "name": "2a4dce0781e77bd4e8d6a73d5c35bafbccebe7",
+            "repo_owner_contact_email": "admin@admin.com",
+            "repo_owner_email": "admin@admin.com",
+            "last_modified": 1517802010,
+            "content_highlight": "",
+            "fullpath": "/untitled folder/note1/.git/objects/29/2a4dce0781e77bd4e8d6a73d5c35bafbccebe7",
+            "repo_name": "Doc",
+            "is_dir": false,
+            "size": 103
+        }
+    ]
+}
+
 **Errors**
 
 * 404 Search not supported.
 * 400 Missing argument q.
+* 400 Parameter invalid.
 
 ### <a id="get-library-download-links"></a>Get Library Download Links
 
@@ -3366,20 +4026,36 @@ For more info, you can see [this official docs](http://wopi.readthedocs.org/en/l
 
 **Sample response**
 
-    {
-    "id": "013d3d38fed38b3e8e26b21bb3463eab6831194f",
-    "mtime": 1398148877,
+```
+{
+    "last_modifier_name": "\u8d85\u7ba1",
+    "uploader_email": "03e7957e09ee43d9b57c9b2b4c741668@ifile.com",
+    "upload_time": "2018-07-11T05:14:20+08:00",
+    "name": "1.md",
+    "permission": "rw",
+    "uploader_name": "\u8d85\u7ba1",
+    "uploader_contact_email": "03e7957e09ee43d9b57c9b2b4c741668@ifile.com",
+    "last_modified": "2018-07-16T15:03:56+08:00",
+    "mtime": 1531724636,
+    "starred": false,
+    "size": 2,
     "type": "file",
-    "name": "foo.py",
-    "size": 22
-    }
+    "id": "86dd07538e51f8d437ecc25d9a48250041fef5a0",
+    "last_modifier_email": "03e7957e09ee43d9b57c9b2b4c741668@ifile.com",
+    "last_modifier_contact_email": "03e7957e09ee43d9b57c9b2b4c741668@ifile.com"
+}
+```
 
 **Errors**
 
-* 400 Path is missing
-* 520 Operation failed.
+* 400 p invalid.
+* 404 Library/File not found.
+* 403 Permission denied.
+* 500 Internal Server Error
 
 ### <a id="get-file-history"></a>Get File History
+
+This is an deprecated api, please use the new one below.
 
 **GET** https://cloud.seafile.com/api2/repos/{repo-id}/file/history/?p=/foo.c
 
@@ -3438,6 +4114,109 @@ For more info, you can see [this official docs](http://wopi.readthedocs.org/en/l
 
 * 400 Path is missing
 * 404 File not found
+
+### <a id="get-file-history-v2.1"></a>Get File History
+
+**GET** http://192.168.1.113:8000/api/v2.1/repos/{repo_id)/file/history/?path={path}
+
+**Request parameters**
+
+* `repo-id`
+* `path`, file path.
+* `commit_id`, commit id used for get more file history. If not passed, Seafile will use library's head commit id as its default value and return the latest history.
+
+**Sample request**
+
+```
+curl -H 'Authorization: Token 2bac21cab9eb0c4baac10d1e6fc3cf590f0dcf17' -H 'Accept: application/json; charset=utf-8; indent=4' http://192.168.1.113:8000/api/v2.1/repos/f26331a8-8acd-4c3d-9c73-352c595c36c8/file/history/?path=/Work/Seafile/for-test-web-api.md
+```
+
+**Sample response**
+
+```
+{
+    "next_start_commit": "bf642ec4272a28dd4a785c67932e2e42bc4508cb",
+    "data": [
+        {
+            "commit_id": "ec91c5ec26b7f5f0d0711c8c40201b9047801b0f",
+            "rev_file_id": "1e09388a46d7654e463a4513c96c19c82e38228c",
+            "ctime": "2018-03-16T15:24:03+08:00",
+            "creator_name": "lian",
+            "creator_email": "lian@lian.com",
+            "rev_renamed_old_path": null,
+            "creator_avatar_url": "/media/avatars/default.png",
+            "path": "/Work/Seafile/for-test-web-api.md",
+            "creator_contact_email": "lian@lian.com",
+            "size": 15829,
+            "description": "Modified \"for-test-web-api.md\""
+        },
+        {
+            "commit_id": "d6dcffa32d2b73741de26ac19d45759f2269ae32",
+            "rev_file_id": "1292177376d527288389186cac6f55869a9f82c6",
+            "ctime": "2018-02-02T16:17:13+08:00",
+            "creator_name": "lian",
+            "creator_email": "lian@lian.com",
+            "rev_renamed_old_path": null,
+            "creator_avatar_url": "/media/avatars/default.png",
+            "path": "/Work/Seafile/for-test-web-api.md",
+            "creator_contact_email": "lian@lian.com",
+            "size": 15829,
+            "description": "Modified \"for-test-web-api.md\""
+        }
+    ]
+}
+```
+
+If `next_start_commit`'s value is `false`, means that all file history has been returned.
+
+For the sample response, `next_start_commit`'s value is `bf642ec4272a28dd4a785c67932e2e42bc4508cb`, so if you want to get more file history, send a request with `commit_id` parameter.
+
+```
+curl -H 'Authorization: Token 2bac21cab9eb0c4baac10d1e6fc3cf590f0dcf17' -H 'Accept: application/json; charset=utf-8; indent=4' "http://192.168.1.113:8000/api/v2.1/repos/f26331a8-8acd-4c3d-9c73-352c595c36c8/file/history/?path=/Work/Seafile/for-test-web-api.md&commit_id=bf642ec4272a28dd4a785c67932e2e42bc4508cb"
+```
+
+Then more file history returned.
+
+```
+{
+    "next_start_commit": "8747a025a7034e445fcfe3d351ac94b4d332564f",
+    "data": [
+        {
+            "commit_id": "82fc46eb0fc35cec7db64845d4db7ab6bfae70bc",
+            "rev_file_id": "a1c31c771ff069edd80acc8b3ae16c3428b8ad36",
+            "ctime": "2018-01-30T17:27:59+08:00",
+            "creator_name": "lian",
+            "creator_email": "lian@lian.com",
+            "rev_renamed_old_path": null,
+            "creator_avatar_url": "/media/avatars/default.png",
+            "path": "/Work/Seafile/for-test-web-api.md",
+            "creator_contact_email": "lian@lian.com",
+            "size": 15829,
+            "description": "Modified \"for-test-web-api.md\""
+        },
+        {
+            "commit_id": "ce12a11a0a2e1cf5dd2bc8a453b1ef2b12511ed1",
+            "rev_file_id": "059fb6daa974f528d0be3c6e7072d5c71fd65a34",
+            "ctime": "2018-01-20T12:26:06+08:00",
+            "creator_name": "lian",
+            "creator_email": "lian@lian.com",
+            "rev_renamed_old_path": null,
+            "creator_avatar_url": "/media/avatars/default.png",
+            "path": "/Work/Seafile/for-test-web-api.md",
+            "creator_contact_email": "lian@lian.com",
+            "size": 15831,
+            "description": "Modified \"for-test-web-api.md\""
+        }
+    ]
+}
+```
+
+**Errors**
+
+* 400 path invalid.
+* 403 Permission denied.
+* 404 Library/File not found.
+* 500 Internal Server Error
 
 ### <a id="restore-file-from-history"></a>Restore File From History
 
@@ -3798,6 +4577,7 @@ After getting the upload link, POST to this link for uploading files.
 * relative_path: sub path of "parent_dir", if this sub path does not exist, Seafile will create it recursively.
 * ret-json: returns a json array including file info if set to `1`.
 * need_idx_progress: return a `task_id` to check progress of file uploading if set to `true`.
+* replace: whether overwrite file with the same name. 1 for replace, 0 for not replace.
 
 > NOTE:
 > 1. `parent_dir` must endswith `/`
@@ -3805,9 +4585,11 @@ After getting the upload link, POST to this link for uploading files.
 
 **Sample request**
 
-upload file to `/path-in-seafile-repo/`:
+upload file to `/path-in-seafile-repo/`, if a file named 'test.txt' already exists in `/path-in-seafile-repo/`, replace it with the new file:
 
 ```
+curl -H "Authorization: Token f2210dacd9c6ccb8133606d94ff8e61d99b477fd" -F file=@local-folder/test.txt -F parent_dir=/path-in-seafile-repo/ -F replace=1 http://cloud.seafile.com:8082/upload-api/73c5d117-3bcf-48a0-aa2a-3f48d5274ae3
+
 curl -H "Authorization: Token f2210dacd9c6ccb8133606d94ff8e61d99b477fd" -F file=@local-folder/test.txt -F parent_dir=/path-in-seafile-repo/ http://cloud.seafile.com:8082/upload-api/73c5d117-3bcf-48a0-aa2a-3f48d5274ae3
 ```
 
@@ -3870,7 +4652,7 @@ http://192.168.1.113:8082/idx_progress?task_id=d319a3f4-40da-4d58-9d3f-07864061f
 ```
 **Note**
 
-- New uploaded file name will be 'test(1).text' if a file with name 'test.txt' already exists in parent directory
+- If 'replace=1' is not specified, new uploaded file name will be 'test(1).text' if a file with name 'test.txt' already exists in parent directory
 
 - For python client uploading, see <https://github.com/haiwen/webapi-examples/blob/master/python/upload-file.py>, or it can be done much more easily with elegant [python requests library](http://docs.python-requests.org/en/latest/), see <https://github.com/haiwen/webapi-examples/blob/master/python/upload-file2.py>
 
@@ -3879,6 +4661,196 @@ http://192.168.1.113:8082/idx_progress?task_id=d319a3f4-40da-4d58-9d3f-07864061f
     400 Bad request
     440 Invalid filename
     500 Internal server error
+
+### <a id="resumable-upload-file"></a>Resumable Upload File
+
+Can only be used when size of file to be uploaded bigger than 100MB.
+
+#### <a id="resumable-check-if-enabled"></a>Check If Enable Resumable Upload
+
+**GET** http://192.168.1.113:8000/api/v2.1/repos/{repo_id}/file-uploaded-bytes/?parent_dir={parent_dir}&file_name={file_name}
+
+**Request parameters**
+
+* repo_id
+* parent_dir
+* file_name
+
+**Sample request**
+
+```
+curl -v -H 'Authorization: Token e71c00e93af863ba9bcddb61a46bb4de11d713fc' -H 'Accept: application/json; charset=utf-8; indent=4' "http://192.168.1.113:8000/api/v2.1/repos/09b7d3c0-5f0d-49be-9318-7ca136f386cd/file-uploaded-bytes/?parent_dir=/&file_name=test.md"
+```
+
+**Sample response**
+
+```
+*   Trying 192.168.1.113...
+* Connected to 192.168.1.113 (192.168.1.113) port 8000 (#0)
+> GET /api/v2.1/repos/09b7d3c0-5f0d-49be-9318-7ca136f386cd/file-uploaded-bytes/?parent_dir=/&file_name=test.md HTTP/1.1
+> Host: 192.168.1.113:8000
+> User-Agent: curl/7.50.1
+> Authorization: Token e71c00e93af863ba9bcddb61a46bb4de11d713fc
+> Accept: application/json; charset=utf-8; indent=4
+>
+* HTTP 1.0, assume close after body
+< HTTP/1.0 200 OK
+< Date: Fri, 01 Jun 2018 08:59:27 GMT
+< Server: WSGIServer/0.1 Python/2.7.12+
+< Content-Length: 26
+< Content-Language: en
+< Accept-Ranges: bytes
+< Vary: Accept, Accept-Language, Cookie
+< Allow: GET, HEAD, OPTIONS
+< Content-Type: application/json; charset=utf-8; indent=4
+<
+{
+    "uploadedBytes": 0
+* Closing connection 0
+}
+```
+
+If the response has this header `Accept-Ranges: bytes`, means that Seafile server supports resumable upload file.
+
+**Errors**
+
+- 400 parent_dir/file_name invalid.
+- 404 Library/Folder not found.
+- 500 Internal server error
+
+#### <a id="resumable-get-upload-link"></a>Get Upload Link
+
+Same as <a href="#get-upload-link">Get Upload Link</a>
+
+#### <a id="resumable-get-bytes-already-upload"></a>Get Bytes Already Uploaded
+
+**GET** http://192.168.1.113:8000/api/v2.1/repos/{repo_id}/file-uploaded-bytes/?parent_dir={parent_dir}&file_name={file_name}
+
+**Request parameters**
+
+* repo_id
+* parent_dir
+* file_name
+
+**Sample request**
+
+```
+curl -v -H 'Authorization: Token e71c00e93af863ba9bcddb61a46bb4de11d713fc' -H 'Accept: application/json; charset=utf-8; indent=4' "http://192.168.1.113:8000/api/v2.1/repos/09b7d3c0-5f0d-49be-9318-7ca136f386cd/file-uploaded-bytes/?parent_dir=/path-in-seafile-repo/&file_name=test.md"
+```
+
+**Sample response**
+
+File has not been uploaded before.
+
+```
+{
+    "uploadedBytes": 0
+}
+```
+
+File has already been uploaded 149946368 bytes. If you want to continue uploading this file, upload it begin with 149946368 bytes.
+
+```
+{
+    "uploadedBytes": 149946368
+}
+```
+
+**Errors**
+
+- 400 parent_dir/file_name invalid.
+- 404 Library/Folder not found.
+- 500 Internal server error
+
+#### <a id="resumable-upload-file-1"></a>Upload File
+
+After getting the upload link and `uploadedBytes`, POST to this link for uploading files.
+
+**POST** http://cloud.seafile.com:8082/upload-api/73c5d117-3bcf-48a0-aa2a-3f48d5274ae3
+
+**Request parameters**
+
+* file: local file path.
+* parent_dir : path in your Seafile repo that you want to upload local file to.
+* replace: whether overwrite file with the same name. 1 for replace, 0 for not replace.
+
+**Sample request**
+
+upload file to `/path-in-seafile-repo/`, if a file named 'test.txt' already exists in `/path-in-seafile-repo/`, replace it with the new file::
+
+```
+curl -H "Authorization: Token f2210dacd9c6ccb8133606d94ff8e61d99b477fd" -H "Content-Range: bytes 149946368-150994943/1587609600" -F file=@test.md -F parent_dir=/path-in-seafile-repo/ -F replace=1 http://cloud.seafile.com:8082/upload-api/73c5d117-3bcf-48a0-aa2a-3f48d5274ae3
+```
+
+* `149946368-150994943` means is now uploading 149946368-150994943 bytes.
+* `1587609600` is file's total bytes.
+
+Example of Request Payload
+
+```
+------WebKitFormBoundaryiUPBhwtLnoqOBFlA
+Content-Disposition: form-data; name="parent_dir"
+
+/
+------WebKitFormBoundaryiUPBhwtLnoqOBFlA
+Content-Disposition: form-data; name="file"; filename="ubuntu-16.04.3-desktop-amd64.iso"
+Content-Type: application/x-cd-image
+
+...file content...
+```
+
+**Sample response**
+
+```
+{
+    "success": true
+}
+```
+
+After the whole file is uploaded, Seafile will do some background index task for this file, it will take time if the file is very large.
+
+If you don't want to wait, you can pass a `need_idx_progress` parameter when you send file upload request.
+
+**Sample request**
+
+upload file to `/path-in-seafile-repo/`:
+
+```
+curl -H "Authorization: Token f2210dacd9c6ccb8133606d94ff8e61d99b477fd" -H "Content-Range: bytes 149946368-150994943/1587609600" -F file=@test.md -F parent_dir=/path-in-seafile-repo/ "http://cloud.seafile.com:8082/upload-api/73c5d117-3bcf-48a0-aa2a-3f48d5274ae3?need_idx_progress=true"
+```
+
+A task id will be returned.
+
+```
+b6a30c27-73ea-415f-bff1-cd4025585b00
+```
+
+Then, you can use this task id to check the background index task progress.
+
+```
+{
+    "indexed":602,
+    "total":602,
+    "status":0,
+    "ret_json":"[
+        {
+            \"name\": \"book.json\",
+            \"id\": \"dfb70f907118e0a96c249316281de429d485d8b2\",
+            \"size\": 602
+        }
+    ]"
+}
+```
+
+Note: You should upload up to 1MB of file content every request.
+
+**Errors**
+
+```
+400 Bad request
+440 Invalid filename
+500 Internal server error
+```
 
 ### <a id="update-file"></a>Update file
 
@@ -3932,26 +4904,135 @@ The id of the updated file
 - 440 Invalid filename
 - 500 Internal server error
 
-### <a id="get-upload-blks-link"></a>Get Upload Blocks Link
+### <a id="get-upload-blocks-link"></a>Uploading Large File in Blocks
 
-**GET** https://cloud.seafile.com/api2/repos/{repo-id}/upload-blks-link/
+#### Step 1, POST the block list to Seahub
+
+**POST** https://cloud.seafile.com/api2/repos/{repo-id}/upload-blks-link/?p=/parent-folder-path
 
 **Request parameters**
 
-* repo-id
+* `repo-id`.
+* `p`, parent folder path, default is `/`.
+* `blklist`: string of block ids, seperated by `,`, for example:
 
 **Sample request**
 
-    curl -H "Authorization: Token f2210dacd9c6ccb8133606d94ff8e61d99b477fd" https://cloud.seafile.com/api2/repos/99b758e6-91ab-4265-b705-925367374cf0/upload-blks-link/
+```
+curl -H "Authorization: Token 2bac21cab9eb0c4baac10d1e6fc3cf590f0dcf17" -d 'blklist=1faee57feb464aa1f61165722c93a5075d1993ff,0cfc000bbde26a7b9d4754103501af76a7a' http://192.168.1.113:8000/api2/repos/d4f596ed-09ea-4ac6-8d59-12acbd089097/upload-blks-link/?p=/
+```
 
 **Sample response**
 
-    "https://cloud.seafile.com/seafhttp/upload-blks-api/569213db-7297-457a-907d-e2259a277c05"
+The response is in json format containing the following fields:
+
+* rawblksurl: the url to upload raw blocks to file server
+* commiturl: the url to commit file in file server
+* blklist: the block id list of the missing blocks
+
+
+```
+{
+    "blklist": [
+        "1faee57feb464aa1f61165722c93a5075d1993ff",
+        "0cfc000bbde26a7b9d4754103501af76a7a"],
+    "commiturl": "http://192.168.1.113:8082/upload-blks-api/8bd0ae30-e543-4e03-84ce-03a3cc79e14a?commitonly=true&ret-json=true",
+    "rawblksurl": "http://192.168.1.113:8082/upload-raw-blks-api/8bd0ae30-e543-4e03-84ce-03a3cc79e14a"
+}
+```
 
 **Errors**
 
-- 403 Can not access repo
-- 520 above quota
+* 403 Permission denied.
+* 404 Folder not found.
+* 404 Library not found.
+* 443 Out of quota.
+* 500 Internal Server Error
+
+#### Step 2, upload missing blocks to rawblksurl
+
+```
+POST http://server-address:8082/upload-raw-blks-api/<token>
+```
+
+**Request parameters**
+
+* filename: file block id.
+
+The content of the request is in multipart form-data format.
+
+```
+------WebKitFormBoundaryWWPdItXjNGBDlSuZ
+Content-Disposition: form-data; name="file"; filename=<block id>
+Content-Type: text/xml
+
+
+------WebKitFormBoundaryWWPdItXjNGBDlSuZ--
+```
+
+Each block is sent in a file field. You should set `filename` attribute to the id of each block.
+
+**Sample request**
+
+```
+curl -F file=@1.txt -F filename=1faee57feb464aa1f61165722c93a5075d1993ff https://dev.seafile.com/seafhttp/upload-raw-blks-api/389479a2-01fb-4073-8cd3-8f5115e78fc9
+```
+
+**Success**
+
+   Response code 200 if everything is ok
+
+**Errors**
+
+* 400 Invalid URL | Access denied | Duplicate progress id | Invalid Seafile-Content-Range
+* 440 Invalid filename
+* 441 File already exists
+* 442 File size is too large
+* 443 Out of quota
+* 500 Internal error
+
+### Step 3, let the server to commit the file
+
+```
+POST commiturl: `http://server-address:8082/upload-blks-api/<token>?commitonly=true&ret-json=true`
+```
+
+The content is in multipart form-data format. Fields and corresponding values are:
+
+**Request parameters**
+
+* parent_dir: parent directory path
+* file_name: file name
+* file_size: file size in bytes
+* replace: whether overwrite file with the same name. 1 for replace, 0 for not replace.
+* blockids: block id list of the file in JSON list format
+
+**Sample request**
+
+```
+curl -d "parent_dir=/&file_name=1.md&file_size=1234&replace=0&blockids=["1faee57feb464aa1f61165722c93a5075d1993ff","0cfc000bbde26a7b9d4754103501af76a7a36f89"]" -H 'Accept: application/json; charset=utf-8; indent=4' https://dev.seafile.com/seafhttp/upload-blks-api/389479a2-01fb-4073-8cd3-8f5115e78fc9?commitonly=true&ret-json=true
+```
+
+**Sample response**
+
+If you set 'ret-json' into url arguments, new_file_id will be returned
+
+```
+{
+    "id": "4ccd37916552e2943314027931edd0b45240be7c"
+}
+```
+
+**Errors**
+
+* 400 Invalid URL | Access denied | Duplicate progress id | Invalid Seafile-Content-Range
+* 440 Invalid filename
+* 441 File already exists
+* 442 File size is too large
+* 443 Out of quota
+* 446 Block missing
+* 403 Permission denied
+* 500 Internal error
 
 ### <a id="get-update-blks-link"></a>Get Update Blocks Link
 
@@ -4153,6 +5234,38 @@ The id of the updated file
 * 403 Can not access repo
 * 404 Folder not found
 * 500 Internal error
+
+### <a id="get-smart-link-for-a-file"></a>Get Smart Link for a File
+
+**GET** "http://192.168.1.113:8000/api/v2.1/smart-link/?repo_id={repo_id}&path={path}&is_dir={is_dir}"
+
+**Request parameters**
+
+* `repo_id`
+* `path`, path of file/folder.
+* `is_dir`, `true` or `false`.
+
+**Sample request for view**
+
+```
+curl -H "Authorization: Token 1cb7908b876d9b1708c757a347f2e6346456ab91" -H 'Accept: application/json; indent=4' "http://192.168.1.113:8000/api/v2.1/smart-link/?repo_id=d4f596ed-09ea-4ac6-8d59-12acbd089097&path=/8.md&is_dir=false"
+```
+
+**Sample response**
+
+```
+{
+    "smart_link": "http://192.168.1.113:8000/smart-link/3eb1657f-db82-4329-a05e-9c087022fb2f/8.md"
+}
+```
+
+**Errors**
+
+* 400 repo_id/path/is_dir invalid.
+* 400 is_dir can only be 'true' or 'false'.
+* 403 Permission denied.
+* 404 Library/Foldef/File/ not found.
+* 500 Internal Server Error
 
 ## <a id="directory"></a>Directory
 
@@ -4422,6 +5535,38 @@ Perform the following two steps to download directory
 * 400 commit_id invalid.
 * 404 Library/Folder not found.
 * 403 Permission denied.
+* 500 Internal Server Error
+
+### <a id="move-directory-merge"></a>Move Directory Merge
+
+**POST** http://192.168.1.113:8000/api/v2.1/move-folder-merge/
+
+* src_repo_id
+* src_parent_dir
+* src_dirent_name
+* dst_repo_id
+* dst_parent_dir
+
+**Sample request**
+
+```
+curl -d 'src_repo_id=09b7d3c0-5f0d-49be-9318-7ca136f386cd&src_parent_dir=/&src_dirent_name=1&dst_repo_id=d4aac5b9-28d4-4372-a4b3-d6de171402df&dst_parent_dir=/' -H 'Authorization: Token 2bac21cab9eb0c4baac10d1e6fc3cf590f0dcf17' -H 'Accept: application/json; charset=utf-8; indent=4' "http://192.168.1.113:8000/api/v2.1/move-folder-merge/"
+```
+
+**Sample response**
+
+```
+{
+    "success": true
+}
+```
+
+**Errors**
+
+* 400 parameter invalid.
+* 404 Library/Folder not found.
+* 403 Permission denied.
+* 443 Out of quota.
 * 500 Internal Server Error
 
 ##### <a id="download-directory-query-task-progress"></a>Query Task Progress
@@ -5268,39 +6413,60 @@ If scope parameter is passed then accounts will be searched inside the specific 
 
 ### <a id="admin-only-update-account"></a>Update Account
 
-**PUT** https://cloud.seafile.com/api2/accounts/{email}/
+**PUT** https://cloud.seafile.com/api/v2.1/admin/users/
 
 **Request parameters**
 
 At least one of followings:
 
-* password
-* is_staff
-* is_active
+* is_staff, `true` or `false`.
+* is_active, `true` or `false`.
+* role
 * name
-* note
-* storage, the unit is MB.
+* login_id
+* contact_email
+* reference_id
+* department
+* quota_total_mb, the unit is MB.
 
 **Sample request**
 
-    curl -v -X PUT -d "password=654321&is_staff=true&storage=100" -H "Authorization: Token f2210dacd9c6ccb8133606d94ff8e61d99b477fd" -H 'Accept: application/json; indent=4' https://cloud.seafile.com/api2/accounts/user@mail.com/
+Update user's role.
+
+```
+curl -X PUT -d 'role=guest' -H "Authorization: Token 5eba8c2f983404e33b140b13a1d050b9a4440e03" -H 'Accept: application/json; indent=4' "http://192.168.1.113:8000/api/v2.1/admin/users/1@1.com/"
+```
 
 **Sample response**
 
-    ...
-    < HTTP/1.0 200 OK
-    ...
-
-    "success"
-
-**Success**
-
-    Response code 200(OK) is returned.
+```
+{
+    "login_id": "",
+    "quota_usage": 859349,
+    "name": "1",
+    "create_time": "2018-08-18T10:39:01+08:00",
+    "is_active": true,
+    "is_staff": false,
+    "contact_email": "",
+    "reference_id": "",
+    "department": "",
+    "quota_total": 2000000,
+    "role": "guest",
+    "email": "1@1.com"
+}
+```
 
 **Errors**
 
-* 400 Bad Request, keyword password is required
-* 403 Permission error, only administrator can perform this action
+* 400 Bad Request, is_staff invalid.
+* 400 Bad Request, is_active invalid.
+* 400 Bad Request, Name is too long (maximum is 64 characters).
+* 400 Bad Request, Name should not include '/'.
+* 400 Bad Request, Contact email invalid.
+* 400 Bad Request, Department is too long (maximum is 512 characters).
+* 400 Bad Request, Space quota is too low (minimum value is 0).
+* 404 User not found.
+* 500 Internal Server Error
 
 ### <a id="admin-only-migrate-account"></a>Migrate Account
 
@@ -5829,6 +6995,181 @@ Available for Seafile v6.0.0+
 * 404 Folder not found.
 * 500 Internal Server Error
 
+### <a id="admin-only-get-all-deleted-librares"></a>Get All Deleted Libraries
+
+**GET** http://192.168.1.113:8000/api/v2.1/admin/trash-libraries/
+
+* `page`, default 1.
+* `per_page`, default 100.
+
+**Sample request**
+
+```
+curl -H 'Authorization: Token 2bac21cab9eb0c4baac10d1e6fc3cf590f0dcf17' -H 'Accept: application/json; charset=utf-8; indent=4' "http://192.168.1.113:8000/api/v2.1/admin/trash-libraries/"
+```
+
+**Sample response**
+
+```
+{
+    "page_info": {
+        "current_page": 1,
+        "has_next_page": false
+    },
+    "repos": [
+        {
+            "owner": "1@1.com",
+            "delete_time": "2018-06-04T17:24:55+08:00",
+            "name": "a-stor-2",
+            "id": "ed46b580-8df7-4a2b-bb45-c3d179cfc668"
+        },
+        {
+            "owner": "1@1.com",
+            "delete_time": "2018-06-04T17:24:54+08:00",
+            "name": "a-st",
+            "id": "560d9b7b-fd24-4ce3-9e4a-20a953bee1b9"
+        },
+        {
+            "owner": "lian@lian.com",
+            "delete_time": "2018-06-04T17:21:35+08:00",
+            "name": "dst",
+            "id": "09b7d3c0-5f0d-49be-9318-7ca136f386cd"
+        },
+        {
+            "owner": "lian@lian.com",
+            "delete_time": "2018-06-04T17:21:32+08:00",
+            "name": "k",
+            "id": "fbf4b69c-5a46-41a3-a9a3-58c1274ec536"
+        },
+        {
+            "owner": "lian@lian.com",
+            "delete_time": "2018-06-04T17:21:29+08:00",
+            "name": "src",
+            "id": "d4aac5b9-28d4-4372-a4b3-d6de171402df"
+        }
+    ]
+}
+```
+
+**Errors**
+
+* 403 Permission error, only administrator can perform this action
+* 500 Internal Server Error
+
+
+### <a id="admin-only-get-deleted-librares-by-owner"></a>Get Deleted Libraries by Owner
+
+**GET** http://192.168.1.113:8000/api/v2.1/admin/trash-libraries/?owner={owner}
+
+* `owner`, library owner's email.
+
+**Sample request**
+
+```
+curl -H 'Authorization: Token 2bac21cab9eb0c4baac10d1e6fc3cf590f0dcf17' -H 'Accept: application/json; charset=utf-8; indent=4' "http://192.168.1.113:8000/api/v2.1/admin/trash-libraries/?owner=1@1.com"
+```
+
+**Sample response**
+
+```
+{
+    "repos": [
+        {
+            "owner": "1@1.com",
+            "delete_time": "2018-06-04T17:24:55+08:00",
+            "name": "a-stor-2",
+            "id": "ed46b580-8df7-4a2b-bb45-c3d179cfc668"
+        },
+        {
+            "owner": "1@1.com",
+            "delete_time": "2018-06-04T17:24:54+08:00",
+            "name": "a-st",
+            "id": "560d9b7b-fd24-4ce3-9e4a-20a953bee1b9"
+        }
+    ],
+    "search_owner": "1@1.com"
+}
+```
+
+**Errors**
+
+* 403 Permission error, only administrator can perform this action
+* 500 Internal Server Error
+
+### <a id="admin-only-clean-deleted-library"></a>Clean Deleted Library
+
+**DELETE** http://192.168.1.113:8000/api/v2.1/admin/trash-libraries/{repo_id}/
+
+* `repo_id`, deleted library's id.
+
+**Sample request**
+
+```
+curl -X DELETE -H 'Authorization: Token 2bac21cab9eb0c4baac10d1e6fc3cf590f0dcf17' -H 'Accept: application/json; charset=utf-8; indent=4' "http://192.168.1.113:8000/api/v2.1/admin/trash-libraries/560d9b7b-fd24-4ce3-9e4a-20a953bee1b9/"
+```
+
+**Sample response**
+
+```
+{
+    "success": true
+}
+```
+
+**Errors**
+
+* 403 Permission error, only administrator can perform this action
+* 500 Internal Server Error
+
+### <a id="admin-only-restore-deleted-library"></a>Restore Deleted Library
+
+**PUT** http://192.168.1.113:8000/api/v2.1/admin/trash-libraries/d4aac5b9-28d4-4372-a4b3-d6de171402df/
+
+* `repo_id`, deleted library's id.
+
+**Sample request**
+
+```
+curl -X PUT -H 'Authorization: Token 2bac21cab9eb0c4baac10d1e6fc3cf590f0dcf17' -H 'Accept: application/json; charset=utf-8; indent=4' "http://192.168.1.113:8000/api/v2.1/admin/trash-libraries/d4aac5b9-28d4-4372-a4b3-d6de171402df/"
+```
+
+**Sample response**
+
+```
+{
+    "success": true
+}
+```
+
+**Errors**
+
+* 403 Permission error, only administrator can perform this action
+* 404 Library does not exist in trash.
+* 500 Internal Server Error
+
+### <a id="admin-only-clean-all-deleted-libraries"></a>Clean ALl Deleted Libraries
+
+**DELETE** http://192.168.1.113:8000/api/v2.1/admin/trash-libraries/
+
+**Sample request**
+
+```
+curl -X DELETE -H 'Authorization: Token 2bac21cab9eb0c4baac10d1e6fc3cf590f0dcf17' -H 'Accept: application/json; charset=utf-8; indent=4' "http://192.168.1.113:8000/api/v2.1/admin/trash-libraries/"
+```
+
+**Sample response**
+
+```
+{
+    "success": true
+}
+```
+
+**Errors**
+
+* 403 Permission error, only administrator can perform this action
+* 500 Internal Server Error
+
 ## <a id="admin-only-shares"></a>Shares
 
 ### <a id="admin-only-get-repo-user-shares"></a>Get Repo User Shares
@@ -6242,6 +7583,38 @@ Available for Seafile v6.0.0+
 * 404 User not found.
 * 500 Internal Server Error
 
+### <a id="admin-only-set-group-quota"></a>Set Group Quota
+
+Available for Seafile v6.3
+
+**PUT** https://cloud.seafile.com/api/v2.1/admin/groups/{group_id}/
+
+**Request parameters**
+
+* `quota`: integer, `-2` means no quota limit.
+
+**Sample request**
+
+    curl -X PUT -d "quota=100" -H 'Authorization: Token 444d2bbf1fc78ffbeedc4704c9f41e32d926ac94' https://cloud.seafile.com/api/v2.1/admin/groups/1528/
+
+**Sample response**
+
+```
+{
+    "owner": "1@1.com",
+    "created_at": "2016-08-04T17:34:05+08:00",
+    "id": 1528,
+    "name": "test_group",
+    "quota": 100
+}
+```
+
+**Errors**
+
+* 400 Quota invalid.
+* 403 Permission error, only administrator can perform this action
+* 500 Internal Server Error
+
 ### <a id="admin-only-get-group-libraries"></a>Get Group Libraries
 
 Available for Seafile v6.0.0+
@@ -6434,6 +7807,102 @@ Available for Seafile v6.0.8+
 * 400 email invalid.
 * 400 is_admin invalid.
 * 404 Group/User not found.
+* 500 Internal Server Error
+
+### <a id="admin-only-add-group-owned-library"></a>Add Group Owned Library
+
+**POST** http://192.168.1.113:8000/api/v2.1/admin/groups/{group_id}/group-owned-libraries/
+
+**Request parameters**
+
+* `group_id`
+* `repo_name`
+* `password`
+* `permission`, default `rw`.
+
+**Sample request**
+
+```
+curl -d "repo_name=group-owned-repo-4&permission=r" -H 'Authorization: Token f2210dacd9c6ccb8133606d94ff8e61d99b477fd' "http://192.168.1.113:8000/api/v2.1/amdin/groups/53/group-owned-libraries/"
+```
+
+**sample response**
+
+```
+{
+    "repo_id": "9bc59af9-265e-4110-a0e2-619450a5cb35",
+    "permission": "r",
+    "encrypted": false,
+    "owner_email": "53@seafile_group",
+    "mtime": "2018-04-23T17:25:37+08:00",
+    "repo_name": "group-owned-repo-4",
+    "size": 0
+}
+```
+
+**Errors**
+
+* 400 repo_name/permission invalid.
+* 403 NOT allow to create encrypted library..
+* 403 Permission denied.
+* 403 No group quota.
+* 404 Group not found.
+
+### <a id="admin-only-delete-group-owned-library"></a>Delete Group Owned Library
+
+**DELETE** http://192.168.1.113:8000/api/v2.1/admin/groups/{group_id}/group-owned-libraries/{repo_id}/
+
+**Request parameters**
+
+* `group_id`
+* `repo_id`
+
+**Sample request**
+
+```
+curl -X DELETE -H 'Authorization: Token f2210dacd9c6ccb8133606d94ff8e61d99b477fd' "http://192.168.1.113:8000/api/v2.1/admin/groups/53/group-owned-libraries/9bc59af9-265e-4110-a0e2-619450a5cb35/"
+```
+
+**sample response**
+
+```
+{"success":true}
+```
+
+**Errors**
+
+* 403 Permission denied.
+* 404 Group/Library not found.
+* 500 Internal Server Error
+
+#### <a id="admin-only-modify-group-owned-library-sub-folder-permission"></a>Modify Group Owned Library Sub-Folder Permission
+
+**PUT** http://192.168.1.113:8000/api/v2.1/admin/groups/{group_id}/group-owned-libraries/{repo_id}/
+
+**Request parameters**
+
+* `group_id`
+* `repo_id`
+* `path`, path of sub folder.
+* `permission`: `r` or `rw`.
+
+**Sample request**
+
+```
+curl -X PUT -d "path=/tmp/&permission=r" -H 'Authorization: Token f2210dacd9c6ccb8133606d94ff8e61d99b477fd' "http://192.168.1.113:8000/api/v2.1/admin/groups/53/group-owned-libraries/9bc59af9-265e-4110-a0e2-619450a5cb35/"
+```
+
+**sample response**
+
+```
+{"success":true}
+```
+
+**Errors**
+
+* 400 path/permission invalid.
+* 403 Permission denied.
+* 404 Group/Library/Folder not found.
 * 500 Internal Server Error
 
 ##### Unset a group member as admin
@@ -6919,11 +8388,128 @@ This api is only supported in pro edition.
 
 **Sample request**
 
-    curl -v -X POST -d "username=example@example.com&password=example&org_name=example&prefix=example&quota=100&member_limit=10" -H "Authorization: Token ccdff90e4d1efe76b2b3d91c06b027a5cff189d4" -H 'Accept: application/json; indent=4' https://cloud.seafile.com/api2/organization/
+```
+curl -v -X POST -d "username=example@example.com&password=example&org_name=example&prefix=example&quota=100&member_limit=10" -H "Authorization: Token ccdff90e4d1efe76b2b3d91c06b027a5cff189d4" -H 'Accept: application/json; indent=4' https://cloud.seafile.com/api2/organization/
+```
 
 **Sample response**
 
-    "success"
+```
+"success"
+```
+
+**Errors**
+
+* 400 Missing argument
+* 400 Email is not valid
+* 400 Quota is not valid
+* 400 URL prefix can only be letters(a-z), numbers, and the underscore character
+* 400 A user with this email already exists
+* 400 An organization with this prefix already exists
+* 403 Feature is not enabled.
+
+### <a id="admin-only-get-organization-info"></a>Get Organization Info
+
+**GET** http://192.168.1.113:8000/api/v2.1/admin/organizations/{org_id}/
+
+**Request parameters**
+
+* org_id
+
+**Sample request**
+
+```
+curl -H 'Authorization: Token 2bac21cab9eb0c4baac10d1e6fc3cf590f0dcf17' -H 'Accept: application/json; charset=utf-8; indent=4' "http://192.168.1.113:8000/api/v2.1/admin/organizations/3/"
+```
+
+**Sample response**
+```
+{
+    "org_name": "123123",
+    "ctime": "2018-06-04T16:54:08+08:00",
+    "creator_name": "1234",
+    "max_user_number": 1232,
+    "creator_email": "1234@1.com",
+    "org_id": 3,
+    "quota": -2,
+    "creator_contact_email": "1234@1.com",
+    "org_url_prefix": "123"
+}
+```
+
+**Errors**
+
+* 400 org_id invalid.
+* 403 Feature is not enabled.
+* 404 Organization not found.
+* 500 Internal Server Error
+
+### <a id="admin-only-update-organization-info"></a>Update Organization Info
+
+**PUT** http://192.168.1.113:8000/api/v2.1/admin/organizations/{org_id}/
+
+**Request parameters**
+
+* org_id
+* org_name
+* max_user_number
+* quota
+
+**Sample request**
+
+```
+curl -X PUT -d "org_name=new_org_name&max_user_number=321&quota=4565" -H 'Authorization: Token 2bac21cab9eb0c4baac10d1e6fc3cf590f0dcf17' -H 'Accept: application/json; charset=utf-8; indent=4' "http://192.168.1.113:8000/api/v2.1/admin/organizations/3/"
+```
+
+**Sample response**
+```
+{
+    "org_name": "new_org_name",
+    "ctime": "2018-06-04T16:54:08+08:00",
+    "creator_name": "1234",
+    "max_user_number": 321,
+    "creator_email": "1234@1.com",
+    "org_id": 3,
+    "quota": 4565000000,
+    "creator_contact_email": "1234@1.com",
+    "org_url_prefix": "123"
+}
+```
+
+**Errors**
+
+* 400 org_id/max_user_number/quota invalid.
+* 403 Feature is not enabled.
+* 404 Organization not found.
+* 500 Internal Server Error
+
+### <a id="admin-only-delete-organization"></a>Delete Organization
+
+**DELETE** http://192.168.1.113:8000/api/v2.1/admin/organizations/{org_id}/
+
+**Request parameters**
+
+* org_id
+
+**Sample request**
+
+```
+curl -X DELETE  -H 'Authorization: Token 2bac21cab9eb0c4baac10d1e6fc3cf590f0dcf17' -H 'Accept: application/json; charset=utf-8; indent=4' "http://192.168.1.113:8000/api/v2.1/admin/organizations/3/"
+```
+
+**Sample response**
+```
+{
+    "success": true
+}
+```
+
+**Errors**
+
+* 400 org_id invalid.
+* 403 Feature is not enabled.
+* 404 Organization not found.
+* 500 Internal Server Error
 
 ### <a id="admin-only-add-organization-user"></a>Add Organization User
 
@@ -7072,3 +8658,158 @@ This api is only supported in pro edition (since 6.0.9).
 * 404 Organization not found.
 * 404 User not found.
 * 500 Internal Server Error
+
+## <a id="admin-only-department"></a>Department
+
+### <a id="admin-only-list-departments"></a> List departments
+
+**GET** http://192.168.1.113:8000/api/v2.1/admin/address-book/groups/
+
+**Sample request**
+
+```
+curl -H 'Authorization: Token 2bac21cab9eb0c4baac10d1e6fc3cf590f0dcf17' -H 'Accept: application/json; charset=utf-8; indent=4' http://192.168.1.113:8000/api/v2.1/admin/address-book/groups/
+```
+
+**Sample response**
+
+```
+{
+  "data": [
+    {
+      "name": "test-xxx",
+      "created_at": "2018-06-05T10:45:45+08:00",
+      "quota": -2,
+      "parent_group_id": -1,
+      "owner": "system admin",
+      "id": 176
+    },
+    {
+      "name": "\u7814\u53d1\u90e8",
+      "created_at": "2018-05-24T23:30:07+08:00",
+      "quota": -2,
+      "parent_group_id": -1,
+      "owner": "system admin",
+      "id": 172
+    },
+    {
+      "name": "test1",
+      "created_at": "2018-05-15T11:57:16+08:00",
+      "quota": 1000000000,
+      "parent_group_id": -1,
+      "owner": "system admin",
+      "id": 168
+    }
+  ]
+}
+```
+
+### <a id="admin-only-list-departments-groups"></a> List groups and members in a department
+
+**GET** http://192.168.1.113:8000/api/v2.1/admin/address-book/groups/{group_id}/?return_ancestors=true
+
+**Request parameters**
+
+* return_ancestors (true or false, defaults to false)
+
+**Sample request**
+
+```
+curl -H 'Authorization: Token 2bac21cab9eb0c4baac10d1e6fc3cf590f0dcf17' -H 'Accept: application/json; charset=utf-8; indent=4' http://192.168.1.113:8000/api/v2.1/admin/address-book/groups/172/?return_ancestors=true
+```
+
+**Sample response**
+
+```
+{
+  "id": 172
+  "name": "\u7814\u53d1\u90e8",
+  "created_at": "2018-05-24T23:30:07+08:00",
+  "quota": -2,
+  "members": [
+    {
+      "login_id": "",
+      "avatar_url": "http://192.168.1.113:8000/image-view\/avatars\/9\/3\/45638f87b4642ce4820dbe65e3438d\/resized\/80\/dfad850ea93d405f6e6cf51a9f1e36bf_GrrNVeZ.png",
+      "contact_email": "xxx@gmail.com",
+      "name": "xxx",
+      "is_admin": true,
+      "role": "Admin",
+      "group_id": 172,
+      "email": "xxx@gmail.com"
+    }
+  ],
+  "parent_group_id": -1,
+  "groups": [
+    {
+      "name": "\u5ba2\u6237\u7aef\u7ec4",
+      "created_at": "2018-05-24T23:30:32+08:00",
+      "quota": 5000000000,
+      "parent_group_id": 172,
+      "owner": "system admin",
+      "id": 173
+    },
+    {
+      "name": "\u670d\u52a1\u5668\u5f00\u53d1\u7ec4",
+      "created_at": "2018-05-25T11:55:17+08:00",
+      "quota": -2,
+      "parent_group_id": 172,
+      "owner": "system admin",
+      "id": 174
+    },
+  ],
+  "owner": "system admin",
+  "ancestor_groups": [
+    
+  ],
+}
+```
+
+### <a id="admin-only-create-department"></a> Create department
+
+**POST** http://192.168.1.113:8000/api/v2.1/admin/address-book/groups/
+
+**Request parameters**
+
+* `group_name`
+* `group_owner`	(defaults to '')
+* `parent_group` (Positive Integer, defaults to -1)
+
+**Sample request**
+
+```
+curl -v -d "group_name=xxx&group_owner=system admin" -H 'Authorization: Token f2210dacd9c6ccb8133606d94ff8e61d99b477fd' -H 'Accept: application/json; charset=utf-8; indent=4' http://192.168.1.113:8000/api/v2.1/admin/address-book/groups/
+```
+
+**Sample response**
+
+```
+{
+  "name": "xxx",
+  "created_at": "2018-06-05T10:45:45+08:00",
+  "quota": -2,
+  "parent_group_id": -1,
+  "owner": "system admin",
+  "id": 176
+}
+```
+
+**Errors**
+
+* 400 `group_name` or `parent_group` invalid
+
+### <a id="admin-only-dismiss-department"></a> Dismiss department
+
+**DELETE** http://192.168.1.113:8000/api/v2.1/admin/address-book/groups/{group_id}/
+
+**Sample request**
+
+```
+curl -X DELETE -v  -H 'Authorization: Token f2210dacd9c6ccb8133606d94ff8e61d99b477fd' -H 'Accept: application/json; charset=utf-8; indent=4' http://192.168.1.113:8000/api/v2.1/admin/address-book/groups/176/
+```
+
+**Sample response**
+
+```
+{"success":true}
+```
+

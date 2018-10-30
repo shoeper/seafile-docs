@@ -6,6 +6,8 @@ In version 6.0, we support 10 permissions, more permissions will be added later.
 
 In version 6.1, we added a new permission `role_quota` which can be used to set quota for a certain role of users. For example, we can set the quota of employee to 100G by adding `'role_quota': '100g'`, and leave other role of users to the default quota.
 
+Since version 6.3.6, we added a new permission `can_add_public_repo`(whether or not you can create a public library, default is "False").
+
 Seafile comes with two build-in roles `default` and `guest`, a default user is a normal user with permissions as followings:
 ```
     'default': {
@@ -100,7 +102,7 @@ After that, email address "a@a.com", any email address ends with "@a-a-a.com" an
 
 ## Add custom roles
 
-If you want to add a new role and assign some users with this role, e.g. new role `employee` can invite guest and have all other permissions a default user has, you can add following lines to `seahub_settings.py`
+If you want to add a new role and assign some users with this role, e.g. new role `employee` can invite guest and can create public library and have all other permissions a default user has, you can add following lines to `seahub_settings.py`
 
 ```
 ENABLED_ROLE_PERMISSIONS = {
@@ -142,6 +144,7 @@ ENABLED_ROLE_PERMISSIONS = {
         'can_connect_with_ios_clients': True,
         'can_connect_with_desktop_clients': True,
         'role_quota': '',
+        'can_add_public_repo': True,
     },
 }
 ```

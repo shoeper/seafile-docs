@@ -12,6 +12,14 @@ Seahub caches items(avatars, profiles, etc) on file system by default(/tmp/seahu
 
 Refer to ["add memcached"](../deploy/add_memcached.md).
 
+## Security settings
+
+```python
+# For security consideration, please set to match the host/domain of your site, e.g., ALLOWED_HOSTS = ['.example.com'].
+# Please refer https://docs.djangoproject.com/en/dev/ref/settings/#allowed-hosts for details.
+ALLOWED_HOSTS = ['.myseafile.com']
+```
+
 ## User management options
 
 The following options affect user registration, password and session.
@@ -91,6 +99,18 @@ REPO_PASSWORD_MIN_LENGTH = 8
 # mininum length for password for share link (since version 4.4)
 SHARE_LINK_PASSWORD_MIN_LENGTH = 8
 
+# minimum expire days for share link (since version 6.3.6)
+SHARE_LINK_EXPIRE_DAYS_MIN = 3 # default is 0, no limit.
+
+# maximum expire days for share link (since version 6.3.6)
+SHARE_LINK_EXPIRE_DAYS_MAX = 8 # default is 0, no limit.
+
+# force user login when view file/folder share link (since version 6.3.6)
+SHARE_LINK_LOGIN_REQUIRED = True
+
+# enable water mark when view(not edit) file in web browser (since version 6.3.6)
+ENABLE_WATERMARK = True
+
 # Disable sync with any folder. Default is `False`
 # NOTE: since version 4.2.4
 DISABLE_SYNC_WITH_ANY_FOLDER = True
@@ -105,6 +125,10 @@ ENABLE_USER_CREATE_ORG_REPO = True
 # Enable or disable user share library to any group
 # Since version 6.2.0
 ENABLE_SHARE_TO_ALL_GROUPS = True
+
+# Enable or disable user to clean trash (default is True)
+# Since version 6.3.6
+ENABLE_USER_CLEAN_TRASH = True
 ```
 
 Options for online file preview:
@@ -201,6 +225,13 @@ TIME_ZONE = 'UTC'
 # Default language for sending emails.
 LANGUAGE_CODE = 'en'
 
+# Custom language code choice.
+LANGUAGES = (
+    ('en', 'English'),
+    ('zh-cn', '简体中文'),
+    ('zh-tw', '繁體中文'),
+)
+
 # Set this to your website/company's name. This is contained in email notifications and welcome message when user login for the first time.
 SITE_NAME = 'Seafile'
 
@@ -263,6 +294,18 @@ LIBRARY_TEMPLATES = {
 # This list can be any valid email address, not necessarily the emails of Seafile user.
 # Since version 6.0.8
 VIRUS_SCAN_NOTIFY_LIST = ['user_a@seafile.com', 'user_b@seafile.com']
+
+# Enable a user to change password in 'settings' page. Default to `True`
+# Since version 6.2.11
+ENABLE_CHANGE_PASSWORD = True
+
+# Enable group discussion. Default to `True`
+# Since version 6.2.11
+ENABLE_GROUP_DISCUSSION = True
+
+# Enable file comments. Default to `True`
+# Since version 6.2.11
+ENABLE_FILE_COMMENT = True
 ```
 
 ## RESTful API
@@ -286,7 +329,7 @@ REST_FRAMEWORK_THROTTING_WHITELIST = []
 
 ## Seahub Custom Functions
 
-Since version 6.2, you can define a custome function to modify the result of user search function.
+Since version 6.2, you can define a custom function to modify the result of user search function.
 
 For example, if you want to limit user only search users in the same institution, you can define `custom_search_user` function in `{seafile install path}/conf/seahub_custom_functions/__init__.py`
 

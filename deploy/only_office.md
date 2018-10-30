@@ -451,6 +451,7 @@ LoadModule ssl_module modules/mod_ssl.so
   #
   SetEnvIf Request_URI . proxy-fcgi-pathinfo=unescape
   SetEnvIf Authorization "(.*)" HTTP_AUTHORIZATION=$1
+  ProxyPreserveHost	On
   ProxyPass / fcgi://127.0.0.1:8000/
   
   #

@@ -61,15 +61,15 @@ The Seafile server package requires the following packages have been installed i
 
 - python 2.7
 - python-setuptools
-- python-imaging
 - python-ldap
 - python-urllib3
+- python-requests
 - sqlite3
 
 ```
 #on Debian/Ubuntu 14.04 server
 apt-get update
-apt-get install python2.7 libpython2.7 python-setuptools python-imaging python-ldap python-urllib3 sqlite3
+apt-get install python2.7 libpython2.7 python-setuptools python-ldap python-urllib3 sqlite3 python-requests
 ```
 
 ```
@@ -77,16 +77,18 @@ apt-get install python2.7 libpython2.7 python-setuptools python-imaging python-l
 # As the default python binary on Ubuntu 16.04 server is python 3, we need to install python (python 2) first.
 apt-get update
 apt-get install python
-apt-get install python2.7 libpython2.7 python-setuptools python-imaging python-ldap python-urllib3 ffmpeg python-pip sqlite3
-pip install pillow moviepy
+apt-get install python2.7 libpython2.7 python-setuptools python-ldap python-urllib3 ffmpeg python-pip sqlite3 python-requests
+pip install Pillow==4.3.0
+pip install moviepy  # used in movie file thumbnails
 ```
 
 ```
 # on CentOS 7
 yum -y install epel-release
 rpm --import http://li.nux.ro/download/nux/RPM-GPG-KEY-nux.ro
-yum -y install python-imaging MySQL-python python-memcached python-ldap python-urllib3 ffmpeg ffmpeg-devel
-pip install pillow moviepy
+yum -y install MySQL-python python-memcached python-ldap python-urllib3 ffmpeg ffmpeg-devel python-requests
+pip install Pillow==4.3.0
+pip install moviepy  # used in movie file thumbnails
 ```
 
 #### Setup
@@ -177,6 +179,8 @@ you will be redirected to the Login page. Just enter the admin username and pass
 
 If you want to run Seahub on a port other than the default 8000, say 8001, you must:
 
+**Seafile 6.2.x and previous versions**
+
 - stop the Seafile server
 ```
 ./seahub.sh stop
@@ -193,6 +197,37 @@ SERVICE_URL = http://192.168.1.100:8001
 ```
 ./seafile.sh start
 ./seahub.sh start 8001
+```
+
+See Seafile [Server Configuration Manual](../config/ccnet-conf.md) for more details about ``ccnet.conf``.
+
+**Seafile 6.3.x and above versions**
+
+You can assign the port of Seahub by setting the `conf/gunicorn.conf`.
+
+- stop the Seafile server
+```
+./seahub.sh stop
+./seafile.sh stop
+```
+
+- modify the value of SERVICE_URL in the file [ccnet.conf](../config/ccnet-conf.md), like this: (assume your ip or domain is 192.168.1.100). You can also modify SERVICE_URL via web UI in "System Admin->Settings". (**Warning**: if you set the value both via Web UI and ccnet.conf, the setting via Web UI will take precedence.)
+
+```
+SERVICE_URL = http://192.168.1.100:8001
+```
+
+- **modify the conf/gunicorn.conf**
+
+```
+# default localhost:8000
+bind = "0.0.0.0:8001"
+```
+
+- restart Seafile server
+```
+./seafile.sh start
+./seahub.sh start
 ```
 
 See Seafile [Server Configuration Manual](../config/ccnet-conf.md) for more details about ``ccnet.conf``.

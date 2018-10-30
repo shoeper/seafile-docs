@@ -20,18 +20,18 @@ We also support text message methods by using the Twilio service.
 First you need to install the Twilio python library by
 
 ```
-sudo pip install twilio
+sudo pip install twilio==5.7.0
 ```
 
 After that, append the following lines to `seahub_settings.py`, 
 
 ```
-TWO_FACTOR_SMS_GATEWAY = 'seahub_extra.two_factor.gateways.twilio.gateway.Twilio'
+TWO_FACTOR_SMS_GATEWAY = 'seahub.two_factor.gateways.twilio.gateway.Twilio'
 TWILIO_ACCOUNT_SID = '<your-account-sid>'
 TWILIO_AUTH_TOKEN = '<your-auth-token>'
 TWILIO_CALLER_ID = '<your-caller-id>'
 EXTRA_MIDDLEWARE_CLASSES = (
-    'seahub_extra.two_factor.gateways.twilio.middleware.ThreadLocals',
+    'seahub.two_factor.gateways.twilio.middleware.ThreadLocals',
 )
 ```
 

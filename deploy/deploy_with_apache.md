@@ -53,6 +53,7 @@ Modify Apache config file:
     # seahub
     #
     SetEnvIf Authorization "(.*)" HTTP_AUTHORIZATION=$1
+    ProxyPreserveHost On
     ProxyPass / http://127.0.0.1:8000/
     ProxyPassReverse / http://127.0.0.1:8000/
 </VirtualHost>

@@ -87,6 +87,7 @@ You should create a new virtual host configuration for Shibboleth.
         RewriteRule ^/(media.*)$ /$1 [QSA,L,PT]
         RewriteCond %{REQUEST_FILENAME} !-f
         RewriteCond %{REQUEST_URI} !^/Shibboleth.sso
+        ProxyPreserveHost On
         RewriteRule ^(.*)$ /seahub.fcgi$1 [QSA,L,E=HTTP_AUTHORIZATION:%{HTTP:Authorization}]
 
     </VirtualHost>

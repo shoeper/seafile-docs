@@ -120,6 +120,7 @@ Here is the sample configuration:
   #
   SetEnvIf Request_URI . proxy-fcgi-pathinfo=unescape
   SetEnvIf Authorization "(.*)" HTTP_AUTHORIZATION=$1
+  ProxyPreserveHost On
   ProxyPass /seafile fcgi://127.0.0.1:8000/seafile
 </VirtualHost>
 ```

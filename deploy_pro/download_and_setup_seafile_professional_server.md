@@ -18,10 +18,12 @@ For Ubuntu 16.04:
 
 ```
 sudo apt-get install openjdk-8-jre poppler-utils libpython2.7 python-pip \
-mysql-server python-setuptools python-imaging python-mysqldb python-memcache python-ldap \
+mysql-server python-setuptools python-mysqldb python-memcache python-ldap \
 python-urllib3
 
 sudo pip install boto requests
+sudo pip install Pillow==4.3.0
+sudo pip install moviepy  # used in movie file thumbnails
 sudo ln -sf /usr/lib/jvm/java-8-openjdk-amd64/jre/bin/java /usr/bin/
 ```
 
@@ -31,10 +33,12 @@ For CentOS 7:
 wget https://bootstrap.pypa.io/get-pip.py
 sudo python get-pip.py
 sudo yum install java-1.7.0-openjdk poppler-utils python-setuptools \
-python-imaging MySQL-python mariadb-server python-memcached python-ldap \
+MySQL-python mariadb-server python-memcached python-ldap \
 python-urllib3
 
 sudo pip install boto requests
+sudo pip install Pillow==4.3.0
+sudo pip install moviepy  # used in movie file thumbnails
 sudo /etc/init.d/mysqld start
 ```
 

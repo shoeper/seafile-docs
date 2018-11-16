@@ -71,20 +71,19 @@ Compiling seafile
 2. Compile
 
         ./autogen.sh
-        ./configure --disable-fuse
+        ./configure
         make
         sudo make install
 
-Compiling seafile-client and packaging it
+Compiling seafile-client
 ---------
 
-1. execute the building script:
+1. Download [seafile-client](https://github.com/haiwen/seafile-client)
+2. Compile
 
-        ./scripts/build.py
+        cmake .
+        make
 
-2. Go to Release directory and see if `seafile-applet.app` can run correctly.
+3. Run the seafile client executable
 
-Problem you may encounter
--------------------------
-1. If `install_name_tool` reports "malformed object" "unknown load command", It may be the version of xcode command line tools incompatible with `install_name_tool`.
-2. If xcode can't find glib, Corrects xcode's "build settings/search paths/header search".
+        ./seafile-applet

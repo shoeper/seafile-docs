@@ -84,7 +84,7 @@
     * [Administrator Roles and Permissions](deploy_pro/admin_roles_permissions.md)
     * [Multi-Tenancy Support](deploy_pro/multi_tenancy.md)
   * Advanced Authentication
-    * [Two-factor Authenticatioin](deploy_pro/two_factor_authentication.md)
+    * [Two-factor Authentication](deploy_pro/two_factor_authentication.md)
     * [CAS Authentication](deploy_pro/cas.md)
   * Advanced Maintenance Tools
     * [Real-time Backup Server](deploy_pro/real_time_backup.md)

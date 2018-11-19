@@ -38,7 +38,7 @@ This option will make search speed improved significantly (10x) when the search 
 * [fix] Remove forcesave option in OnlyOffice since it have a bug
 * [fix] Fix a bug that wiki page can't be loaded
 * Add traffic statistics
-* [fix] Remove unneccesary logs in virus scan
+* [fix] Remove unnecessary logs in virus scan
 
 
 ### 6.3.6 (2018/09/21)

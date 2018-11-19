@@ -2,6 +2,18 @@
 
 ## ChangeLog
 
+### 1.0.0 (2018/11/19)
+
+* [fix] Allow a guest user to copy files into shared library
+* Support pause sync
+* [win] Add option to only allow current user to view the virtual disk
+* [win] Don't let the Windows to search into the internal cache folder
+* [win] Install the explorer extension to system path to allow multiple users to use the extension
+* [mac] Add option to allow search in Finder (disabled by default)
+* [mac] Update kernel drive to support Mac Mojave
+* [mac] Support office file automatically lock
+
+
 ### 0.9.5 (2018/09/10)
 
 * [fix, Win] Fix support for some SSL CA

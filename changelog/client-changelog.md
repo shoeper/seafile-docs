@@ -2,6 +2,13 @@
 
 ## 6.2
 
+### 6.2.7 (2018/11/22)
+
+* Handle library permission change for synced libraries
+* Don't retry forever when error occur during first time downloading
+* [Mac] Fix dark mode support on Mac Mojave
+* Show user's name instead of email in account switching popup
+
 ### 6.2.5 (2018/09/14)
 
 * More robust deleting folder locally if it is deleted on the server

@@ -2,6 +2,11 @@
 
 ## 6.2
 
+### 6.2.8 (2018/12/05)
+
+* [fix] Don't refresh activity list automatically
+* [fix] Fix view on Web link for starred items 
+
 ### 6.2.7 (2018/11/22)
 
 * Handle library permission change for synced libraries

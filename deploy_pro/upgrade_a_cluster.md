@@ -22,6 +22,36 @@ Doing maintanence upgrading is simple, you only need to run the script `./upgrad
 
 ## Specific instructions for each version
 
+### From 6.2 to 6.3
+
+In version 6.2.11, the included Django was upgraded. The memcached configuration needed to be upgraded if you were using a cluster. If you upgrade from a version below 6.1.11, don't forget to change your memcache configuration. If the configuration in your `seahub_settings.py` is:
+
+```
+CACHES = {
+    'default': {
+        'BACKEND': 'django_pylibmc.memcached.PyLibMCCache',
+        'LOCATION': '<MEMCACHED SERVER IP>:11211',
+    }
+}
+
+COMPRESS_CACHE_BACKEND = 'django.core.cache.backends.locmem.LocMemCache'
+```
+
+Now you need to change to:
+
+```
+CACHES = {
+    'default': {
+        'BACKEND': 'django_pylibmc.memcached.PyLibMCCache',
+        'LOCATION': '<MEMCACHED SERVER IP>:11211',
+    },
+    'locmem': {
+        'BACKEND': 'django.core.cache.backends.locmem.LocMemCache',
+    },
+}
+COMPRESS_CACHE_BACKEND = 'locmem'
+```
+
 ### From 6.1 to 6.2
 
 No special upgrade operations.

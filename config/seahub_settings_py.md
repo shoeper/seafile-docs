@@ -105,6 +105,11 @@ SHARE_LINK_EXPIRE_DAYS_MIN = 3 # default is 0, no limit.
 # maximum expire days for share link (since version 6.3.6)
 SHARE_LINK_EXPIRE_DAYS_MAX = 8 # default is 0, no limit.
 
+# default expire days for share link (since version 6.3.8)
+# only valid when SHARE_LINK_EXPIRE_DAYS_MIN and SHARE_LINK_EXPIRE_DAYS_MAX is configured
+# should be greater than or equal to MIN and less than or equal to MAX
+SHARE_LINK_EXPIRE_DAYS_DEFAULT = 5
+
 # force user login when view file/folder share link (since version 6.3.6)
 SHARE_LINK_LOGIN_REQUIRED = True
 

@@ -2,10 +2,15 @@
 
 ## 6.2
 
+### 6.2.9 (2018/12/10)
+
+* [fix] Fix background index when upload files via cloud file browser
+* Don't call ping and account-info every 5 minutes
+
 ### 6.2.8 (2018/12/05)
 
 * [fix] Don't refresh activity list automatically
-* [fix] Fix view on Web link for starred items 
+* [fix] Fix view on Web link for starred items
 
 ### 6.2.7 (2018/11/22)
 

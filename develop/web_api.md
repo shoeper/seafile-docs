@@ -12,6 +12,7 @@
 <li><a href="#update-account">Update Account(Admin only)</a></li>
 <li><a href="#migrate-account">Migrate Account(Admin only)</a></li>
 <li><a href="#delete-account">Delete Account(Admin only)</a></li>
+<li><a href="#force-2fa">Force Two-factor Authentication(Admin only)</a></li>
 <li><a href="#check-account-info">Check Account Info</a></li>
 <li><a href="#server-info">Get Server Information</a></li>
 </ul>
@@ -394,6 +395,29 @@ At least one of followings:
 **Errors**
 
 * 403 Permission error, only administrator can perform this action
+
+### <a id="force-2fa"></a>Force Two-factor Authentication ###
+
+**PUT** https://cloud.seafile.com/api2/two-factor-auth/{email}/
+
+**Request parameters**
+
+* force_2fa: If set as `1`, `email` will be forced to enable two-factor authentication. Users who are not enable two-factor auth will be redirected to two-auth setting page after he/she logged in. To remove this limit, set this argument as `0`.
+
+**Sample request**
+
+    curl -v -X PUT -d "force_2fa=1" -H "Authorization: Token f2210dacd9c6ccb8133606d94ff8e61d99b477fd" -H 'Accept: application/json; indent=4' https://cloud.seafile.com/api2/two-factor-auth/account@gmail.com/
+
+**Sample response**
+
+    "{success: true}"
+
+**Errors**
+
+* 400 User not found
+
+* 403 Permission error, only administrator can perform this action
+
 
 ### <a id="server-info"></a>Get Server Information ###
 

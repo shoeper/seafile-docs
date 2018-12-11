@@ -45,7 +45,7 @@ If you choose UserPrincipalName as unique identifier:
 Meaning of each config options:
 
 * HOST: LDAP URL for the host. ldap://, ldaps:// and ldapi:// are supported. You can also include port number in the URL, like ldap://ldap.example.com:389. To use TLS, you should configure the LDAP server to listen on LDAPS port and specify ldaps:// here. More details about TLS are covered below.
-* BASE: The root distinguished name (DN) to use when running queries against the directory server. **You cannot use the root DN (e.g. dc=example,dc=com) as BASE**.
+* BASE: The distinguished name (DN) of the search base when running queries against the directory server. If you want to use the root DN as search base (e.g. dc=example,dc=com), you need to add `FOLLOW_REFERRALS = false` to the configuration. The meaning of this option will be explained in following sections.
 * USER_DN: The distinguished name of the user that Seafile will use when connecting to the directory server. This user should have sufficient privileges to access all the nodes under BASE. It's recommended to use a user in the administrator group.
 * PASSWORD: Password of the above user.
 * LOGIN_ATTR: The attribute used for user's unique identifier. Use `mail` or `userPrincipalName`.
@@ -117,7 +117,6 @@ FIRST_NAME_ATTR = givenName
 LAST_NAME_ATTR = sn
 DEPT_ATTR = department
 UID_ATTR = sAMAccountName
-ACTIVATE_USER_WHEN_IMPORT = true
 ```
 
 Meaning of each options:
@@ -135,7 +134,6 @@ Meaning of each options:
 
 If you choose `userPrincipalName` as the unique identifier for user, Seafile cannot use it as real email address to send notification emails to user. If the users in AD also have an email address attribute, you can sync these email addresses into Seafile's internal database. Seafile can then use them to send emails. The configuration option is:
 - **CONTACT_EMAIL_ATTR**: usually you can set it to the `mail` attribute.
-- **ACTIVATE_USER_WHEN_IMPORT**: Set to "false" if you don't want to activate the users when import.It's "true" by default.
 
 ### Other LDAP servers
 
@@ -170,6 +168,26 @@ Meaning of each option:
 - **DEPT_ATTR**: Attribute for user's department. It's "department" by default.
 - **UID_ATTR**: Attribute for Windows/Unix login name. If this is synchronized, users can also log in with their Windows/Unix login name. In OpenLDAP, the attribute `uid` or something similar can be used.
 
+### Importing Users without Activating Them
+
+The users imported with the above configuration will be activated by default. For some organizations with large number of users, they may want to import user information (such as user full name) without activating the imported users. Activating all imported users will require licenses for all users in AD/LDAP, which may not be affordable.
+
+Seafile provides a combination of options for such use case. First, you have to add below option to [LDAP_SYNC] section of ccnet.conf:
+
+```
+ACTIVATE_USER_WHEN_IMPORT = false
+```
+
+This prevents Seafile from activating imported users. Second, add below option to `seahub_settings.py`:
+
+```
+ACTIVATE_AFTER_FIRST_LOGIN = True
+```
+
+This option will automatically activate users when they login to Seafile for the first time.
+
+With these configurations, an imported user can be searched and be shared with folders, but will not consume license until he/she logs in.
+
 ### Manually Trigger Synchronization
 
 To test your LDAP sync configuration, you can run the sync command manually.
@@ -179,17 +197,6 @@ To trigger LDAP sync manually,
 ```
 cd seafile-server-lastest
 ./pro/pro.py ldapsync
-```
-
-### Don't Import New Users in LDAP Sync
-
-By default, when LDAP sync process detects that a new user is added in the LDAP server, it'll automatically sync that user into internal database. And the new users will be activated by default. This will consume one more user license. 
-
-Let's consider the following situation: you have a lot of users in the LDAP server, but you don't buy enough licenses to add all these users into Seafile. Enabling LDAP sync will consume all the licenses you buy and make your Seafile installation unusable. The ideal solution would be: new users are only added to Seafile when they log in for the first time. And LDAP sync only sync information from LDAP server for existing users. The following option is for this exact purpose:
-
-```
-[LDAP_SYNC]
-IMPORT_NEW_USER = false
 ```
 
 ## Advanced LDAP/AD Integration Options
@@ -249,8 +256,8 @@ mkdir disabled_libs_use_local_ones_instead
 mv libnssutil3.so disabled_libs_use_local_ones_instead/
 ```
 
-This effectively removes the bundled libraries from the library search path. 
-When the server starts, it'll instead find and use the system libraries (if they are installed). 
+This effectively removes the bundled libraries from the library search path.
+When the server starts, it'll instead find and use the system libraries (if they are installed).
 This change has to be repeated after each update of the Seafile installation.
 
 
@@ -276,7 +283,7 @@ FOLLOW_REFERRALS = true
 
 ### Configure Multi-ldap Servers
 
-Since seafile 5.1.4 pro edition, we support multi-ldap servers, that is besides base ldap server info in [LDAP] section, you can set other ldap servers info in [LDAP_MULTI_1], [LDAP_MULTI_2] ... [LDAP_MULTI_9] sections, so you can configure ten ldap servers to work with seafile. Multi-ldap servers mean when get or search ldap user, it will iterate all configured ldap servers until find pointed one; When get all ldap users, it will iterate all ldap servers to get all users; For Ldap sync it will sync all user/group info in all configured ldap servers to seafile.
+Since seafile 5.1.4 pro edition, we support multi-ldap servers, that is besides base ldap server info in [LDAP] section, you can set other ldap servers info in [LDAP_MULTI_1], [LDAP_MULTI_2] ... [LDAP_MULTI_9] sections, so you can configure ten ldap servers to work with seafile. Multi-ldap servers mean that, when get or search ldap user, it will iterate all configured ldap servers until a match is found; When listing all ldap users, it will iterate all ldap servers to get all users; For Ldap sync it will sync all user/group info in all configured ldap servers to seafile.
 
 For example I have configured base ldap server in `ccnet.conf` as follow:
 ```
@@ -296,4 +303,18 @@ USER_DN = cn=admin,dc=example,dc=com
 PASSWORD = secret
 ```
 
-Note: All ldap servers share LOGIN_ATTR, USE_PAGED_RESULT, FOLLOW_REFERRALS attributes in [LDAP] section; For ldap user/group sync, all ldap servers share all ldap sync related attributes in [LDAP_SYNC] section.
+Before 6.3.8, all ldap servers share LOGIN_ATTR, USE_PAGED_RESULT, FOLLOW_REFERRALS attributes in [LDAP] section; For ldap user/group sync, all ldap servers share all ldap sync related attributes in [LDAP_SYNC] section.
+
+Since seafile 6.3.8 pro, we support more independent config sections for each ldap server. The LOGIN_ATTR, USE_PAGED_RESULT, FOLLOW_REFERRALS options can be set independently in each [LDAP_MULTI_x] section. Furthermore, independent [LDAP_SYNC_MULTI_x] sections can be set for each LDAP server. That is, each LDAP server can use different LDAP sync options.
+
+There are still some shared config options that can only be set in [LDAP_SYNC] section, which is used for all LDAP servers.
+
+* SYNC_INTERVAL
+* DEACTIVE_USER_IF_NOTFOUND
+* ACTIVATE_USER_WHEN_IMPORT
+* IMPORT_NEW_USER
+* DEL_GROUP_IF_NOT_FOUND
+
+These options are used to control synchronization behaviors, so they're shared for all LDAP servers.
+
+NOTE: It is recommended to have a [LDAP_SYNC_MULTI_x] section for each [LDAP_SYNC_x] section. Otherwise the LDAP sync process will use the options in [LDAP_SYNC] section as default.

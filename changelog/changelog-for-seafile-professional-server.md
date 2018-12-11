@@ -30,6 +30,29 @@ highlight = fvh
 
 This option will make search speed improved significantly (10x) when the search result contains large pdf/doc files. But you need to rebuild search index if you want to add this option.
 
+### 6.3.8 (2018/12/10)
+
+* Improve online PDF view for large PDF files (In the old version, a large PDF file consumes a lot of memory)
+* Admin can force a user to use two-factor authentication
+* Improve performance of upgrading a library's size and file numbers
+* Don't print a lot of "Repo size compute queue is 0"
+* Enable using WebDAV with Single Sign On (A new option ENABLE_WEBDAV_SECRET)
+* Enable login to WebDAV via contact email
+* [fix] A shared empty folder name will be updated if the folder's name is changed
+* Support preview for PSD and AI files
+* [fix] Fix license information display problem
+* Set default quota for department groups synced from LDAP
+* [fix] Fix video preview for shared link on mobile browsers
+* Redirect old wiki URL to new wiki URL
+* Hide save as button for files viewed by Office Online Server
+* When a library be transfer to another user, don't clear the syncing tokens
+* Enable sync department groups in LDAP sync
+* [fix] Fix problems when downloading large list of files via Zip download
+* [fix] Fix a performance problem when get the list of all groups
+* [fix] Can change history settings for library in admin area even if the change of history settings is disable for normal users
+* Make multi-threads mode as default for Seahub
+
+
 ### 6.3.7 (2018/10/16)
 
 * [fix] Fix a bug of lock by online office

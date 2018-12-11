@@ -67,13 +67,6 @@ workers = 1
 ## where to store the converted office/pdf files. Deafult is /tmp/.
 outputdir = /tmp/
 
-## how many pages are allowed to be previewed online. Default is 50 pages
-max-pages = 50
-
-## the max size of documents to allow to be previewed online, in MB. Default is 2 MB
-## Preview a large file (for example >30M) online will freeze the browser.
-max-size = 2
-
 ```
 
 ## <a id="wiki-doc-preview"></a>FAQ about Office/PDF document preview
@@ -85,24 +78,6 @@ max-size = 2
 - My server is CentOS, and I see errors like "/usr/lib64/libreoffice/program/soffice.bin X11 error: Can't open display", how could I fix it?
 
   This error indicates you have not installed the `libreoffice-headless` package. Install it by `"sudo yum install libreoffice-headless"`.
-
-- How can I change max size and max pages of documents that can be previewed online ?
-
- 1. Locate the `OFFICE CONVERTER` section in `seafevents.conf`.
- 2. Append following lines to the section
-```
-# the max size of documents to allow to be previewed online, in MB. Default is 2 MB
-max-size = 2
-# how many pages are allowed to be previewed online. Default is 50 pages
-max-pages = 50
-```
-
-Then, restart seafile server
-```
-cd /data/haiwen/seafile-server-latest/
-./seafile.sh restart
-./seahub.sh restart
-```
 
 - Document preview doesn't work on my Ubuntu/Debian server, what can I do?
 

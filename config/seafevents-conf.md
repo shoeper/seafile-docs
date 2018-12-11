@@ -54,13 +54,6 @@ workers = 1
 ## where to store the converted office/pdf files. Deafult is /tmp/.
 outputdir = /tmp/
 
-## how many pages are allowed to be previewed online. Default is 50 pages
-max-pages = 50
-
-## the max size of documents allowed to be previewed online, in MB. Default is 2 MB
-## Previewing a large file (for example >30M) online is likely going to freeze the browser.
-max-size = 2
-
 [EVENTS PUBLISH]
 ## must be "true" to enable publish events messages
 enabled = false
@@ -74,46 +67,3 @@ server = 192.168.1.1
 port = 6379
 password = q!1w@#123
 ```
-
-### <a id="wiki-options-you-may-want-to-modify"></a>Options you may want to modify
-
-The section above listed all the options in `seafevents.conf`. Most of the time you can use the default settings. But you may want to modify some of them to fit your own use case.
-
-We list them in the following table, as well as why we choose the default value.
-
-<table>
-<tr>
-<th>section</th>
-<th>option</th>
-<th>default value</th>
-<th>description</th>
-</tr>
-
-<tr>
-<td>INDEX FILES</td>
-<td>index_office_pdf</td>
-<td>false</td>
-<td>
-The full text search of office/pdf documents is not enabled by default. This is because it may consume quite some storage for the search index. To turn it on, set this value to "true" and recreate the search index. See [File Search Details](details_about_file_search.md) for details.
-</td>
-</tr>
-
-<tr>
-<td>OFFICE CONVERTER</td>
-<td>max-size</td>
-<td>2</td>
-<td>
-The max file size allowed to be previewed online is 2MB. The preview is converted for office/pdf files as HTML and display it in the browser. If the file size is too large, the conversion could take too much time and consume many resources.
-</td>
-</tr>
-
-<tr>
-<td>OFFICE CONVERTER</td>
-<td>max-pages</td>
-<td>50</td>
-<td>
-When previewing an office/pdf document online, the pages displayed are the first 50 pages. If the value is too large, the conversion may take too much time and consume too many resources. Furthermore the browser can crash.
-</td>
-</tr>
-
-</table>

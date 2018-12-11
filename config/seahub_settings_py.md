@@ -79,6 +79,14 @@ SESSION_SAVE_EVERY_REQUEST = False
 # Whether enable personal wiki and group wiki. Default is `False`
 # Since 6.1.0 CE
 ENABLE_WIKI = True
+
+# In old version, if you use Single Sign On, the password is not saved in Seafile.
+# Users can't use WebDAV because Seafile can't check whether the password is correct.
+# Since version 6.3.8, you can enable this option to let user's to specific a password for WebDAV login.
+# Users login via SSO can use this password to login in WebDAV.
+# Enable the feature. pycryptodome should be installed first.
+# sudo pip install pycryptodome==3.7.2
+ENABLE_WEBDAV_SECRET = True
 ```
 
 ## `repo snapshot label` feature
@@ -144,9 +152,6 @@ Options for online file preview:
 USE_PDFJS = True
 
 # Online preview maximum file size, defaults to 30M.
-# Note, this option controls files that can be previewed online, like pictures, txt, pdf.
-# In pro edition, for preview doc/ppt/excel/pdf, there is another option `max-size`
-# in seafevents.conf that controls the limit of files that can be previewed.
 FILE_PREVIEW_MAX_SIZE = 30 * 1024 * 1024
 
 # Extensions of previewed text files.
@@ -161,6 +166,7 @@ groovy, rst, patch, go"""
 ENABLE_THUMBNAIL = True
 
 # Seafile only generates thumbnails for images smaller than the following size.
+# Since version 6.3.8 pro, suport the psd online preview.
 THUMBNAIL_IMAGE_SIZE_LIMIT = 30 # MB
 
 # Enable or disable thumbnail for video. ffmpeg and moviepy should be installed first.

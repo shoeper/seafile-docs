@@ -30,6 +30,10 @@ highlight = fvh
 
 This option will make search speed improved significantly (10x) when the search result contains large pdf/doc files. But you need to rebuild search index if you want to add this option.
 
+### 6.3.9 (2018/12/13)
+
+* Fix a seaf-server crash problem
+
 ### 6.3.8 (2018/12/10)
 
 * Improve online PDF view for large PDF files (In the old version, a large PDF file consumes a lot of memory)

@@ -265,6 +265,12 @@ SHARE_LINK_EMAIL_LANGUAGE = ''
 # Since PRO 6.1.4 or CE 6.1.2
 UNREAD_NOTIFICATIONS_REQUEST_INTERVAL = 3 * 60 # seconds
 
+# Whether to allow user to delete account, change login password or update basic user
+# info on profile page.
+# Since PRO 6.3.10
+ENABLE_DELETE_ACCOUNT = False
+ENABLE_UPDATE_USER_INFO = False
+ENABLE_CHANGE_PASSWORD = False
 ```
 
 ## Pro edition only options

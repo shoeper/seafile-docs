@@ -30,6 +30,16 @@ highlight = fvh
 
 This option will make search speed improved significantly (10x) when the search result contains large pdf/doc files. But you need to rebuild search index if you want to add this option.
 
+### 6.3.10 （2019/01/02)
+
+* [fix] Fix folder upload problem
+* [fix] Fix file audit page can't be load
+* [fix] Fix MIME type for .xls
+* Add RPC slow log
+* Add admin API for manage organizations in multi-tenancy mode
+* Add warning when close page during file uploading
+
+
 ### 6.3.9 (2018/12/13)
 
 * Fix a seaf-server crash problem

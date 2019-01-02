@@ -119,3 +119,15 @@ OAUTH_ATTRIBUTE_MAP = {
     "name": (False, "name")
 }
 ```
+
+For users of Azure Cloud, as there is no `id` field returned from Azure Cloud's user info endpoint, so we use a special configuration for `OAUTH_ATTRIBUTE_MAP` setting (others are the same as Github/Google):
+
+```
+OAUTH_ATTRIBUTE_MAP = {
+    "email": (True, "email"),
+    "id": (False, "not used"),
+    "name": (False, "name")
+}
+```
+
+Please see [this tutorial](https://forum.seafile.com/t/oauth-authentification-against-microsoft-office365-azure-cloud/7999) for the complete deployment process of OAuth against Azure Cloud.

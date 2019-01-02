@@ -411,10 +411,12 @@
     <li>
         <a href="#admin-only-organization">Organization</a>
         <ul>
+            <li><a href="#admin-only-get-organizations">Get Organizations</a></li>
             <li><a href="#admin-only-add-organization">Add Organization</a></li>
             <li><a href="#admin-only-get-organization-info">Get Organization Info</a></li>
             <li><a href="#admin-only-update-organization-info">Update Organization Info</a></li>
             <li><a href="#admin-only-delete-organization">Delete Organization</a></li>
+            <li><a href="#admin-only-get-organization-users">Get Organization Users</a></li>
             <li><a href="#admin-only-add-organization-user">Add Organization User</a></li>
             <li><a href="#admin-only-get-organization-user-info">Get Organization User Info</a></li>
             <li><a href="#admin-only-update-organization-user-info">Update Organization User Info</a></li>
@@ -8484,6 +8486,57 @@ This api is only supported in pro edition.
 
 ## <a id="admin-only-organization"></a>Organization
 
+### <a id="admin-only-get-organizations"></a>Get Organizations
+
+This api is only supported in pro edition (since 6.3.10).
+
+**GET** http://192.168.1.113:8000/api/v2.1/admin/organizations/
+
+**Sample request**
+
+```
+curl -H 'Authorization: Token 5eba8c2f983404e33b140b13a1d050b9a4440e03' -H 'Accept: application/json; charset=utf-8; indent=4 "http://192.168.1.113:8000/api/v2.1/admin/organizations/"
+```
+
+**Sample response**
+
+```
+{
+    "organizations": [
+        {
+            "org_name": "new_org_name_2",
+            "quota_usage": 1059777,
+            "ctime": "2018-08-09T12:48:56+08:00",
+            "creator_name": "org-admin-user",
+            "max_user_number": 321,
+            "creator_email": "org@org.com",
+            "org_id": 3,
+            "quota": 4565000000,
+            "creator_contact_email": "org@org.com",
+            "org_url_prefix": "org_l0l4xd"
+        },
+        {
+            "org_name": "org",
+            "quota_usage": 0,
+            "ctime": "2018-12-20T17:21:47+08:00",
+            "creator_name": "015bb183344d4503bff35dee3280320b",
+            "max_user_number": 1232,
+            "creator_email": "015bb183344d4503bff35dee3280320b@org.com",
+            "org_id": 104,
+            "quota": 100000000,
+            "creator_contact_email": "015bb183344d4503bff35dee3280320b@org.com",
+            "org_url_prefix": "org_p"
+        }
+    ]
+}
+"success"
+```
+
+**Errors**
+
+* 403 Feature is not enabled.
+* 500 Internal Server Error
+
 ### <a id="admin-only-add-organization"></a>Add Organization
 
 This api is only supported in pro edition.
@@ -8538,15 +8591,16 @@ curl -H 'Authorization: Token 2bac21cab9eb0c4baac10d1e6fc3cf590f0dcf17' -H 'Acce
 **Sample response**
 ```
 {
-    "org_name": "123123",
-    "ctime": "2018-06-04T16:54:08+08:00",
-    "creator_name": "1234",
+    "org_name": "org",
+    "quota_usage": 1059777,
+    "ctime": "2018-08-09T12:48:56+08:00",
+    "creator_name": "org-admin-user",
     "max_user_number": 1232,
-    "creator_email": "1234@1.com",
+    "creator_email": "org@org.com",
     "org_id": 3,
     "quota": -2,
-    "creator_contact_email": "1234@1.com",
-    "org_url_prefix": "123"
+    "creator_contact_email": "org@org.com",
+    "org_url_prefix": "org_l0l4xd"
 }
 ```
 
@@ -8578,14 +8632,15 @@ curl -X PUT -d "org_name=new_org_name&max_user_number=321&quota=4565" -H 'Author
 ```
 {
     "org_name": "new_org_name",
-    "ctime": "2018-06-04T16:54:08+08:00",
-    "creator_name": "1234",
+    "quota_usage": 1059777,
+    "ctime": "2018-08-09T12:48:56+08:00",
+    "creator_name": "org-admin-user",
     "max_user_number": 321,
-    "creator_email": "1234@1.com",
+    "creator_email": "org@org.com",
     "org_id": 3,
     "quota": 4565000000,
-    "creator_contact_email": "1234@1.com",
-    "org_url_prefix": "123"
+    "creator_contact_email": "org@org.com",
+    "org_url_prefix": "org_l0l4xd"
 }
 ```
 
@@ -8622,6 +8677,53 @@ curl -X DELETE  -H 'Authorization: Token 2bac21cab9eb0c4baac10d1e6fc3cf590f0dcf1
 * 400 org_id invalid.
 * 403 Feature is not enabled.
 * 404 Organization not found.
+* 500 Internal Server Error
+
+### <a id="admin-only-get-organization-users"></a>Get Organization Users
+
+This api is only supported in pro edition (since 6.3.10).
+
+**GET** http://192.168.1.113:8000/api/v2.1/admin/organizations/1/users/
+
+**Request parameters**
+
+* org_id
+
+**Sample request**
+
+```
+curl -H 'Authorization: Token 5eba8c2f983404e33b140b13a1d050b9a4440e03' -H 'Accept: application/json; charset=utf-8; indent=4' "http://192.168.1.113:8000/api/v2.1/admin/organizations/1/users/"
+```
+
+**Sample response**
+```
+{
+    "users": [
+        {
+            "quota_usage": 0,
+            "name": "lian-org",
+            "org_id": 1,
+            "contact_email": "lian@seafile.com",
+            "active": true,
+            "quota_total": 4565000000,
+            "email": "lian@seafile.com"
+        },
+        {
+            "quota_usage": 1059777,
+            "name": "org-admin-user",
+            "org_id": 1,
+            "contact_email": "org@org.com",
+            "active": true,
+            "quota_total": 4565000000,
+            "email": "org@org.com"
+        }
+    ]
+}
+```
+
+**Errors**
+
+* 400 org_id invalid.
 * 500 Internal Server Error
 
 ### <a id="admin-only-add-organization-user"></a>Add Organization User

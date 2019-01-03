@@ -136,3 +136,20 @@ default_expire_hours = 6
 ```
 
 The default is 12 hours.
+
+## Enabled Slow Log
+
+Since Seafile-pro-6.3.10, you can to enabled the seaf-server's RPC slow request query log, so that you can do performance analysis.
+
+Add the options to seafile.conf:
+
+```
+[Slow_log]
+# Set to true
+ENABLE_SLOW_LOG = true
+# the unit of all slow log thresholds is millisecond.
+# default to 5000 milliseconds, only RPC queries processed for longer than 5000 milliseconds will be  logged.
+RPC_SLOW_THRESHOLD = 5000
+```
+
+Restarted the seafile service, and you can find the `seafile_slow_rpc.log` in the `logs/slow_logs`. And you can also use the log-rotate to cutting the log file. Just send the `SIGUSR2` to the seaf-server progress, the log file will be closed and reopened.

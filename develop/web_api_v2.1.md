@@ -6492,7 +6492,7 @@ If scope parameter is passed then accounts will be searched inside the specific 
 
 ### <a id="admin-only-update-account"></a>Update Account
 
-**PUT** https://cloud.seafile.com/api/v2.1/admin/users/
+**PUT** https://cloud.seafile.com/api/v2.1/admin/users/{email}/
 
 **Request parameters**
 
@@ -6506,7 +6506,7 @@ At least one of followings:
 * contact_email
 * reference_id
 * department
-* quota_total_mb, the unit is MB.
+* quota_total, the unit is MB.
 
 **Sample request**
 

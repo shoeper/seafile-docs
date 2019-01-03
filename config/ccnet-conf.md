@@ -31,7 +31,7 @@ PORT=13419
 
 ## Enabled Slow Log
 
-Since Seafile-pro-6.3.10, you can to enabled the ccnet-server's RPC slow request query log, so that you can do performance analysis.
+Since Seafile-pro-6.3.10, you can enable ccnet-server's RPC slow log to do performance analysis.
 
 Add the options to ccnet.conf:
 
@@ -44,7 +44,7 @@ ENABLE_SLOW_LOG = true
 RPC_SLOW_THRESHOLD = 5000
 ```
 
-Restarted the seafile service, and you can find the `ccnet_slow_rpc.log` in the `logs/slow_logs`. And you can also use the log-rotate to cutting the log file. Just send the `SIGUSR2` to the ccnet-server progress, the log file will be closed and reopened.
+After restarting the seafile service, you can find `ccnet_slow_rpc.log` in `logs/slow_logs`. You can also use [log-rotate](../deploy/using_logrotate.md) to rotate the log files. You just need to send `SIGUSR2` to `ccnet-server` process. The slow log file will be closed and reopened.
 
 **Note**: You should restart seafile so that your changes take effect.
 

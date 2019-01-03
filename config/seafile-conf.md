@@ -139,7 +139,7 @@ The default is 12 hours.
 
 ## Enabled Slow Log
 
-Since Seafile-pro-6.3.10, you can to enabled the seaf-server's RPC slow request query log, so that you can do performance analysis.
+Since Seafile-pro-6.3.10, you can enable seaf-server's RPC slow log to do performance analysis.
 
 Add the options to seafile.conf:
 
@@ -152,4 +152,4 @@ ENABLE_SLOW_LOG = true
 RPC_SLOW_THRESHOLD = 5000
 ```
 
-Restarted the seafile service, and you can find the `seafile_slow_rpc.log` in the `logs/slow_logs`. And you can also use the log-rotate to cutting the log file. Just send the `SIGUSR2` to the seaf-server progress, the log file will be closed and reopened.
+After restarting the seafile service, you can find `seafile_slow_rpc.log` in `logs/slow_logs`. You can also use [log-rotate](../deploy/using_logrotate.md) to rotate the log files. You just need to send `SIGUSR2` to `seaf-server` process. The slow log file will be closed and reopened.

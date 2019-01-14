@@ -2,6 +2,16 @@
 
 ## ChangeLog
 
+### 1.0.1 (2019/01/14)
+
+* Update included Dokany drive
+* Improve notification when user try to delete a library in the client
+* [fix] Fix getting internal link for folders
+* [fix] Fix problem after changing the cache directory
+* [fix] Fix support for guest users that have no storage capacity
+* [fix] Fix timeout when loading a library with a lot of files
+
+
 ### 1.0.0 (2018/11/19)
 
 * [fix] Allow a guest user to copy files into shared library

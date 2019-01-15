@@ -2,6 +2,12 @@
 
 ## 6.2
 
+### 6.2.10 (2019/01/15)
+
+* [fix] Fix support for Windows user name containting non-ascii characters
+* Remove seacloud.cc from the default server list
+* Remove description from library detail dialog
+
 ### 6.2.9 (2018/12/10)
 
 * [fix] Fix background index when upload files via cloud file browser

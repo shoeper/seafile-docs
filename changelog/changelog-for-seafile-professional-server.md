@@ -30,7 +30,15 @@ highlight = fvh
 
 This option will make search speed improved significantly (10x) when the search result contains large pdf/doc files. But you need to rebuild search index if you want to add this option.
 
-### 6.3.10 （2019/01/02)
+### 6.3.11 (2019/01/15)
+
+* [fix] Fix support for two-factor authentication using SMS
+* [fix] Fix support for traffic statistics
+* [fix] Improve performance for getting group library list
+* [fix] Fix file access audit log
+* Remove file count and size count for directories as it will lead to performance problem
+
+### 6.3.10 (2019/01/02)
 
 * [fix] Fix folder upload problem
 * [fix] Fix file audit page can't be load

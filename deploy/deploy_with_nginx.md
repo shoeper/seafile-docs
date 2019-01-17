@@ -15,6 +15,9 @@ In Ubuntu 16.04, you can add the config file as follows:
 3. Create symbolic link: `ln -s /etc/nginx/sites-available/seafile.conf /etc/nginx/sites-enabled/seafile.conf`
 
 ```nginx
+
+log_format seafileformat '$http_x_forwarded_for $remote_addr [$time_local] "$request" $status $body_bytes_sent "$http_referer" "$http_user_agent" $upstream_response_time';
+
 server {
     listen 80;
     server_name seafile.example.com;
@@ -32,7 +35,7 @@ server {
          # used for view/edit office file via Office Online Server
          client_max_body_size 0;
 
-         access_log      /var/log/nginx/seahub.access.log;
+         access_log      /var/log/nginx/seahub.access.log seafileformat;
          error_log       /var/log/nginx/seahub.error.log;
     }
 
@@ -72,6 +75,9 @@ server {
         proxy_send_timeout  36000s;
 
         send_timeout  36000s;
+
+        access_log      /var/log/nginx/seafhttp.access.log seafileformat;
+        error_log       /var/log/nginx/seafhttp.error.log;
     }
     location /media {
         root /home/user/haiwen/seafile-server-latest/seahub;

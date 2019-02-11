@@ -37,7 +37,7 @@ There are a few steps to deploy a Seafile cluster:
 
 ### Hardware, Database, Memcached
 
-At least 3 Linux server with at least 4GB RAM. Two servers work as frontend servers, while one server works as background task server.
+At least 3 Linux server with at least 4 cores, 8GB RAM. Two servers work as frontend servers, while one server works as background task server. Virtual machines are sufficient for most cases.
 
 In small cluster, you can re-use the 3 Seafile servers to run memcached cluster and MariaDB cluster. For larger clusters, you can have 3 more dedicated server to run memcached cluster and MariaDB cluster. Because the load on these two clusters are not high, they can share the hardware to save cost. Documentation about how to setup memcached cluster and MariaDB cluster can be found [here](memcached_mariadb_cluster.md)
 

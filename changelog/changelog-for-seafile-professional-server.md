@@ -30,6 +30,17 @@ highlight = fvh
 
 This option will make search speed improved significantly (10x) when the search result contains large pdf/doc files. But you need to rebuild search index if you want to add this option.
 
+### 6.3.12 (2019/02/21)
+
+* [fix] Fix using WebDAV with Single Sign On
+* [fix] Fix a bug in importing users via excel file
+* Redirect users to home page after setting up 2FA
+* [fix] Fix can't send email when non-ascii symbols in filename in virus scan
+* [fix] Fix a bug in syncing LDAP when a user belong to multiple groups
+* Add slow log for accessing object storage for debugging purpose
+* [fix] Fix a SQL bug in multi-tenancy mode
+* Set the chunk size to 8MB during uploading files via chunk to speed up file transfer
+
 ### 6.3.11 (2019/01/15)
 
 * [fix] Fix support for two-factor authentication using SMS

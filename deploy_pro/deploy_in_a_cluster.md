@@ -176,9 +176,9 @@ CREATE TABLE `avatar_uploaded` (`filename` TEXT NOT NULL, `filename_md5` CHAR(32
 You also need to add the settings for backend cloud storage systems to the config files.
 
 * For NFS: [Setup Seafile cluster with NFS](setup_seafile_cluster_with_nfs.md)
-* For S3: [Setup With Amazon S3](setup_with_mazon_S3.md)
-* For OpenStack Swift: [Setup With OpenStackSwift](setup_with_OpenStackSwift.md)
-* For Ceph: [Setup With Ceph](setup_with_Ceph.md)
+* For S3: [Setup With Amazon S3](setup_with_amazon_S3.md)
+* For OpenStack Swift: [Setup With OpenStackSwift](setup_with_openstackswift.md)
+* For Ceph: [Setup With Ceph](setup_with_ceph.md)
 
 
 ### Run and Test the Single Node

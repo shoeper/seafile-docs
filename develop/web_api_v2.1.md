@@ -4743,8 +4743,6 @@ http://192.168.1.113:8082/idx_progress?task_id=d319a3f4-40da-4d58-9d3f-07864061f
 
 ### <a id="resumable-upload-file"></a>Resumable Upload File
 
-Can only be used when size of file to be uploaded bigger than 100MB.
-
 #### <a id="resumable-check-if-enabled"></a>Check If Enable Resumable Upload
 
 **GET** http://192.168.1.113:8000/api/v2.1/repos/{repo_id}/file-uploaded-bytes/?parent_dir={parent_dir}&file_name={file_name}
@@ -4858,7 +4856,7 @@ After getting the upload link and `uploadedBytes`, POST to this link for uploadi
 upload file to `/path-in-seafile-repo/`, if a file named 'test.txt' already exists in `/path-in-seafile-repo/`, replace it with the new file::
 
 ```
-curl -H "Authorization: Token f2210dacd9c6ccb8133606d94ff8e61d99b477fd" -H "Content-Range: bytes 149946368-150994943/1587609600" -F file=@test.md -F parent_dir=/path-in-seafile-repo/ -F replace=1 http://cloud.seafile.com:8082/upload-api/73c5d117-3bcf-48a0-aa2a-3f48d5274ae3
+curl -H "Content-Range: bytes 149946368-150994943/1587609600" -H "Content-Disposition: attachment; filename=\"test.md\"" -F file=@test.md -F parent_dir=/path-in-seafile-repo/ -F replace=1 http://cloud.seafile.com:8082/upload-api/73c5d117-3bcf-48a0-aa2a-3f48d5274ae3
 ```
 
 * `149946368-150994943` means is now uploading 149946368-150994943 bytes.

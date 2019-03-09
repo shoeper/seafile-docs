@@ -47,7 +47,7 @@ Below are summary of options for syncing groups:
 * **GROUP_MEMBER_ATTR**: The attribute field to use when loading the group's members. For most directory servers, the attributes is "member", which is the default value.For "posixGroup", it should be set to "memberUid".
 * **USER_ATTR_IN_MEMBERUID**: The user attribute set in 'memberUid' option, which is used in "posixGroup".The default value is "uid".
 * **DEL_GROUP_IF_NOT_FOUND**: set to "true", will deleted the groups if not found it in LDAP/AD server; need Seafile-pro-6.3.0 and above version
-* **SYNC_GROUP_AS_DEPARTMENT**: In 6.3.8 version, a new option SYNC_GROUP_AS_DEPARTMENT is added. If this option is set, the groups will be synced as top-level departments in Seafile, instead of simple groups. Learn more about departments in Seafile [here](https://help.seafile.com/en/sharing_collaboration/departments.html).
+* **SYNC_GROUP_AS_DEPARTMENT**: In 6.3.8 version, a new option SYNC_GROUP_AS_DEPARTMENT is added. If this option is set to "true", the groups will be synced as top-level departments in Seafile, instead of simple groups. Learn more about departments in Seafile [here](https://help.seafile.com/en/sharing_collaboration/departments.html).
 
 The search base for groups is the "BASE_DN" set in "[LDAP]" section of ccnet.conf.
 

@@ -2,6 +2,11 @@
 
 ## ChangeLog
 
+### 1.0.3 (2019/03/18)
+
+* [fix] Fix copy folders with properties into SeaDrive
+* [fix] Fix a possible crash bug when listing libraries
+
 ### 1.0.1 (2019/01/14)
 
 * Update included Dokany drive

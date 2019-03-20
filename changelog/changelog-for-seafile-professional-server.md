@@ -30,6 +30,17 @@ highlight = fvh
 
 This option will make search speed improved significantly (10x) when the search result contains large pdf/doc files. But you need to rebuild search index if you want to add this option.
 
+### 6.3.13 (2019/03/20)
+
+* [fix] Fix some bugs in accessing S3 for some special configurations
+* [fix] Fix OnlyOffice integration when OnlyOffice using invalid CA
+* [fix] Fix sometimes users can't login into WebDAV
+* [fix] Fix a crash bug in realtime backup server
+* [fix] Fix the last modified time is not updated for shared sub-folders
+* [fix] Keep last modified time when moving or copying files from on library to another
+* [fix] Fix can't sync a sub-folder of a shared sub-folder
+* [fix] Fix URL in email notification for sub-folder shared event
+
 ### 6.3.12 (2019/02/21)
 
 * [fix] Fix using WebDAV with Single Sign On

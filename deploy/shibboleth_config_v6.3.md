@@ -46,17 +46,18 @@ You should create a new virtual host configuration for Shibboleth. And then rest
         SSLCertificateKeyFile /path/to/ssl-key.pem
 
         <Location /Shibboleth.sso>
-	        SetHandler shib
-	        AuthType shibboleth
-	        ShibRequestSetting requireSession 1
-	        Require valid-user
+            SetHandler shib
+            AuthType shibboleth
+            ShibRequestSetting requireSession 1
+            Require valid-user
         </Location>
 
         <Location /sso>
-        	SetHandler shib
-	        AuthType shibboleth
-	        ShibRequestSetting requireSession 1
-	        Require valid-user
+            SetHandler shib
+            AuthType shibboleth
+            ShibUseHeaders On
+            ShibRequestSetting requireSession 1
+            Require valid-user
         </Location>
 
         RewriteEngine On
@@ -136,6 +137,19 @@ Change `url` and `backingFilePath` property:
     <MetadataFilter type="Signature" certificate="fedsigner.pem" verifyBackup="false"/>
 ```
 
+###### `Attribute` element
+
+Uncomment attribute elements for getting more user info:
+
+```
+<!-- Older LDAP-defined attributes (SAML 2.0 names followed by SAML 1 names)... -->
+<Attribute name="urn:oid:2.16.840.1.113730.3.1.241" id="displayName"/>
+<Attribute name="urn:oid:0.9.2342.19200300.100.1.3" id="mail"/>
+
+<Attribute name="urn:mace:dir:attribute-def:displayName" id="displayName"/>
+<Attribute name="urn:mace:dir:attribute-def:mail" id="mail"/>
+```
+
 #### Upload Shibboleth(SP)'s metadata
 
 After restarting Apache, you should be able to get the Service Provider metadata by accessing https://your-seafile-domain/Shibboleth.sso/Metadata. This metadata should be uploaded to the Identity Provider (IdP) server.
@@ -147,7 +161,11 @@ Add the following configuration to seahub_settings.py.
 ```
 ENABLE_SHIB_LOGIN = True
 SHIBBOLETH_USER_HEADER = 'HTTP_REMOTE_USER'
-SHIBBOLETH_ATTRIBUTE_MAP  = {}
+# basic user attributes
+SHIBBOLETH_ATTRIBUTE_MAP = {
+    "HTTP_DISPLAYNAME": (False, "display_name"),
+    "HTTP_MAIL": (False, "contact_email"),
+}
 EXTRA_MIDDLEWARE_CLASSES = (
     'shibboleth.middleware.ShibbolethRemoteUserMiddleware',
 )

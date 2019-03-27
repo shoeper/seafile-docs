@@ -62,7 +62,7 @@ You should create a new virtual host configuration for Shibboleth. And then rest
 
         RewriteEngine On
         <Location /media>
-	        Require all granted
+            Require all granted
         </Location>
 
         # seafile fileserver
@@ -75,10 +75,10 @@ You should create a new virtual host configuration for Shibboleth. And then rest
         ProxyPass / http://127.0.0.1:8000/
         ProxyPassReverse / http://127.0.0.1:8000/
 
-		# for http
-		# RequestHeader set REMOTE_USER %{REMOTE_USER}e
-		# for https
-		RequestHeader set REMOTE_USER %{REMOTE_USER}s
+        # for http
+        # RequestHeader set REMOTE_USER %{REMOTE_USER}e
+        # for https
+        RequestHeader set REMOTE_USER %{REMOTE_USER}s
     </VirtualHost>
 </IfModule>
 ```
@@ -240,9 +240,10 @@ After restarting Apache and Seahub service (`./seahub.sh restart`), you can then
 
 ## Debug
 
-If you encountered problems when login in, follow these step to get debug info (for Seafile pro 6.3.13).
+If you encountered problems when login, follow these steps to get debug info (for Seafile pro 6.3.13).
 
 #### Add this setting to `seahub_settings.py`
+
 ```
 DEBUG = True
 ```

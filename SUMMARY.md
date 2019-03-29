@@ -19,6 +19,7 @@
   * [Shibboleth Authentication for Seafile v6.2](deploy/shibboleth_config.md)
   * [Shibboleth Authentication for Seafile v6.3+](deploy/shibboleth_config_v6.3.md)
   * [OAuth Authentication](deploy/oauth.md)
+  * [Kerberos Authentication](deploy/kerberos_config.md)
   * [Syslog Integration](deploy/using_syslog.md)
   * Online File Preview and Edit
     * [LibreOffice Online Integration](deploy/libreoffice_online.md)

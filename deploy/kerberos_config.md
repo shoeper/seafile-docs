@@ -1,4 +1,4 @@
-## Overview
+## Kerberos
 
 [Kerberos](https://web.mit.edu/kerberos/) is a widely used single sign on (SSO) protocol. Seafile server supports authentication via Kerberos. It allows users to log in to Seafile without entering credentials again if they have a kerberos ticket.
 

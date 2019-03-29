@@ -91,6 +91,8 @@ Installation and configuration of Shibboleth is out of the scope of this documen
 
 #### Configure Shibboleth(SP)
 
+##### shibboleth2.xml
+
 Open `/etc/shibboleth/shibboleth2.xml` and change some property. After you have done all the followings, don't forget to restart Shibboleth(SP)
 
 ###### `ApplicationDefaults` element
@@ -136,6 +138,10 @@ Change `url` and `backingFilePath` property:
     <MetadataFilter type="RequireValidUntil" maxValidityInterval="2419200"/>
     <MetadataFilter type="Signature" certificate="fedsigner.pem" verifyBackup="false"/>
 ```
+
+##### attribute-map.xml
+
+Open `/etc/shibboleth/attribute-map.xml` and change some property. After you have done all the followings, don't forget to restart Shibboleth(SP)
 
 ###### `Attribute` element
 

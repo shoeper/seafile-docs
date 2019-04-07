@@ -171,7 +171,7 @@ haiwen
 ├── seahub.db
 ```
 
-## Performance turning
+## Performance tuning
 
 If you have more than 50 Seafile users, we highly recommend to [add memcached](../deploy/add_memcached.md). This is going to speedup Seahub (the web front end) significantly.
 

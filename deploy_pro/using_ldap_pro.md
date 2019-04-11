@@ -115,7 +115,6 @@ USER_OBJECT_CLASS = person
 ENABLE_EXTRA_USER_INFO_SYNC = true
 FIRST_NAME_ATTR = givenName
 LAST_NAME_ATTR = sn
-DEPT_ATTR = department
 UID_ATTR = sAMAccountName
 ```
 
@@ -129,7 +128,6 @@ Meaning of each options:
 - **FIRST_NAME_ATTR**: Attribute for user's first name. It's "givenName" by default.
 - **LAST_NAME_ATTR**: Attribute for user's last name. It's "sn" by default.
 - **USER_NAME_REVERSE**: In some languages, such as Chinese, the display order of the first and last name is reversed. Set this option if you need it.
-- **DEPT_ATTR**: Attribute for user's department. It's "department" by default.
 - **UID_ATTR**: Attribute for Windows login name. If this is synchronized, users can also log in with their Windows login name. In AD, the attribute `sAMAccountName` can be used as `UID_ATTR`.
 
 If you choose `userPrincipalName` as the unique identifier for user, Seafile cannot use it as real email address to send notification emails to user. If the users in AD also have an email address attribute, you can sync these email addresses into Seafile's internal database. Seafile can then use them to send emails. The configuration option is:
@@ -151,7 +149,6 @@ USER_OBJECT_CLASS = userOfNames
 ENABLE_EXTRA_USER_INFO_SYNC = true
 FIRST_NAME_ATTR = givenName
 LAST_NAME_ATTR = sn
-DEPT_ATTR = department
 UID_ATTR = uid
 ```
 
@@ -165,7 +162,6 @@ Meaning of each option:
 - **FIRST_NAME_ATTR**: Attribute for user's first name. It's "givenName" by default.
 - **LAST_NAME_ATTR**: Attribute for user's last name. It's "sn" by default.
 - **USER_NAME_REVERSE**: In some languages, such as Chinese, the display order of the first and last name is reversed. Set this option if you need it.
-- **DEPT_ATTR**: Attribute for user's department. It's "department" by default.
 - **UID_ATTR**: Attribute for Windows/Unix login name. If this is synchronized, users can also log in with their Windows/Unix login name. In OpenLDAP, the attribute `uid` or something similar can be used.
 
 ### Importing Users without Activating Them

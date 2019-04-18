@@ -1,5 +1,21 @@
 # Seafile Professional Server Changelog
 
+## 7.0
+
+### 7.0.1 beta (2019/04/18)
+
+* Improved Markdown editor
+* Add columns view mode (Wiki view mode)
+* Add context menu
+* Realtime search
+* Support search libraries
+* Record file history to database for Markdown, Text and Docx, xlsx, pptx files
+* Redesigned activities page
+* Add preview-edit-on-cloud, preview-on-cloud permissions
+* Redesigned file tags
+* Support editing share link permission after creating a link
+
+
 ## 6.3
 
 In version 6.3, Django is upgraded to version 1.11. Django 1.8, which is used in version 6.2, is deprecated in 2018 April.

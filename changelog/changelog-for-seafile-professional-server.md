@@ -2,6 +2,215 @@
 
 ## 7.0
 
+**Since seafile-pro 7.0.0, we have upgraded Elasticsearch to 5.6. This introduces a new requirement because Elasticsearch 5.6 relies on the Java 8 environment and can't run with root.**
+
+### Upgrade the Java version
+
+In order to upgrade from 6.3.x to 7.0.x, you may need to upgrade the JDK version.
+
+Run the following command to view the current Java version information:
+
+```
+java -version
+
+```
+
+If the current jdk version is 1.7.0, then you need to upgrade to 1.8.0. To upgrade to openjdk-1.8.0, refer to the following command:
+
+```
+# For CentOS
+yum install java-1.8.0-openjdk
+
+```
+
+```
+# For Ubuntu
+apt-get install openjdk-8-jre
+
+```
+
+---
+
+**In addition, if you previously ran Seafile with root, you would need to run Seafile with a non-root user in order to use search functionality after upgrading to 7.0.x. If Seafile is already running with a non-root user, you can do the upgrade directly.**
+
+### Switch user
+
+It is recommended that you run Seafile with the seafile user. For specific operations, please refer to the following process:
+
+**Assume that the Seafile installation directory is:** `/opt/seafile`
+
+**Assume that the Seafile data storage path is:** `/opt/seafile/seafile-data`
+
+#### Stop Seafile Service
+
+You need to stop the currently running seafile process first.
+
+```
+cd /opt/seafile/seafile-server-latest
+./seafile.sh stop
+./seahub.sh stop
+
+```
+
+#### Create seafile user
+
+Create a system account to run the Seafile service. The suggested user name is seafile：
+
+```
+useradd --system --comment "seafile" seafile --create-home --home-dir  /home/seafile
+
+```
+
+#### Modify directory permissions
+
+Modify the owner and group of the Seafile installation directory and the Seafile data storage directory to seafile:
+
+```
+chown -R seafile.seafile /opt/seafile
+chown -R seafile.seafile /opt/seafile/seafile-data
+chown -R seafile.seafile /tmp/seafile-office-output
+
+```
+
+#### Start the service
+
+```
+su - seafile
+cd /opt/seafile/seafile-server-latest
+./seafile.sh start
+./seahub.sh start
+
+```
+
+### Modify the startup scripts
+
+**If you used the systemd manager to implement boot-up：**
+
+* You need to modify `/etc/systemd/system/seafile.service`：
+
+
+```
+[Unit]
+Description=Seafile Server
+After=network.target mariadb.service
+
+[Service]
+ExecStart=/opt/seafile/seafile-server-latest/seafile.sh start
+ExecStop=/opt/seafile/seafile-server-latest/seafile.sh stop
+User=seafile
+Group=seafile
+Type=oneshot
+RemainAfterExit=yes
+
+[Install]
+WantedBy=multi-user.target
+
+```
+
+* and `/etc/systemd/system/seahub.service`：
+
+
+```
+[Unit]
+Description=Seafile Seahub
+After=network.target seafile.service
+
+[Service]
+ExecStart=/opt/seafile/seafile-server-latest/seahub.sh start
+ExecStop=/opt/seafile/seafile-server-latest/seahub.sh stop
+User=seafile
+Group=seafile
+Type=oneshot
+RemainAfterExit=yes
+
+[Install]
+WantedBy=multi-user.target
+
+```
+
+* Reload the systemd manager configuration：
+
+
+```
+systemctl daemon-reload
+
+```
+
+**If you used the init script to implement boot-up:**
+
+You need to modify `/etc/init.d/seafile-server`：
+
+```
+#!/bin/bash
+### BEGIN INIT INFO
+# Provides:          seafile-server
+# Required-Start:    $remote_fs $syslog mysql
+# Required-Stop:     $remote_fs $syslog
+# Default-Start:     2 3 4 5
+# Default-Stop:      0 1 6
+# Short-Description: Seafile server
+# Description:       Start Seafile server
+### END INIT INFO
+
+# Author: Alexander Jackson <alexander.jackson@seafile.com.de>
+
+# Change the value of "seafile_dir" to your path of seafile installation
+user=seafile
+seafile_dir=/opt/seafile
+script_path=${seafile_dir}/seafile-server-latest
+seafile_init_log=${seafile_dir}/logs/seafile.init.log
+seahub_init_log=${seafile_dir}/logs/seahub.init.log
+
+case "$1" in
+        start)
+                sudo -u ${user} ${script_path}/seafile.sh $1 >> ${seafile_init_log}
+                sudo -u ${user} ${script_path}/seahub.sh $1 >> ${seahub_init_log}
+        ;;
+        restart)
+                sudo -u ${user} ${script_path}/seafile.sh $1 >> ${seafile_init_log}
+                sudo -u ${user} ${script_path}/seahub.sh $1 >> ${seahub_init_log}
+        ;;
+        stop)
+                sudo -u ${user} ${script_path}/seafile.sh $1 >> ${seafile_init_log}
+                sudo -u ${user} ${script_path}/seahub.sh $1 >> ${seahub_init_log}
+        ;;
+        *)
+                echo "Usage: /etc/init.d/seafile-server {start|stop|restart}"
+                exit 1
+        ;;
+esac
+
+```
+
+### Upgrade Seafile
+
+Stop running the current seafile service：
+
+```
+su - seafile
+cd /opt/seafile/seafile-server-latest
+./seafile.sh stop
+./seahub.sh stop
+
+```
+
+Download the seafile-pro 7.0.x package and extract it to the Seafile installation directory `/opt/seafile`; then execute the upgrade script:
+
+```
+cd /opt/seafile/seafile-pro-server-7.0.x/upgrade/
+./upgrade_6.3_7.0.sh
+
+```
+
+After the upgrade script is successfully executed, start the Seafile service:
+
+```
+cd /opt/seafile/seafile-server-latest
+./seafile.sh start
+./seahub.sh start
+
+```
+
 ### 7.0.1 beta (2019/04/18)
 
 * Improved Markdown editor

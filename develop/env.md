@@ -89,7 +89,7 @@ ccnet-server -c conf -f -
 ```
 cd ~/dev/seafile-server/tests
 mkdir -p conf/seafile-data
-touch seafile-data/seafile.conf
+touch conf/seafile-data/seafile.conf
 seaf-server -c conf -d conf/seafile-data -f -l -
 ```
 

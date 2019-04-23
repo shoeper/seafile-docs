@@ -2,6 +2,12 @@
 
 ## ChangeLog
 
+### 1.0.4 (2019/04/23)
+
+* [fix] Fix file locking
+* [fix] Fix support of detecting pro edition when first time login
+* Support Kerberos authentication
+
 ### 1.0.3 (2019/03/18)
 
 * [fix] Fix copy folders with properties into SeaDrive

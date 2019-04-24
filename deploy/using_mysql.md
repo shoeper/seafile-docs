@@ -9,7 +9,7 @@ This manual explains how to setup and run Seafile server from a pre-built packag
 
 ## Deploying and Directory Layout
 
-Supposed your organization's name is "haiwen", and you've downloaded `seafile-server_1.8.2_*` into your home directory. We suggest you to to use the following layout for your deployment:
+Supposed your organization's name is "haiwen", and you've downloaded `seafile-server_1.8.2_*` into your home directory. We suggest you to use the following layout for your deployment:
 
 ```
 mkdir haiwen

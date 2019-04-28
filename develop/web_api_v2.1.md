@@ -5962,7 +5962,7 @@ For example, `https://cloud.seafile.com/seafhttp/zip/b2272645-35ee-44ce-8f68-07c
 
 **Sample request**
 
-    curl -H "Authorization: Token cbd7705c06846425ed5c46ae0313d5b098d24154" -F "avatar=@1.jpg" -d "avatar_size=64" https://cloud.seafile.com/api/v2.1/user-avatar/
+    curl -H "Authorization: Token cbd7705c06846425ed5c46ae0313d5b098d24154" -F "avatar=@1.jpg" -F "avatar_size=64" https://cloud.seafile.com/api/v2.1/user-avatar/
 
 **Sample response**
 

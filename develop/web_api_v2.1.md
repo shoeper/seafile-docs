@@ -5966,7 +5966,7 @@ For example, `https://cloud.seafile.com/seafhttp/zip/b2272645-35ee-44ce-8f68-07c
 
 **Sample response**
 
-    {"avatar_url":"/media/avatars/2/4/fa66e6b3a50e2707997ec5eed3eda0/resized/64/a92f89f3e23c7fe9cc708454cdd010df_1Mi6nbd.png"}
+    {"avatar_url":"https://cloud.seafile.com/media/avatars/2/4/fa66e6b3a50e2707997ec5eed3eda0/resized/64/a92f89f3e23c7fe9cc708454cdd010df_Y7zJE8v.png"}
 
 **Errors**
 

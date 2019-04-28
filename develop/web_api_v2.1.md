@@ -5958,17 +5958,19 @@ For example, `https://cloud.seafile.com/seafhttp/zip/b2272645-35ee-44ce-8f68-07c
 **Request parameters**
 
 * `avatar`: image file
+* `avatar_size`: avatar size in profile page
 
 **Sample request**
 
-    curl -H "Authorization: Token cbd7705c06846425ed5c46ae0313d5b098d24154" -F "avatar=@1.jpg" https://cloud.seafile.com/api/v2.1/user-avatar/
+    curl -H "Authorization: Token cbd7705c06846425ed5c46ae0313d5b098d24154" -F "avatar=@1.jpg" -d "avatar_size=64" https://cloud.seafile.com/api/v2.1/user-avatar/
 
 **Sample response**
 
-    {"success": true}
+    {"avatar_url":"/media/avatars/2/4/fa66e6b3a50e2707997ec5eed3eda0/resized/64/a92f89f3e23c7fe9cc708454cdd010df_1Mi6nbd.png"}
 
 **Errors**
 
+* 400 invalid avatar size
 * 400 invalid file extension
 * 400 file is too big
 * 500 Internal Server Error

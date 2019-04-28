@@ -5958,7 +5958,7 @@ For example, `https://cloud.seafile.com/seafhttp/zip/b2272645-35ee-44ce-8f68-07c
 **Request parameters**
 
 * `avatar`: image file
-* `avatar_size`: avatar size in profile page
+* `avatar_size`: avatar size
 
 **Sample request**
 

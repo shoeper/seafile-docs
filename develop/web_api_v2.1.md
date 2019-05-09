@@ -5447,11 +5447,8 @@ curl -H "Authorization: Token e71c00e93af863ba9bcddb61a46bb4de11d713fc" -H 'Acce
 {
     "repo_id": "d4f596ed-09ea-4ac6-8d59-12acbd089097",
     "name": "Develop",
-    "file_count": 4,
-    "dir_count": 1,
     "mtime": "2018-01-05T17:45:41+08:00",
     "path": "/Develop/",
-    "size": 397888
 }
 ```
 

@@ -211,6 +211,17 @@ cd /opt/seafile/seafile-server-latest
 
 ```
 
+### 7.0.2 beta (2019/05/17)
+
+* UI fixes
+* Support using different salt for each encrypted libraries
+* Add back sub-folder permission feature
+* Improved user's settings page and file search page
+* Support transfer personal library to department
+* Add role permission
+* [WOPI] Pass last modified time to WOPI
+* Improve image resizing in Markdown 
+
 ### 7.0.1 beta (2019/04/18)
 
 * Improved Markdown editor

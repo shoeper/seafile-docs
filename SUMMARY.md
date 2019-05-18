@@ -116,7 +116,6 @@
     * [Server](build_seafile/server.md)
     * [Raspberry Pi](build_seafile/rpi.md)
   * [Develop env](develop/env.md)
-  * [Code Standard](develop/code_standard.md)
   * [Web API V2.1](develop/web_api_v2.1.md)
   * [Python API](develop/python_api.md)
   * [PHP API](https://github.com/rene-s/Seafile-PHP-SDK)

@@ -42,12 +42,14 @@ The following are LDAP group sync related options. They're in the "[LDAP_SYNC]" 
 Below are summary of options for syncing groups:
 * **ENABLE_GROUP_SYNC**: set to "true" if you want to enable ldap group syncing
 * **GROUP_OBJECT_CLASS**: This is the name of the class used to search for group objects. In Active Directory, it's usually "group"; in OpenLDAP or others, you may use "groupOfNames","groupOfUniqueNames" or "posixGroup", depends on your LDAP server. The default value is "group".
-* **SYNC_INTERVAL**: The interval to sync. Unit is minutes. Default to 60 minutes.
+* **SYNC_INTERVAL**: The interval to sync. Unit is minutes. You can set it to 60, which means that data is synchronized from the LDAP/AD server every 60 minutes.
 * **GROUP_FILTER**: An additional filter to use when searching group objects. If it's set, the final filter used to run search is "(&(objectClass=GROUP_OBJECT_CLASS)(GROUP_FILTER))"; otherwise the final filter would be "(objectClass=GROUP_OBJECT_CLASS)".
 * **GROUP_MEMBER_ATTR**: The attribute field to use when loading the group's members. For most directory servers, the attributes is "member", which is the default value.For "posixGroup", it should be set to "memberUid".
 * **USER_ATTR_IN_MEMBERUID**: The user attribute set in 'memberUid' option, which is used in "posixGroup".The default value is "uid".
 * **DEL_GROUP_IF_NOT_FOUND**: set to "true", will deleted the groups if not found it in LDAP/AD server; need Seafile-pro-6.3.0 and above version
 * **SYNC_GROUP_AS_DEPARTMENT**: In 6.3.8 version, a new option SYNC_GROUP_AS_DEPARTMENT is added. If this option is set to "true", the groups will be synced as top-level departments in Seafile, instead of simple groups. Learn more about departments in Seafile [here](https://help.seafile.com/en/sharing_collaboration/departments.html).
+* **CREATE_DEPARTMENT_LIBRARY**: If you decide to sync the group as a department, you can set this option to "true". In this way, when the group is synchronized for the first time, a library is automatically created for the department, and the library's name is the department's name.
+* **DEFAULT_DEPARTMENT_QUOTA**: If you decide to sync the group as a department, you can set a default space quota for each department when you synchronize a group for the first time. The quota is set to unlimited if this option is not set. Unit is MB.
 
 The search base for groups is the "BASE_DN" set in "[LDAP]" section of ccnet.conf.
 
@@ -100,6 +102,7 @@ Seafile supports syncing OU (Organizational Units) from AD/LDAP to departments. 
 
 Options for syncing departments from OU:
 * **SYNC_DEPARTMENT_FROM_OU**: set to "true" to enable syncing departments from OU.
+* **SYNC_INTERVAL**: The interval to sync. Unit is minutes. You can set it to 60, which means that data is synchronized from the LDAP/AD server every 60 minutes.
 * **DEL_DEPARTMENT_IF_NOT_FOUND**: If set to "true", sync process will delete a department if the corresponding OU is not found in AD/LDAP server.
 * **CREATE_DEPARTMENT_LIBRARY**: set to "true", if you want to automatically create a department library with the OU name.
 * **DEFAULT_DEPARTMENT_QUOTA**: default quota for the imported departments in MB. The quota is set to unlimited if this option is not set.

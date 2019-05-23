@@ -14,9 +14,10 @@ Just follow our document on major version upgrade. No special steps are needed.
 
 ### 7.0.0 beta (2019/05/23)
 
+* Upgraded Web UI with React framework. The look and feel of the new UI is much better.
 * Improved Markdown editor
-* Add columns view mode (Wiki view mode)
-* Add context menu
+* Add columns view mode (tree view like in the Windows Explorer)
+* Add context menu to manipulate files
 * Move files via drag and drop
 * Redesigned file tags
 * Support editing share link permission after creating a link

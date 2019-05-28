@@ -16,10 +16,11 @@
   * [Config Seahub with Apache](deploy/deploy_with_apache.md)
   * [Enabling Https with Apache](deploy/https_with_apache.md)
   * [LDAP/AD Integration](deploy/using_ldap.md)
-  * [Shibboleth Authentication for Seafile v6.2](deploy/shibboleth_config.md)
-  * [Shibboleth Authentication for Seafile v6.3+](deploy/shibboleth_config_v6.3.md)
-  * [OAuth Authentication](deploy/oauth.md)
-  * [Remote User Authentication](deploy/remote_user.md)
+  * [Single Sign On](deploy/single_sign_on.md)
+    * [Shibboleth Authentication for Seafile v6.2](deploy/shibboleth_config.md)
+    * [Shibboleth Authentication for Seafile v6.3+](deploy/shibboleth_config_v6.3.md)
+    * [OAuth Authentication](deploy/oauth.md)
+    * [Remote User Authentication](deploy/remote_user.md)
   * [Syslog Integration](deploy/using_syslog.md)
   * Online File Preview and Edit
     * [LibreOffice Online Integration](deploy/libreoffice_online.md)
@@ -47,7 +48,6 @@
     * [LDAP Configuration for Seafile Pro](deploy_pro/using_ldap_pro.md)
     * [Importing Groups from LDAP](deploy_pro/ldap_group_sync.md)
     * [Importing Roles from LDAP](deploy_pro/ldap_role_sync.md)
-    * [ADFS Integration](deploy_pro/adfs.md)
   * Online File Preview and Edit
     * [Office/PDF Documents Preview](deploy_pro/office_documents_preview.md)
     * [Office Online Server Integration](deploy_pro/office_web_app.md)
@@ -76,8 +76,8 @@
     * [Multi-Tenancy Support](deploy_pro/multi_tenancy.md)
   * Advanced Authentication
     * [Two-factor Authentication](deploy_pro/two_factor_authentication.md)
+    * [ADFS or SAML 2.0](deploy_pro/adfs.md)
     * [CAS Authentication](deploy_pro/cas.md)
-    * [Kerberos Authentication](deploy/kerberos_config.md)
   * Advanced Maintenance Tools
     * [Real-time Backup Server](deploy_pro/real_time_backup.md)
     * [Import Directory To Seafile](deploy_pro/seaf_import.md)

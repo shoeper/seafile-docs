@@ -1,6 +1,6 @@
 ## Overview
 
-Starting from 7.0.0, Seafile can integrate with various Single Sign On systems via a proxy server. Examples include Apache as Shibboleth proxy, and LemonLdap as a proxy to LDAP servers. Seafile can retrieve user information from special request headers (HTTP_REMOTE_USER, HTTP_X_AUTH_USER, etc.) set by the proxy servers.
+Starting from 7.0.0, Seafile can integrate with various Single Sign On systems via a proxy server. Examples include Apache as Shibboleth proxy, or LemonLdap as a proxy to LDAP servers, or Apache as Kerberos proxy. Seafile can retrieve user information from special request headers (HTTP_REMOTE_USER, HTTP_X_AUTH_USER, etc.) set by the proxy servers.
 
 After the proxy server (Apache/Nginx) is successfully authenticated, the user information is set to the request header, and Seafile creates and logs in the user based on this information.
 

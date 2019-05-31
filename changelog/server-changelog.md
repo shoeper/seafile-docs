@@ -12,7 +12,7 @@ Public Wikis are now renamed to published libraries.
 
 Just follow our document on major version upgrade. No special steps are needed.
 
-### 7.0.1 (2019/05/31)
+### 7.0.1 beta (2019/05/31)
 
 * [fix] Fix database upgrade problem
 * [fix] Fix WebDAV can't be started

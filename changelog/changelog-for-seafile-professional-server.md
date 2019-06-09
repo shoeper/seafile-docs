@@ -61,6 +61,10 @@ highlight = fvh
 
 This option will make search speed improved significantly (10x) when the search result contains large pdf/doc files. But you need to rebuild search index if you want to add this option.
 
+### 6.3.14 (2019/05/21)
+
+* [fix] Fix a bug in LDAP group sync
+
 ### 6.3.13 (2019/03/20)
 
 * [fix] Fix some bugs in accessing S3 for some special configurations

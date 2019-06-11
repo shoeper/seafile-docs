@@ -8,37 +8,15 @@ Steps to migrate Seafile from SQLite to MySQL:
 
 1. Stop Seafile and Seahub.
 
-1. Download [sqlite_to_mysql.sh](./sqlite_to_mysql.sh)  to the top directory of your Seafile installation path. For example, `/data/haiwen`.
+1. Download [sqlite2mysql.sh](https://raw.githubusercontent.com/haiwen/seafile-server/master/scripts/sqlite2mysql.sh) and [sqlite2mysql.py](https://raw.githubusercontent.com/haiwen/seafile-server/master/scripts/sqlite2mysql.py) to the top directory of your Seafile installation path. For example, `/opt/seafile`.
 
-1. Run `sqlite_to_mysql.sh`, this script will produce three files (ccnet_db_data.sql, seafile_db_data.sql, seahub_db_data.sql).
+1. Run `sqlite2mysql.sh`:
 
  ```
-chmod +x sqlite_to_mysql.sh
-./sqlite_to_mysql.sh
+chmod +x sqlite2mysql.sh
+./sqlite2mysql.sh
 ```
-
-1. Download these three files to `/data/haiwen`, [ce_ccnet_db.sql](./ce_ccnet_db.sql), [ce_seafile_db.sql](./ce_seafile_db.sql), [mysql.sql](https://raw.githubusercontent.com/haiwen/seahub/master/sql/mysql.sql)(used for create tables in `seahub_db`).
-
-1. Rename `mysql.sql` to `ce_seahub_db.sql`: `mv mysql.sql ce_seahub_db.sql`. Now you should have the following directory layout.
-
- ```sh
-.
-└── haiwen
-|    ...
-|    ...
-|    ├── ce_ccnet_db.sql
-|    ├── ce_seafile_db.sql
-|    ├── ce_seahub_db.sql
-|    ├── ccnet_db_data.sql
-|    ├── seafile_db_data.sql
-|    ├── seahub_db_data.sql
-|    ...
-|    ├── seafile-data
-|    ├── seahub-data
-|    ├── seahub.db
-|    ...
-|    ...
-```
+This script will produce three files: `ccnet-db.sql`, `seafile-db.sql`, `seahub-db.sql`.
 
 1. Create 3 databases ccnet_db, seafile_db, seahub_db and seafile user.
 
@@ -52,24 +30,21 @@ mysql> create database seahub_db character set = 'utf8';
 
  ```
 mysql> use ccnet_db;
-mysql> source ce_ccnet_db.sql;
-mysql> source ccnet_db_data.sql;
+mysql> source ccnet-db.sql;
 ```
 
 1. Import seafile data to MySql.
 
  ```
 mysql> use seafile_db;
-mysql> source ce_seafile_db.sql;
-mysql> source seafile_db_data.sql;
+mysql> source seafile-db.sql;
 ```
 
 1. Import seahub data to MySql.
 
  ```
 mysql> use seahub_db;
-mysql> source ce_seahub_db.sql;
-mysql> source seahub_db_data.sql;
+mysql> source seahub-db.sql;
 ```
 
 1. Modify configure files.

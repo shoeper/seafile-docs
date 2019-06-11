@@ -16,7 +16,7 @@ Steps to migrate Seafile from SQLite to MySQL:
 chmod +x sqlite2mysql.sh
 ./sqlite2mysql.sh
 ```
-    This script will produce three files: `ccnet-db.sql`, `seafile-db.sql`, `seahub-db.sql`.
+This script will produce three files: `ccnet-db.sql`, `seafile-db.sql`, `seahub-db.sql`.
 
 4. Create 3 databases ccnet_db, seafile_db, seahub_db and seafile user.
 
@@ -49,7 +49,7 @@ mysql> source seahub-db.sql;
 
 8. Modify configure files.
 
-    Append following lines to [ccnet.conf](../config/ccnet-conf.md):
+Append following lines to [ccnet.conf](../config/ccnet-conf.md):
 
  ```
 [Database]
@@ -60,9 +60,9 @@ PASSWD=root
 DB=ccnet_db
 CONNECTION_CHARSET=utf8
 ```
-    Note: Use `127.0.0.1`, don't use `localhost`.
+Note: Use `127.0.0.1`, don't use `localhost`.
 
-    Replace the database section in `seafile.conf` with following lines:
+Replace the database section in `seafile.conf` with following lines:
 
  ```
 [database]
@@ -74,7 +74,7 @@ db_name=seafile_db
 connection_charset=utf8
 ```
 
-    Append following lines to `seahub_settings.py`:
+Append following lines to `seahub_settings.py`:
 
  ```
 DATABASES = {
@@ -99,5 +99,7 @@ DATABASES = {
 
 User notifications will be cleared during migration due to the slight difference between MySQL and SQLite, if you only see the busy icon when click the notitfications button beside your avatar, please remove `user_notitfications` table manually by:
 
-    use seahub_db;
-    delete from notifications_usernotification;
+ ```
+use seahub_db;
+delete from notifications_usernotification;
+```

@@ -8,9 +8,9 @@ Steps to migrate Seafile from SQLite to MySQL:
 
 1. Stop Seafile and Seahub.
 
-1. Download [sqlite2mysql.sh](https://raw.githubusercontent.com/haiwen/seafile-server/master/scripts/sqlite2mysql.sh) and [sqlite2mysql.py](https://raw.githubusercontent.com/haiwen/seafile-server/master/scripts/sqlite2mysql.py) to the top directory of your Seafile installation path. For example, `/opt/seafile`.
+2. Download [sqlite2mysql.sh](https://raw.githubusercontent.com/haiwen/seafile-server/master/scripts/sqlite2mysql.sh) and [sqlite2mysql.py](https://raw.githubusercontent.com/haiwen/seafile-server/master/scripts/sqlite2mysql.py) to the top directory of your Seafile installation path. For example, `/opt/seafile`.
 
-1. Run `sqlite2mysql.sh`:
+3. Run `sqlite2mysql.sh`:
 
  ```
 chmod +x sqlite2mysql.sh
@@ -18,7 +18,7 @@ chmod +x sqlite2mysql.sh
 ```
 This script will produce three files: `ccnet-db.sql`, `seafile-db.sql`, `seahub-db.sql`.
 
-1. Create 3 databases ccnet_db, seafile_db, seahub_db and seafile user.
+4. Create 3 databases ccnet_db, seafile_db, seahub_db and seafile user.
 
  ```
 mysql> create database ccnet_db character set = 'utf8';
@@ -26,28 +26,28 @@ mysql> create database seafile_db character set = 'utf8';
 mysql> create database seahub_db character set = 'utf8';
 ```
 
-1. Import ccnet data to MySql.
+5. Import ccnet data to MySql.
 
  ```
 mysql> use ccnet_db;
 mysql> source ccnet-db.sql;
 ```
 
-1. Import seafile data to MySql.
+6. Import seafile data to MySql.
 
  ```
 mysql> use seafile_db;
 mysql> source seafile-db.sql;
 ```
 
-1. Import seahub data to MySql.
+7. Import seahub data to MySql.
 
  ```
 mysql> use seahub_db;
 mysql> source seahub-db.sql;
 ```
 
-1. Modify configure files.
+8. Modify configure files.
 
   Append following lines to [ccnet.conf](../config/ccnet-conf.md):
 
@@ -88,7 +88,7 @@ mysql> source seahub-db.sql;
             }
         }
 
-1. Restart seafile and seahub
+9. Restart seafile and seahub
 
 **NOTE**
 

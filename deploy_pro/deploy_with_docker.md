@@ -239,5 +239,5 @@ Steps:
 You can run docker commands like "docker exec" to find errors.
 
 ```sh
-docker exec -it seafile bash
+docker exec -it seafile /bin/bash
 ```

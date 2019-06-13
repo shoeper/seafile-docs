@@ -101,6 +101,10 @@ ENABLE_REPO_SNAPSHOT_LABEL = False
 Options for libraries:
 
 ```python
+# version for encrypted library
+# should only be `2` or `3`
+ENCRYPTED_LIBRARY_VERSION = 2
+
 # mininum length for password of encrypted library
 REPO_PASSWORD_MIN_LENGTH = 8
 

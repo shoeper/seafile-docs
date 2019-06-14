@@ -12,6 +12,12 @@ Public Wikis are now renamed to published libraries.
 
 Just follow our document on major version upgrade. No special steps are needed.
 
+### 7.0.2 (2019/06/13)
+
+* UI fixes
+* Support index.md in published library
+* Fix IE Edge support
+
 ### 7.0.1 beta (2019/05/31)
 
 * [fix] Fix database upgrade problem

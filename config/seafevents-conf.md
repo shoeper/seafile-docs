@@ -5,6 +5,15 @@
 In the file `seafevents.conf`:
 
 ```
+[FILE HISTORY]
+## From seafile 7.0.0
+## Recording file history to database for fast access is enabled by default for 'Markdown, .txt, ppt, pptx, doc, docx, xls, xlsx'. To disable the feature or to modified the file list, you can add the following settings to seafevents.conf
+
+enabled = false
+suffix = md,txt,...
+
+## After enable the feature, the old histories version for markdown, doc, docx files will not be list in the history page. (Only new histories that stored in database will be listed) But the users can still access the old versions in the library snapshots. For file types not listed in the suffix , histories version will be scanned from the library history as before.
+
 [AUDIT]
 ## Audit log is disabled default.
 ## Leads to additional SQL tables being filled up, make sure your SQL server is able to handle it.

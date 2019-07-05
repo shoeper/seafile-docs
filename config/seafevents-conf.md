@@ -5,6 +5,16 @@
 In the file `seafevents.conf`:
 
 ```
+[FILE HISTORY]
+enabled = true
+threshold = 5
+suffix = md,txt,...
+
+## From seafile 7.0.0
+## Recording file history to database for fast access is enabled by default for 'Markdown, .txt, ppt, pptx, doc, docx, xls, xlsx'. After enable the feature, the old histories version for markdown, doc, docx files will not be list in the history page. (Only new histories that stored in database will be listed) But the users can still access the old versions in the library snapshots. For file types not listed in the suffix , histories version will be scanned from the library history as before. The feature default is enable. You can set the 'enabled = false' to disable the feature.
+## The 'threshold' is the time threshold for recording the historical version of a file, in minutes, the default is 5 minutes. This means that if the interval between two adjacent file saves is less than 5 minutes, the two file changes will be merged and recorded as a historical version. When set to 0, there is no time limit, which means that each save will generate a separate historical version.
+## If you need to modify the file list format, you can add 'suffix = md, txt, ...' configuration items to achieve.
+
 [AUDIT]
 ## Audit log is disabled default.
 ## Leads to additional SQL tables being filled up, make sure your SQL server is able to handle it.

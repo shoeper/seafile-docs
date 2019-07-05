@@ -6,6 +6,22 @@ Since seafile-pro 7.0.0, we have upgraded Elasticsearch to 5.6. As Elasticsearch
 
 Please check our document for how to upgrade to 7.0: https://download.seafile.com/published/support/server-upgrade/pro-7.0.md
 
+### 7.0.4 (2019/07/05)
+
+* UI Improvement and fixes
+* Fix file upload button with Safari, IE edge
+* Support setting history and cleaning trash for department libraries
+* Fix compatibility with "Open library in web" from the old version desktop client
+* Support "." in group name
+* Add back "can edit" permission for sharing links for office file
+* Add back "send link" for upload links
+* Add back grid view for folder sharing links
+* Support creating encrypted libraries for deparment libraries
+* Fix preview for PSD, TIFF files
+* Fix deleting of favirate items when they are shared items but the sharing are revoked
+* Fix avatar broken problem when using a non-stardard port
+* Fix resumable file uploading
+
 ### 7.0.3 (2019/06/13)
 
 * UI fixes

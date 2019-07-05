@@ -14,14 +14,14 @@ Just follow our document on major version upgrade. No special steps are needed.
 
 ### 7.0.3 (2019/07/05)
 
-* UI Improvement and fixes
+* UI Improvements and fixes
 * Fix file upload button with Safari, IE edge
 * Fix compatibility with "Open library in web" from the old version desktop client
 * Support "." in group name
 * Add back "send link" for upload links
 * Add back grid view for folder sharing links
 * Fix preview for PSD, TIFF files
-* Fix deleting of favirate items when they are shared items but the sharing are revoked
+* Fix deleting of favorate items when they are shared items but the sharing are revoked
 * Fix avatar broken problem when using a non-stardard port
 * Fix resumable file uploading
 

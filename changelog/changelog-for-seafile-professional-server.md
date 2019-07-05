@@ -16,9 +16,9 @@ Please check our document for how to upgrade to 7.0: https://download.seafile.co
 * Add back "can edit" permission for sharing links for office file
 * Add back "send link" for upload links
 * Add back grid view for folder sharing links
-* Support creating encrypted libraries for deparment libraries
+* Support creating encrypted libraries for department libraries
 * Fix preview for PSD, TIFF files
-* Fix deleting of favirate items when they are shared items but the sharing are revoked
+* Fix deleting of favorate items when they are shared items but the sharing are revoked
 * Fix avatar broken problem when using a non-stardard port
 * Fix resumable file uploading
 

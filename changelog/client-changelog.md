@@ -2,6 +2,12 @@
 
 ## 7.0
 
+### 7.0.1 (2019/07/11)
+
+* Fix a bug that causing GUI to crash when seaf-daemon dead
+* Fix a bug that cloud file browser does not show file status correctly
+* Do not show lots of "Failed to index file" messages
+
 ### 7.0.0 (2019/06/04)
 
 * Improve error notifications

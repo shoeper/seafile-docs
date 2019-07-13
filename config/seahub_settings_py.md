@@ -114,16 +114,18 @@ REPO_PASSWORD_MIN_LENGTH = 8
 # mininum length for password for share link (since version 4.4)
 SHARE_LINK_PASSWORD_MIN_LENGTH = 8
 
+# Default expire days for share link (since version 6.3.8)
+# Once this value is configured, the user can no longer generate an share link with no expiration time.
+# If the expiration value is not set when the share link is generated, the value configured here will be used.
+SHARE_LINK_EXPIRE_DAYS_DEFAULT = 5
+
 # minimum expire days for share link (since version 6.3.6)
+# SHARE_LINK_EXPIRE_DAYS_MIN should be less than SHARE_LINK_EXPIRE_DAYS_DEFAULT (If the latter is set).
 SHARE_LINK_EXPIRE_DAYS_MIN = 3 # default is 0, no limit.
 
 # maximum expire days for share link (since version 6.3.6)
+# SHARE_LINK_EXPIRE_DAYS_MIN should be greater than SHARE_LINK_EXPIRE_DAYS_DEFAULT (If the latter is set).
 SHARE_LINK_EXPIRE_DAYS_MAX = 8 # default is 0, no limit.
-
-# default expire days for share link (since version 6.3.8)
-# only valid when SHARE_LINK_EXPIRE_DAYS_MIN and SHARE_LINK_EXPIRE_DAYS_MAX is configured
-# should be greater than or equal to MIN and less than or equal to MAX
-SHARE_LINK_EXPIRE_DAYS_DEFAULT = 5
 
 # force user login when view file/folder share link (since version 6.3.6)
 SHARE_LINK_LOGIN_REQUIRED = True

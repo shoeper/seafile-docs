@@ -6,6 +6,17 @@ Since seafile-pro 7.0.0, we have upgraded Elasticsearch to 5.6. As Elasticsearch
 
 Please check our document for how to upgrade to 7.0: https://download.seafile.com/published/support/server-upgrade/pro-7.0.md
 
+### 7.0.5 (2019/07/16)
+
+* [fix] Fix Zip download multiple files
+* [fix] Fix a bug in "System Admin -> Logs -> File Update -> details"
+* [fix] Fix there is an extra history item for newly created docs/pptx
+* [fix] Fix a bug in traffic statistics
+* [fix] Fix file modification report email are not sent out
+* Support show department libraries in fuse
+* Add expiring date for upload link
+* Add search feature in pubished libraries for anonymous users
+
 ### 7.0.4 (2019/07/05)
 
 * UI Improvement and fixes

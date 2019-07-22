@@ -6,6 +6,10 @@ Since seafile-pro 7.0.0, we have upgraded Elasticsearch to 5.6. As Elasticsearch
 
 Please check our document for how to upgrade to 7.0: https://download.seafile.com/published/support/server-upgrade/pro-7.0.md
 
+### 7.0.6 (2019/07/22)
+
+* [fix] Fix a memcache bug when using S3 backend
+
 ### 7.0.5 (2019/07/16)
 
 * [fix] Fix Zip download multiple files

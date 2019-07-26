@@ -12,6 +12,11 @@ Public Wikis are now renamed to published libraries.
 
 Just follow our document on major version upgrade. No special steps are needed.
 
+### 7.0.4 (2019/07/26)
+
+* Fix avatar problem when deployed under non-root domain
+* 
+
 ### 7.0.3 (2019/07/05)
 
 * UI Improvements and fixes

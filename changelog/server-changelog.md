@@ -15,7 +15,12 @@ Just follow our document on major version upgrade. No special steps are needed.
 ### 7.0.4 (2019/07/26)
 
 * Fix avatar problem when deployed under non-root domain
-* 
+* Add get internal link in share dialog
+* Fix newly created DOCX files are not empty and have a Chinese font set as default font
+* Fix system does not send email to new user when adding new user in system admin
+* Fix thumbnail for TIFF files
+* Fix direct download link for sharing links
+
 
 ### 7.0.3 (2019/07/05)
 

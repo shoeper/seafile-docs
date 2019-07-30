@@ -42,7 +42,9 @@
   * [Migrate Seafile From Windows To Linux](deploy_windows/migrate_from_win_to_linux.md)
 * [Deploy Seafile Pro Edition](deploy_pro/README.md)
   * [Download and Setup Seafile Professional Server](deploy_pro/download_and_setup_seafile_professional_server.md)
+  * [Deploying Seafile-pro with Docker](deploy_pro/deploy_with_docker.md)
   * [Migrate from Seafile Community Server](deploy_pro/migrate_from_seafile_community_server.md)
+  * [Migrate CE to Pro with Docker](https://download.seafile.com/published/support/docker/pro-edition/Migrate%20CE%20to%20Pro%20with%20Docker.md)
   * [Upgrading Seafile Professional Server](deploy_pro/upgrading_seafile_professional_server.md)
   * LDAP/AD Integration
     * [LDAP Configuration for Seafile Pro](deploy_pro/using_ldap_pro.md)
@@ -82,7 +84,6 @@
     * [Real-time Backup Server](deploy_pro/real_time_backup.md)
     * [Import Directory To Seafile](deploy_pro/seaf_import.md)
   * [Web Resumable File Upload](deploy_pro/web_resumable_upload.md)
-  * [Deploying Seafile-pro with Docker](deploy_pro/deploy_with_docker.md)
   * [License](deploy_pro/seafile_professional_sdition_software_license_agreement.md)
 * [Server Configuration and Customization](config/README.md)
   * [ccnet.conf](config/ccnet-conf.md)

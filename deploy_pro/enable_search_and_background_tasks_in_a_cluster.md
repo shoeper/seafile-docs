@@ -26,12 +26,12 @@ If you following the steps on settings up a cluster, node B and node C should ha
 
 On Ubuntu/Debian:
 ```shell
-sudo apt-get install openjdk-7-jre libreoffice poppler-utils python-uno # or python3-uno for ubuntu 14.04+
+sudo apt-get install openjdk-8-jre libreoffice poppler-utils python-uno # or python3-uno for ubuntu 16.04+
 ```
 
 On CentOS/Red Hat:
 ```shell
-sudo yum install java-1.7.0-openjdk
+sudo yum install java-1.8.0-openjdk
 sudo yum install libreoffice libreoffice-headless libreoffice-pyuno
 sudo yum install poppler-utils
 ```

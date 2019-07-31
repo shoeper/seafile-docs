@@ -6,11 +6,11 @@ The following document is tested with Ubuntu 16.04 and CentOS 7. We recommend th
 
 Now when we release a new version, we will always provide 2 compressed files, for example:
 
-- *seafile-pro-server_6.3.1_x86-64_Ubuntu.tar.gz*, is compiled in Ubuntu 16.04 enviroment.
+- *seafile-pro-server_7.0.7_x86-64_Ubuntu.tar.gz*, is compiled in Ubuntu 16.04 enviroment.
 
-- *seafile-pro-server_6.3.1_x86-64_CentOS.tar.gz*, is compiled in CentOS 7 enviroment.
+- *seafile-pro-server_7.0.7_x86-64_CentOS.tar.gz*, is compiled in CentOS 7 enviroment.
 
-If you are using Ubuntu 16.04/Debian server, please use *seafile-pro-server_6.3.1_x86-64_Ubuntu.tar.gz*, for CentOS 7 please use *seafile-pro-server_6.3.1_x86-64_CentOS.tar.gz*.
+If you are using Ubuntu 16.04/Debian server, please use *seafile-pro-server_7.0.7_x86-64_Ubuntu.tar.gz*, for CentOS 7 please use *seafile-pro-server_7.0.7_x86-64_CentOS.tar.gz*.
 
 ### Install thirdpart Requirements
 
@@ -32,7 +32,7 @@ For CentOS 7:
 ```
 wget https://bootstrap.pypa.io/get-pip.py
 sudo python get-pip.py
-sudo yum install java-1.7.0-openjdk poppler-utils python-setuptools \
+sudo yum install java-1.8.0-openjdk poppler-utils python-setuptools \
 MySQL-python mariadb-server python-memcached python-ldap \
 python-urllib3
 
@@ -52,7 +52,7 @@ For more information please see bellow.
 
 On Debian:
 ```
-sudo apt-get install openjdk-7-jre
+sudo apt-get install openjdk-8-jre
 ```
 
 On Ubuntu 16.04:
@@ -63,7 +63,7 @@ sudo ln -sf /usr/lib/jvm/java-8-openjdk-amd64/jre/bin/java /usr/bin/
 
 On CentOS/Red Hat:
 ```
-sudo yum install java-1.7.0-openjdk
+sudo yum install java-1.8.0-openjdk
 ```
 
 ### Install poppler-utils ###
@@ -109,7 +109,7 @@ Put the license you got under the top level diretory. In our wiki, we use the di
 
 
 ```
-tar xf seafile-pro-server_1.8.0_x86-64.tar.gz
+tar xf seafile-pro-server_7.0.7_x86-64.tar.gz
 ```
 
 Now you have:
@@ -117,16 +117,16 @@ Now you have:
 ```
 haiwen
 ├── seafile-license.txt
-└── seafile-pro-server-1.8.0/
+└── seafile-pro-server-7.0.7/
 ```
 
 
 -----------
 
-You should notice the difference between the names of the Community Server and Professional Server. Take the 1.8.0 64bit version as an example:
+You should notice the difference between the names of the Community Server and Professional Server. Take the 7.0.7 64bit version as an example:
 
-- Seafile Community Server tarball is `seafile-server_1.8.0_x86-86.tar.gz`; After uncompressing, the folder is `seafile-server-1.8.0`
-- Seafile Professional Server tarball is `seafile-pro-server_1.8.0_x86-86.tar.gz`; After uncompressing, the folder is `seafile-pro-server-1.8.0`
+- Seafile Community Server tarball is `seafile-server_7.0.7_x86-86.tar.gz`; After uncompressing, the folder is `seafile-server-7.0.7`
+- Seafile Professional Server tarball is `seafile-pro-server_7.0.7_x86-86.tar.gz`; After uncompressing, the folder is `seafile-pro-server-7.0.7`
 
 -----------
 
@@ -154,7 +154,7 @@ haiwen
 │   └── seafevents.conf
 ├── pro-data            # data specific for professional version
 ├── seafile-data
-├── seafile-pro-server-1.8.0
+├── seafile-pro-server-7.0.7
 │   ├── reset-admin.sh
 │   ├── runtime
 │   ├── seafile

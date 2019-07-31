@@ -12,19 +12,19 @@ That means, if you are using Community Server version 1.6, and want to switch to
 
 ### Install Java Runtime Environment (JRE) ###
 
-Java 7 or higher is required.
+Java 8 or higher is required.
 
 On Ubuntu/Debian:
 ```
-sudo apt-get install openjdk-7-jre
+sudo apt-get install openjdk-8-jre
 ```
 
 On CentOS/Red Hat:
 ```
-sudo yum install java-1.7.0-openjdk
+sudo yum install java-1.8.0-openjdk
 ```
 
-*Note*: Since version 3.1.12, java 1.7 is required, please check your java version by `java -version`. If not, please [change the default java version](./change_default_java.md).
+*Note*: Since version 7.0.0, java 1.8 is required, please check your java version by `java -version`. 
 
 ### Install poppler-utils ###
 

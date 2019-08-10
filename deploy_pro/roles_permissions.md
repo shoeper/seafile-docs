@@ -8,6 +8,8 @@ In version 6.1, we added a new permission `role_quota` which can be used to set 
 
 Since version 6.3.6, we added a new permission `can_add_public_repo`(whether or not you can create a public library, default is "False").
 
+**Note:**The `can_add_public_repo` option will not take effect if you configure global `CLOUD_MODE = True`.
+
 Seafile comes with two build-in roles `default` and `guest`, a default user is a normal user with permissions as followings:
 ```
     'default': {

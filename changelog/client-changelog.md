@@ -2,6 +2,11 @@
 
 ## 7.0
 
+### 7.0.2 (2019/08/12)
+
+* Improve notifications when user editing files in read-only libraries
+* [fix] Fix seaf-cli syncing problem
+
 ### 7.0.1 (2019/07/11)
 
 * Fix a bug that causing GUI to crash when seaf-daemon dead

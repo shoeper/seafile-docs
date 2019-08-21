@@ -2,6 +2,10 @@
 
 ## ChangeLog
 
+### 1.0.7 (2019/08/21)
+
+* [mac] Improve finder extension
+
 ### 1.0.6 (2019/07/01)
 
 * [fix, Win] Fix a problem when uninstall or upgrade the drive client when the client is running.

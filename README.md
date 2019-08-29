@@ -1,5 +1,7 @@
 # Introduction
 
+> Note, the manual has been moved to https://download.seafile.com/published/seafile-manual/home.md
+
 Seafile is an open source cloud storage system with file encryption and group sharing.
 
 Collections of files are called libraries, and each library can be synced  
@@ -20,7 +22,7 @@ The different components of Seafile project are released under different license
 * Seafile Server core: AGPLv3
 * Seahub \(Seafile server Web UI\): Apache License v
 
-# 
+#
 
 ## About this manual
 
@@ -30,6 +32,3 @@ The "source code" of this manual is hosted on GitHub: [https://github.com/haiwen
 
 * Twitter: @seafile [https://twitter.com/seafile](https://twitter.com/seafile)
 * Forum: [https://forum.seafile.com](https://forum.seafile.com)
-
-
-
